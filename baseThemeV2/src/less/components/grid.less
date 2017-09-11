@@ -1,0 +1,71 @@
+/**
+ * grid
+ */
+
+// on small screens
+@media @bp-min-small {
+  
+  .grid2  { width: 25% }
+  .grid3  { width: 33.333%; }
+  .grid4  { width: 50%; }
+  .grid9  { width: 66.666%; }
+  .grid10 { width: 75%; }
+  
+  .gt-tiny {
+    margin-left: -@sp-tiny / 2;
+    margin-right: -@sp-tiny / 2;
+    
+    & > .pane {
+      padding: 0 @sp-tiny / 2 @sp-tiny;
+    }
+  }
+
+  .gt-small {
+    margin-left: -@sp-small / 2;
+    margin-right: -@sp-small / 2;
+    
+    & > .pane {
+      padding: 0 @sp-small / 2 @sp-small;
+    }
+  }
+  
+  .gt-medium {
+    margin-left: -@sp-medium / 2;
+    margin-right: -@sp-medium / 2;
+    
+    & > .pane {
+      padding: 0 @sp-medium / 2 @sp-medium;
+    }
+  }
+
+  .gt-large {
+    margin-left: -@sp-large / 2;
+    margin-right: -@sp-large / 2;
+    
+    & > .pane {
+      padding: 0 @sp-large / 2 @sp-large;
+    }
+  }
+  
+  .gt-huge {
+    margin-left: -@sp-huge / 2;
+    margin-right: -@sp-huge / 2;
+    
+    & > .pane {
+      padding: 0 @sp-huge / 2 @sp-huge;
+    }
+  }
+  
+}
+
+
+// on medium screens
+@media @bp-min-medium {
+  .grid2  { width: 20%; }
+  .grid3  { width: 25%; }
+  .grid4  { width: 33.333% }
+  .grid6  { width: 50%; }
+  .grid8  { width: 66.666%; }
+  .grid9  { width: 75%; }
+  .grid10 { width: 80%; }
+}
