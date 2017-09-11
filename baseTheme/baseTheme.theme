@@ -1,0 +1,123 @@
+<?php
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Render\Element;
+use Drupal\Component\Utility\UrlHelper;
+use Drupal\Core\Form\FormStateInterface;
+
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function baseTheme_preprocess_html(&$variables) {
+
+    // remove prefix attribute
+    unset($variables['html_attributes']['prefix']);
+
+    // override classes
+    $variables['html_attributes']['class'] = array('no-js');
+
+}
+
+
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function baseTheme_page_attachments_alter(array &$attachments) {
+
+    // get current theme path
+    $theme_path = base_path() . \Drupal::theme()->getActiveTheme()->getPath();
+
+    // remove html tags from head
+    $unset_html_tags = array(
+        'system_meta_generator' => 1,
+        'system_meta_content_type' => 1,
+        'MobileOptimized' => 1,
+        'HandheldFriendly' => 1
+    );
+
+    foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
+        if (isset($unset_html_tags[$attachment[1]])) {
+            unset($attachments['#attached']['html_head'][$key]);
+        }
+    }
+
+    // add custom html tags to head
+    $custom_html_tags = array(
+        'description' => array(
+            'tag' => 'meta',
+            'attributes' => ['name' => 'description', 'content' => 'Website description']
+        ),
+        'XUACompatible' => array(
+            'tag' => 'meta',
+            'attributes' => ['http-equiv' => 'X-UA-Compatible', 'content' => 'IE=edge,chrome=1']
+        ),
+        'msapplicationTileColor' => array(
+            'tag' => 'meta',
+            'attributes' => ['name' => 'msapplication-TileColor', 'color' => '#86e2ff']
+        ),
+        'msapplicationTileImage' => array(
+            'tag' => 'meta',
+            'attributes' => ['name' => 'msapplication-TileImage', 'content' => $theme_path . '/favicon/mstile-144x144.png']
+        ),
+        'msapplicationConfig' => array(
+            'tag' => 'meta',
+            'attributes' => ['name' => 'msapplication-config', 'content' => $theme_path . '/favicon/browserconfig.xml']
+        ),
+        'themeColor' => array(
+            'tag' => 'meta',
+            'attributes' => ['name' => 'theme-color', 'content' => '#ffffff']
+        ),
+        'appleTouchIcon' => array(
+            'tag' => 'link',
+            'attributes' => ['rel' => 'apple-touch-icon', 'sizes' => '180x180', 'href' => $theme_path . '/favicon/apple-touch-icon.png']
+        ),
+        'favicon32x32' => array(
+            'tag' => 'link',
+            'attributes' => ['rel' => 'icon', 'type' => 'image/png', 'sizes' => '32x32', 'href' => $theme_path . '/favicon/favicon-32x32.png']
+        ),
+        'favicon16x16' => array(
+            'tag' => 'link',
+            'attributes' => ['rel' => 'icon', 'type' => 'image/png', 'sizes' => '16x16', 'href' => $theme_path . '/favicon/favicon-16x16.png']
+        ),
+        'manifest' => array(
+            'tag' => 'link',
+            'attributes' => ['rel' => 'manifest', 'href' => $theme_path . '/favicon/manifest.json']
+        ),
+        'maskIcon' => array(
+            'tag' => 'link',
+            'attributes' => ['rel' => 'mask-icon', 'href' => $theme_path . '/favicon/safari-pinned-tab.svg']
+        ),
+        'shortcutIcon' => array(
+            'tag' => 'link',
+            'attributes' => ['rel' => 'shortcut icon', 'href' => $theme_path . '/favicon/favicon.ico']
+        )
+    );
+
+    foreach($custom_html_tags as $system_name => $html_tag) {
+        $tag = array(
+            '#type' => 'html_tag',
+            '#tag' => $html_tag['tag'],
+            '#attributes' => $html_tag['attributes'],
+        );
+        $attachments['#attached']['html_head'][] = array($tag, $system_name);
+    }
+
+}
+
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function baseTheme_preprocess_page(&$variables) {
+
+    // get current theme path
+    $theme_path = base_path() . \Drupal::theme()->getActiveTheme()->getPath();
+
+    // add site name to variables
+    $variables['site_name'] = \Drupal::config('system.site')->get('name');
+
+    // add site logo to variables
+    $variables['site_logo'] = $theme_path . '/logo.svg';
+
+}

@@ -1,0 +1,17 @@
+name: baseTheme
+type: theme
+description: a core base template
+version: 0.8
+core: 8.x
+
+
+libraries:
+  - baseTheme/main
+
+libraries-override:
+  system/base: false
+  system/stable: false
+  classy/base: false
+
+stylesheets-remove:
+  - core/themes/stable/css/views/views.module.css

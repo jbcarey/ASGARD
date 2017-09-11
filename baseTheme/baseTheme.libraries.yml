@@ -1,0 +1,14 @@
+global-styling:
+  version: VERSION
+  css:
+    base:
+      css/template.css: {}
+      fonts/fonts.css: {}
+  js:
+    js/baguetteBox.min.js: {}
+
+
+baguettebox:
+  version: VERSION
+  js:
+    js/baguetteBox.min.js: {}

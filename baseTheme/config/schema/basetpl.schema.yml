@@ -1,0 +1,5 @@
+# Schema for the configuration files of the basetpl theme.
+
+basetpl.settings:
+  type: theme_settings
+  label: 'basetpl settings'
