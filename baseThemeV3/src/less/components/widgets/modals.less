@@ -1,0 +1,85 @@
+/**
+ * Modal windows
+ */
+
+.modal {
+
+  padding: @pd-huge;
+  display: none;
+  visibility: hidden;
+  z-index: 9999;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.active {
+    animation: fadeInDelayed .4s ease-in-out;
+    display: block;
+    height: 100%;
+    left: 0;
+    max-height: 100%;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    visibility: visible;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .box {
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.3);
+  }
+
+}
+
+
+.modal-bg {
+  bottom: 0;
+  background: black;
+  position: fixed;
+  left: 0;
+  opacity: .9;
+  right: 0;
+  top: 0;
+  z-index: 9998;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+
+.modal-controls {
+
+  position: absolute;
+  top: @pd-medium;
+  right: @pd-medium;
+
+  a {
+    display: inline-block;
+    width: em(40);
+    height: em(40);
+    border-radius: 50%;
+    background: transparent no-repeat center center;
+    cursor: pointer;
+    overflow: hidden;
+    text-indent: 100%;
+    transition: all 0.2s ease-in-out;
+
+    &:hover,
+    &:focus,
+    &:active {
+      transform: scale(1.1);
+      background-color: fade(white,30);
+    }
+
+    &:focus,
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  .close {
+    background-image: url(@b64-cancel);
+  }
+
+}
+

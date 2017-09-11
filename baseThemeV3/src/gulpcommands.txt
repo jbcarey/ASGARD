@@ -1,0 +1,8 @@
+// fix dependancy issues - etc
+npm install jshint gulp-jshint --save-dev
+
+// read gulpfile.js and install all modules
+npm install npm-install-all -g
+
+// install modules
+npm-install-all

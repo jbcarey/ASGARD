@@ -10,7 +10,9 @@ var lazypipe = require('lazypipe');
 var plumber = require('gulp-plumber');
 var tap = require('gulp-tap');
 var rename = require('gulp-rename');
+var header = require('gulp-header');
 var watch = require('gulp-watch');
+var package = require('./package.json');
 
 // Scripts and tests
 var jshint = require('gulp-jshint');
@@ -39,14 +41,11 @@ var imageResize = require('gulp-image-resize-ar');
 var realFavicon = require('gulp-real-favicon');
 
 
-
-
 /**
  * Paths to project folders
  */
 
 var paths = {
-
   scripts: {
     input: './js/*',
     output: '../js/',
@@ -80,6 +79,29 @@ var paths = {
 };
 
 
+/**
+ * Template for banner to add to file headers
+ */
+
+var banner = {
+	full :
+		'/**\n' +
+		' * <%= package.name %> v<%= package.version %>\n' +
+		' * <%= package.description %>, by <%= package.author.name %>.\n' +
+		' * <%= package.repository.url %>\n' +
+		' * \n' +
+		' * Free to use under the MIT License.\n' +
+		' * http://gomakethings.com/mit/\n' +
+		' */\n\n',
+	min :
+		'/**' +
+		' <%= package.name %> v<%= package.version %>, by Jay Carey' +
+		' | <%= package.repository.url %>' +
+		' | Licensed under MIT: http://gomakethings.com/mit/' +
+		' */\n'
+};
+
+
 
 
 
@@ -97,27 +119,28 @@ gulp.task('build:plugins', function() {
 
 
 // Lint, minify, and concatenate scripts
-gulp.task('build:js', function() {
-  var jsTasks = lazypipe()
-    .pipe(optimizejs)
-    .pipe(gulp.dest, paths.scripts.output)
-    .pipe(rename, { suffix: '.min' })
-    .pipe(uglify)
-    .pipe(optimizejs)
-    .pipe(gulp.dest, paths.scripts.output);
+gulp.task('build:js',  function() {
+	var jsTasks = lazypipe()
+		.pipe(header, banner.full, { package : package })
+		.pipe(gulp.dest, paths.scripts.output)
+		.pipe(rename, { suffix: '.min' })
+		.pipe(uglify)
+		.pipe(header, banner.min, { package : package })
+		.pipe(gulp.dest, paths.scripts.output);
 
-  return gulp.src(paths.scripts.input)
-    .pipe(plumber())
-    .pipe(tap(function (file, t) {
-      if ( file.isDirectory() ) {
-        var name = file.relative + '.js';
-        return gulp.src(file.path + '/*.js')
-          .pipe(concat(name))
-          .pipe(jsTasks());
-      }
-    }))
-    .pipe(jsTasks());
+	return gulp.src(paths.scripts.input)
+		.pipe(plumber())
+		.pipe(tap(function (file, t) {
+			if ( file.isDirectory() ) {
+				var name = file.relative + '.js';
+				return gulp.src(file.path + '/*.js')
+					.pipe(concat(name))
+					.pipe(jsTasks());
+			}
+		}))
+		.pipe(jsTasks());
 });
+ 
 
 
 
@@ -207,14 +230,14 @@ gulp.task('lint:js', function () {
 
 // Run al tasks
 gulp.task('default', [
- /* 'lint:js',
+  'lint:js',
   'build:plugins',
   'build:js',
   'build:less',
   'build:images',
   'build:svgs',
   'build:fonts',
-  'build:favicon', */
+  'build:favicon',
 ]);
 
 
