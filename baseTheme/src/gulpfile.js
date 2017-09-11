@@ -12,6 +12,7 @@ var tap = require('gulp-tap');
 var rename = require('gulp-rename');
 var watch = require('gulp-watch');
 
+
 // Scripts and tests
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
@@ -78,7 +79,6 @@ var paths = {
   }
   
 };
-
 
 
 

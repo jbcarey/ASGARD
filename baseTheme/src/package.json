@@ -36,5 +36,9 @@
     "less-plugin-autoprefix": "^1.5.1",
     "less-plugin-clean-css": "^1.5.1",
     "less-plugin-functions": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp-jshint": "^2.0.4",
+    "jshint": "^2.9.5"
   }
 }
