@@ -1,18 +1,18 @@
-stark.mobile:
+baseTheme.mobile:
   label: mobile
-  mediaQuery: '(min-width: 0px)'
+  mediaQuery: ''
   weight: 0
   multipliers:
-   - 1x
-stark.narrow:
+    - 1x
+baseTheme.narrow:
   label: narrow
-  mediaQuery: 'all and (min-width: 480px) and (max-width: 959px)'
+  mediaQuery: 'all and (min-width: 560px) and (max-width: 850px)'
   weight: 1
   multipliers:
     - 1x
-stark.wide:
+baseTheme.wide:
   label: wide
-  mediaQuery: 'all and (min-width: 960px)'
+  mediaQuery: 'all and (min-width: 851px)'
   weight: 2
   multipliers:
     - 1x

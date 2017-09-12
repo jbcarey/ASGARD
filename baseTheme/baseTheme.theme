@@ -1,123 +1,125 @@
 <?php
-use Drupal\Core\Template\Attribute;
-use Drupal\Core\Render\Element;
-use Drupal\Component\Utility\UrlHelper;
-use Drupal\Core\Form\FormStateInterface;
-
 
 /**
- * Implements hook_preprocess_html().
+ * @file
+ * Functions to support theming in the baseTheme theme.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ *
+ * Adds body classes if certain regions have content.
  */
 function baseTheme_preprocess_html(&$variables) {
+  // Add information about the number of sidebars.
+  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+    $variables['attributes']['class'][] = 'layout-two-sidebars';
+  }
+  elseif (!empty($variables['page']['sidebar_first'])) {
+    $variables['attributes']['class'][] = 'layout-one-sidebar';
+    $variables['attributes']['class'][] = 'layout-sidebar-first';
+  }
+  elseif (!empty($variables['page']['sidebar_second'])) {
+    $variables['attributes']['class'][] = 'layout-one-sidebar';
+    $variables['attributes']['class'][] = 'layout-sidebar-second';
+  }
+  else {
+    $variables['attributes']['class'][] = 'layout-no-sidebars';
+  }
 
-    // remove prefix attribute
-    unset($variables['html_attributes']['prefix']);
-
-    // override classes
-    $variables['html_attributes']['class'] = array('no-js');
-
-}
-
-
-
-/**
- * Implements hook_page_attachments_alter().
- */
-function baseTheme_page_attachments_alter(array &$attachments) {
-
-    // get current theme path
-    $theme_path = base_path() . \Drupal::theme()->getActiveTheme()->getPath();
-
-    // remove html tags from head
-    $unset_html_tags = array(
-        'system_meta_generator' => 1,
-        'system_meta_content_type' => 1,
-        'MobileOptimized' => 1,
-        'HandheldFriendly' => 1
-    );
-
-    foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
-        if (isset($unset_html_tags[$attachment[1]])) {
-            unset($attachments['#attached']['html_head'][$key]);
-        }
-    }
-
-    // add custom html tags to head
-    $custom_html_tags = array(
-        'description' => array(
-            'tag' => 'meta',
-            'attributes' => ['name' => 'description', 'content' => 'Website description']
-        ),
-        'XUACompatible' => array(
-            'tag' => 'meta',
-            'attributes' => ['http-equiv' => 'X-UA-Compatible', 'content' => 'IE=edge,chrome=1']
-        ),
-        'msapplicationTileColor' => array(
-            'tag' => 'meta',
-            'attributes' => ['name' => 'msapplication-TileColor', 'color' => '#86e2ff']
-        ),
-        'msapplicationTileImage' => array(
-            'tag' => 'meta',
-            'attributes' => ['name' => 'msapplication-TileImage', 'content' => $theme_path . '/favicon/mstile-144x144.png']
-        ),
-        'msapplicationConfig' => array(
-            'tag' => 'meta',
-            'attributes' => ['name' => 'msapplication-config', 'content' => $theme_path . '/favicon/browserconfig.xml']
-        ),
-        'themeColor' => array(
-            'tag' => 'meta',
-            'attributes' => ['name' => 'theme-color', 'content' => '#ffffff']
-        ),
-        'appleTouchIcon' => array(
-            'tag' => 'link',
-            'attributes' => ['rel' => 'apple-touch-icon', 'sizes' => '180x180', 'href' => $theme_path . '/favicon/apple-touch-icon.png']
-        ),
-        'favicon32x32' => array(
-            'tag' => 'link',
-            'attributes' => ['rel' => 'icon', 'type' => 'image/png', 'sizes' => '32x32', 'href' => $theme_path . '/favicon/favicon-32x32.png']
-        ),
-        'favicon16x16' => array(
-            'tag' => 'link',
-            'attributes' => ['rel' => 'icon', 'type' => 'image/png', 'sizes' => '16x16', 'href' => $theme_path . '/favicon/favicon-16x16.png']
-        ),
-        'manifest' => array(
-            'tag' => 'link',
-            'attributes' => ['rel' => 'manifest', 'href' => $theme_path . '/favicon/manifest.json']
-        ),
-        'maskIcon' => array(
-            'tag' => 'link',
-            'attributes' => ['rel' => 'mask-icon', 'href' => $theme_path . '/favicon/safari-pinned-tab.svg']
-        ),
-        'shortcutIcon' => array(
-            'tag' => 'link',
-            'attributes' => ['rel' => 'shortcut icon', 'href' => $theme_path . '/favicon/favicon.ico']
-        )
-    );
-
-    foreach($custom_html_tags as $system_name => $html_tag) {
-        $tag = array(
-            '#type' => 'html_tag',
-            '#tag' => $html_tag['tag'],
-            '#attributes' => $html_tag['attributes'],
-        );
-        $attachments['#attached']['html_head'][] = array($tag, $system_name);
-    }
+  if (!empty($variables['page']['featured_top'])) {
+    $variables['attributes']['class'][] = 'has-featured-top';
+  }
 
 }
 
+/**
+ * Implements hook_preprocess_HOOK() for page templates.
+ */
+function baseTheme_preprocess_page_title(&$variables) {
+  // Since the title and the shortcut link are both block level elements,
+  // positioning them next to each other is much simpler with a wrapper div.
+  if (!empty($variables['title_suffix']['add_or_remove_shortcut']) && $variables['title']) {
+    // Add a wrapper div using the title_prefix and title_suffix render
+    // elements.
+    $variables['title_prefix']['shortcut_wrapper'] = [
+      '#markup' => '<div class="shortcut-wrapper clearfix">',
+      '#weight' => 100,
+    ];
+    $variables['title_suffix']['shortcut_wrapper'] = [
+      '#markup' => '</div>',
+      '#weight' => -99,
+    ];
+    // Make sure the shortcut link is the first item in title_suffix.
+    $variables['title_suffix']['add_or_remove_shortcut']['#weight'] = -100;
+  }
+}
 
 /**
- * Implements hook_preprocess_page().
+ * Implements hook_preprocess_HOOK() for maintenance-page.html.twig.
  */
-function baseTheme_preprocess_page(&$variables) {
+function baseTheme_preprocess_maintenance_page(&$variables) {
+  // By default, site_name is set to Drupal if no db connection is available
+  // or during site installation. Setting site_name to an empty string makes
+  // the site and update pages look cleaner.
+  // @see template_preprocess_maintenance_page
+  if (!$variables['db_is_active']) {
+    $variables['site_name'] = '';
+  }
 
-    // get current theme path
-    $theme_path = base_path() . \Drupal::theme()->getActiveTheme()->getPath();
+  // baseTheme has custom styling for the maintenance page.
+  $variables['#attached']['library'][] = 'baseTheme/maintenance_page';
+}
 
-    // add site name to variables
-    $variables['site_name'] = \Drupal::config('system.site')->get('name');
+/**
+ * Implements hook_preprocess_HOOK() for node.html.twig.
+ */
+function baseTheme_preprocess_node(&$variables) {
+  // Remove the "Add new comment" link on teasers or when the comment form is
+  // displayed on the page.
+  if ($variables['teaser'] || !empty($variables['content']['comments']['comment_form'])) {
+    unset($variables['content']['links']['comment']['#links']['comment-add']);
+  }
+}
 
-    // add site logo to variables
-    $variables['site_logo'] = $theme_path . '/logo.svg';
+/**
+ * Implements hook_preprocess_HOOK() for block.html.twig.
+ */
+function baseTheme_preprocess_block(&$variables) {
+  // Add a clearfix class to system branding blocks.
+  if ($variables['plugin_id'] == 'system_branding_block') {
+    $variables['attributes']['class'][] = 'clearfix';
+  }
+}
 
+/**
+ * Implements hook_preprocess_HOOK() for menu.html.twig.
+ */
+function baseTheme_preprocess_menu(&$variables) {
+  $variables['attributes']['class'][] = 'clearfix';
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ */
+function baseTheme_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  if ($variables['element']['#form_id'] == 'search_block_form') {
+    $suggestions[] = 'form__search_block_form';
+  }
+}
+
+/**
+ * Implements hook_form_alter() to add classes to the search form.
+ */
+function baseTheme_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (in_array($form_id, ['search_block_form', 'search_form'])) {
+    $key = ($form_id == 'search_block_form') ? 'actions' : 'basic';
+    if (!isset($form[$key]['submit']['#attributes'])) {
+      $form[$key]['submit']['#attributes'] = new Attribute();
+    }
+    $form[$key]['submit']['#attributes']->addClass('search-form__submit');
+  }
 }

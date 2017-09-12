@@ -11,11 +11,14 @@ var plumber = require('gulp-plumber');
 var tap = require('gulp-tap');
 var rename = require('gulp-rename');
 var watch = require('gulp-watch');
+var livereload = require('gulp-livereload');
 
+// html
+var htmlmin = require('gulp-htmlmin');
 
 // Scripts and tests
-var jshint = require('gulp-jshint');
-var stylish = require('jshint-stylish');
+//var jshint = require('gulp-jshint');
+//var stylish = require('jshint-stylish');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var optimizejs = require('gulp-optimize-js');
@@ -47,38 +50,42 @@ var realFavicon = require('gulp-real-favicon');
  */
 
 var paths = {
-
-  scripts: {
-    input: './js/*',
-    output: '../js/',
-    plugins: [
-      'node_modules/smooth-scroll/dist/js/smooth-scroll.js',
-      'node_modules/gumshoe/dist/js/gumshoe.js',
-      'node_modules/Modals/dist/js/modals.js',
-    ],
-  },
-  
-  styles: {
-    input: './less/*.less',
-    output: '../css/'
-  },
-  
-  svgs: {
-    input: ['./svg**', '!./svg/{b64,b64/**}'],
-    output: '../svg/'
-  },
-  
-  images: {
-    input: './img/*',
-    output: '../img/'
-  },
-  
-  fonts: {
-    input: './fonts/fonts.list',
-    output: '../fonts/'
-  }
-  
+    input: './**/*',
+    output: '../',
+    scripts: {
+        input: './js/*',
+        plugins: [
+          'node_modules/smooth-scroll/dist/js/smooth-scroll.js',
+          'node_modules/swiper/dist/js/swiper.js',
+        ],
+        output: '../js/'
+    },
+    styles: {
+        input: './less/template.less',
+        output: '../less-css/'
+    },
+    svgs: {
+        input: ['./svg**', '!./svg/{b64,b64/**}'],
+        output: '../svg/'
+    },
+    images: {
+        input: './img/pictures/*',
+        output: '../img/pictures/',
+        thumbs: {
+            input: './img/pictures/thumbs/*',
+            output: '../img/pictures/thumbs/'
+        }
+    },
+    html: {
+        input: './html/*',
+        output: '../'
+    },
+    fonts: {
+        input: './fonts/fonts.list',
+        output: '../fonts/'
+    }
 };
+
 
 
 
@@ -87,131 +94,171 @@ var paths = {
  * Gulp Taks
  */
 
-
-// Merge js
+// merge js
 gulp.task('build:plugins', function() {
   return gulp.src(paths.scripts.plugins)
-    .pipe(gulp.dest('./js/'));
+    .pipe(gulp.dest('./js/plugins/'));
 });
-
 
 
 // Lint, minify, and concatenate scripts
-gulp.task('build:js', function() {
-  var jsTasks = lazypipe()
-    .pipe(optimizejs)
-    .pipe(gulp.dest, paths.scripts.output)
-    .pipe(rename, { suffix: '.min' })
-    .pipe(uglify)
-    .pipe(optimizejs)
-    .pipe(gulp.dest, paths.scripts.output);
+gulp.task('build:scripts', function() {
+	var jsTasks = lazypipe()
+		.pipe(optimizejs)
+		.pipe(gulp.dest, paths.scripts.output)
+		.pipe(rename, { suffix: '.min' })
+		.pipe(uglify)
+		.pipe(optimizejs)
+		.pipe(gulp.dest, paths.scripts.output);
 
-  return gulp.src(paths.scripts.input)
-    .pipe(plumber())
-    .pipe(tap(function (file, t) {
-      if ( file.isDirectory() ) {
-        var name = file.relative + '.js';
-        return gulp.src(file.path + '/*.js')
-          .pipe(concat(name))
-          .pipe(jsTasks());
-      }
-    }))
-    .pipe(jsTasks());
+	return gulp.src(paths.scripts.input)
+		.pipe(plumber())
+		.pipe(tap(function (file, t) {
+			if ( file.isDirectory() ) {
+				var name = file.relative + '.js';
+				return gulp.src(file.path + '/*.js')
+					//.pipe(concat(name))
+					.pipe(jsTasks());
+			}
+		}))
+		.pipe(jsTasks());
 });
-
 
 
 // Process and minify Less files
-gulp.task('build:less', function() {
-  return gulp.src(paths.styles.input)
-    .pipe(plumber())
-    .pipe(less({
-      plugins: [
-        lessFunctions = new lessPluginFunctions(),
-        cleanCSSPlugin = new LessPluginCleanCSS({
-          advanced: true
-        }),
-        autoprefix = new LessAutoprefix({
-          browsers: ['last 2 versions']
-        })
-      ]
-    }))
-    .pipe(cssc({
-      consolidateViaDeclarations: false,
-      compress: false
-    }))
-    .pipe(gulp.dest(paths.styles.output))
-    .pipe(cssnano())
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(paths.styles.output))
+gulp.task('build:styles', function() {
+    return gulp.src(paths.styles.input)
+        .pipe(plumber())
+        .pipe(less({
+          plugins: [
+            lessFunctions = new lessPluginFunctions(),
+            cleanCSSPlugin = new LessPluginCleanCSS({
+              advanced: true
+            }),
+            autoprefix = new LessAutoprefix({
+              browsers: ['last 2 versions']
+            })
+          ]
+        }))
+        .pipe(cssc({
+            consolidateViaDeclarations: false,
+            compress: false
+        }))
+        .pipe(gulp.dest(paths.styles.output))
+        .pipe(cssnano())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest(paths.styles.output))
+        .pipe(livereload());
 });
 
 
 
-// Generate svg sprites
+// Generate SVG sprites
 gulp.task('build:svgs', function () {
-  return gulp.src(paths.svgs.input)
-    .pipe(plumber())
-    .pipe(tap(function (file, t) {
-      if ( file.isDirectory() ) {
-        var name = file.relative + '.svg';
-        return gulp.src(file.path + '/*.svg')
-          .pipe(svgmin())
-          .pipe(svgstore({
-            fileName: name,
-            prefix: 'icon-',
-            inlineSvg: true
-          }))
-          .pipe(gulp.dest(paths.svgs.output));
-      }
-    }))
-    .pipe(svgmin())
-    .pipe(gulp.dest(paths.svgs.output));
+    return gulp.src(paths.svgs.input)
+        .pipe(plumber())
+        .pipe(tap(function (file, t) {
+            if ( file.isDirectory() ) {
+                var name = file.relative + '.svg';
+                return gulp.src(file.path + '/*.svg')
+                    .pipe(svgmin())
+                    .pipe(svgstore({
+                        fileName: name,
+                        prefix: 'icon-',
+                        inlineSvg: true
+                    }))
+                    .pipe(gulp.dest(paths.svgs.output));
+            }
+        }))
+        .pipe(svgmin())
+        .pipe(gulp.dest(paths.svgs.output));
 });
-
-
 
 // Copy image files into output folder
-gulp.task('build:images', function() {
-  return gulp.src(paths.images.input)
-    .pipe(plumber())
-    .pipe(imageResize({ 
-      width : 1200,
-      height : 600,
-      crop : true,
-      upscale : false
-    }))
-    .pipe(gulp.dest(paths.images.output));
+gulp.task('build:images', ['build:thumbs'], function() {
+    return gulp.src(paths.images.input)
+        .pipe(plumber())
+        .pipe(imageResize({ 
+          width : 1200,
+          height : 600,
+          crop : true,
+          upscale : false
+        }))
+        .pipe(gulp.dest(paths.images.output));
 });
 
 
+// Copy image thumbnail files into output folder
+gulp.task('build:thumbs', function() {
+    return gulp.src(paths.images.thumbs.input)
+        .pipe(plumber())
+        .pipe(imageResize({ 
+          width : 180,
+          height : 180,
+          crop : true,
+          upscale : false
+        }))
+        .pipe(gulp.dest(paths.images.thumbs.output));
+});
+
+
+// Copy html files into output folder
+gulp.task('build:html', function() {
+    return gulp.src(paths.html.input)
+        .pipe(plumber())
+        .pipe(htmlmin({
+            collapseWhitespace: true,
+            collapseInlineTagWhitespace: true,
+            collapseBooleanAttributes: true,
+            minifyCSS: true,
+            minifyJS: true,
+            removeEmptyAttributes: true,
+            removeEmptyElements: true
+        }))
+        .pipe(gulp.dest(paths.html.output));
+});
 
 // Generate fonts
 gulp.task('build:fonts', function () {
-  return gulp.src(paths.fonts.input)
-    .pipe(googleWebFonts())
-    .pipe(gulp.dest(paths.fonts.output));
-});
-
-
+    return gulp.src(paths.fonts.input)
+        .pipe(googleWebFonts())
+        .pipe(gulp.dest(paths.fonts.output));
+    });
 
 // Generate favicons
 gulp.task('build:favicon', function() {
-  var faviconSettings = require('./favicon/config.json');
-  realFavicon.generateFavicon(faviconSettings);
+    var faviconSettings = require('./favicon/config.json');
+    realFavicon.generateFavicon(faviconSettings);
 });
-
-
 
 // Lint scripts
-gulp.task('lint:js', function () {
-  return gulp.src(paths.scripts.input)
-    .pipe(plumber())
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'));
+gulp.task('lint:scripts', function () {
+    return gulp.src(paths.scripts.input)
+        .pipe(plumber())
+        .pipe(jshint())
+        .pipe(jshint.reporter('jshint-stylish'));
 });
 
+// Remove pre-existing content from output and test folders
+gulp.task('clean:dist', function () {
+    del.sync([
+        paths.output
+    ]);
+});
 
+// Spin up livereload server and listen for file changes
+gulp.task('listen', function () {
+    livereload.listen();
+    gulp.watch(paths.input).on('change', function(file) {
+        gulp.start('devel');
+        //gulp.start('refresh');
+    });
+});
+
+// Run livereload after file change
+gulp.task('refresh', ['devel'], function () {
+    livereload.changed();
+});
 
 
 
@@ -223,32 +270,40 @@ gulp.task('lint:js', function () {
  * Task Runners
  */
 
-
-// Run al tasks
+// Compile files
 gulp.task('default', [
-  'lint:js',
-  'build:plugins',
-  'build:js',
-  'build:less',
-  'build:images',
-  'build:svgs',
-  'build:fonts',
-  'build:favicon'
+//  'lint:scripts',
+//  'clean:dist',
+    'build:plugins',
+    'build:scripts',
+    'build:styles',
+//  'build:images',
+//  'build:html',
+    'build:svgs',
+    'build:fonts',
+    'build:favicon'
+]);
+
+/**
+ * Task Runners
+ */
+
+// Compile files
+gulp.task('devel', [
+//  'lint:scripts',
+    'build:scripts',
+    'build:styles',
+//  'build:html'
 ]);
 
 
+// Compile files and generate docs when something changes
+gulp.task('watch', [
+    'listen',
+    'devel'
+]);
 
-// watch scripts
-gulp.task('watch:js', ['lint:js','build:js'], function () {
-    gulp.watch('./js/**/*.js', ['build:js']);
+// Spin up livereload server and listen for file changes 
+gulp.task('watch-less', function () {
+    gulp.watch('./less/**/*.less', ['build:styles']);
 });
-
-
-
-// watch less styles
-gulp.task('watch:less', ['build:less'], function () {
-    gulp.watch('./less/**/*.less', ['build:less']);
-});
-
-
-

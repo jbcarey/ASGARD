@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Theme override for an image field widget.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - data: Render elements of the image widget.
+ *
+ * @see template_preprocess_image_widget()
+ */
+#}
+{% spaceless %}
+{{ attach_library('classy/image-widget') }}
+<div{{ attributes.addClass('grid-tiny small') }}>
+  {% if data.preview %}
+    <div class="image-preview pane grid2">
+      {{ data.preview }}
+    </div>
+  {% endif %}
+  <div class="image-widget-data pane grid10">
+    {# Render widget data without the image preview that was output already. #}
+    {{ data.alt }}
+    {{ data.title }}
+    <div class="grid-tiny">
+      <div class="pane grid8">
+        {{ data|without('preview','remove_button','alt','title') }}
+      </div>
+      <div class="pane grid4 operations">
+        {{ data.remove_button }}
+      </div>
+    </div>
+  </div>
+</div>
+{% endspaceless %}

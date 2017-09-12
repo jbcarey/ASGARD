@@ -46,17 +46,17 @@
 <div id="menu-bar" class="bgc-dark">
     <div class="wrapper">
         {{ page.primary_menu }}
-        {{ page.secondary_menu }}
+      {#  {{ page.secondary_menu }} #}
     </div>
 </div>
 
 <header class="bgc-dark">
-    {{ page.header.banner }}
+   <div class="wrapper"> {{ page.header.banner }}
     <a id="logo" href="{{ front_page }}">
         <img src="{{ site_logo }}" width="120" height="120" alt="{{ site_name }}" />
         <span>{{ site_name }}</span>
     </a>
-    {{ page.header|without('banner')  }}
+    {{ page.header|without('banner')  }}</div>
 </header>
 
 {{ page.highlighted }}

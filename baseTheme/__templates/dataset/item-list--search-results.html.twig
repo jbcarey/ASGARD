@@ -1,0 +1,9 @@
+{% if items or empty -%}
+  {%- if items -%}
+    {%- for item in items -%}
+      {{ item.value }}
+    {%- endfor -%}
+  {%- else -%}
+    {{- empty -}}
+  {%- endif -%}
+{%- endif %}

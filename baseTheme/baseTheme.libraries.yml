@@ -1,14 +1,23 @@
 global-styling:
   version: VERSION
   css:
-    base:
-      css/template.css: {}
-      fonts/fonts.css: {}
-  js:
-    js/baguetteBox.min.js: {}
+    layout:
+      less-css/template.min.css: {}
+    
 
-
-baguettebox:
+messages:
   version: VERSION
-  js:
-    js/baguetteBox.min.js: {}
+  css:
+    component:
+      css/components/messages.css: { preprocess: false }
+
+
+
+maintenance_page:
+  version: VERSION
+  css:
+    theme:
+      css/maintenance-page.css: {}
+  dependencies:
+    - system/maintenance
+    - bartik/global-styling
