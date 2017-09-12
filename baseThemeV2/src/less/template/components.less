@@ -1,0 +1,80 @@
+/**
+ * Components template
+ * ...
+ */
+
+// message
+.message {
+  box-shadow: 0 -2px 0 fade(black,10) inset;
+  border-radius: .2em;
+}
+
+
+// pane
+.button .icon {
+  fill: white;
+  width: 1em;
+  height: 1em;
+  margin-right: .4em;
+}
+
+
+// box
+.box {
+  padding: @pd-large;
+  background-color: @bgc-alt;
+  border-style: solid;
+  border-width: 1px 2px 2px 1px;
+  border-color: mix(@bc,@bgc,60) mix(@bc,@bgc,80) mix(@bc,@bgc,80) mix(@bc,@bgc,60);
+
+  & > figure {
+    margin: -@pd-large -@pd-large @mg-medium;
+    & > img {
+      width: 100%;
+    } 
+  }
+}
+
+
+// gallery
+.gallery > a {
+  overflow: hidden;
+  position: relative;
+
+  img {
+    transition: 0.2s all ease-in-out;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: fade(black,0);
+  }
+
+  img,
+  &:before {
+    transition: .2s all ease-in-out;
+  }
+
+  &:hover {
+
+    img {
+      transform: scale(1.2);
+    }
+
+    &:before {
+      background-color: fade(black,50);
+    }
+
+    img,
+    &:before {
+      transition-duration: .5s;
+    }
+
+  }
+    }

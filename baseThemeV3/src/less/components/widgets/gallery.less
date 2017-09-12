@@ -1,0 +1,45 @@
+/**
+* Gallery widget component
+*/
+
+.gallery {
+  margin-left: -@mg-tiny;
+  margin-top: -@mg-tiny;
+
+  & > a {
+    display: inline-block;
+    vertical-align: top;
+    width: 33.333%;
+    border-width: @mg-tiny 0 0 @mg-tiny;
+    border-style: solid;
+    border-color: transparent;
+    box-sizing: border-box;
+    
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+  }
+
+  @media @bp-min-small {
+    & > a  {
+      width: 20%;
+    }
+  }
+
+  @media @bp-min-medium {
+    & > a  {
+      width: 20%;
+    }
+  }
+
+  @media @bp-min-large {
+    & > a  {
+      width: 16.666%;
+    }
+  }
+
+}
+
