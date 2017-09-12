@@ -1,0 +1,60 @@
+
+// colors
+.main_color(@color) {
+  
+  // logo
+  #logo span+span {
+    border-color: @color;
+  }
+  
+  // social
+  #social-links .icon {
+    background: lighten(@color,20);
+    &:hover {
+      background: @color;
+    }
+  }
+  
+  // links
+  #main-menu a,
+  a.read-more {
+  
+    &:after {
+      background: @color;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      color: @color;
+    }
+    
+    &:focus,
+    &:active {
+      color: darken(@color,15);
+    }
+  }
+  
+  // forms
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='search'],
+  input[type='number'],
+  input[type='password'],
+  textarea,
+  select {
+    &:focus,
+    &:active {
+      border-bottom-color: @color;
+    }
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    background: @color;
+  }
+  
+}

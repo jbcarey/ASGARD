@@ -1,0 +1,55 @@
+/**
+ * Template imports 
+ */
+
+@BASE: "../../../../themes/basetpl/src/less";
+
+// helpers
+@import "@{BASE}/functions/loop";
+@import "@{BASE}/functions/unit";
+
+
+@import "@{BASE}/template";
+
+// components
+@import (less) "@{BASE}/components/includes/normalize.css";
+@import "@{BASE}/components/keyframes";
+@import "@{BASE}/variables/colors"; 
+@import "@{BASE}/variables/typography";
+@import "@{BASE}/variables/structure";
+@import "@{BASE}/variables/buttons";
+@import "@{BASE}/components/forms";
+@import "@{BASE}/components/buttons";
+@import "@{BASE}/variables/input";
+//@import "@{BASE}/components/messages";  
+@import "@{BASE}/components/tables";
+
+
+// variables
+@import "variables/colors";
+@import "variables/structure";
+@import "variables/typography";
+@import "variables/input";  
+@import "variables/buttons";
+@import "variables/base64";
+
+// widgets
+@import "@{BASE}/components/widgets/details";
+@import "@{BASE}/components/widgets/gallery";
+@import "@{BASE}/components/widgets/baguettebox";
+@import "@{BASE}/components/widgets/modals";
+@import "@{BASE}/components/widgets/swiper/swiper";
+@import "@{BASE}/components/widgets/maps";
+
+// template
+@import "animations";
+@import "typography";
+@import "components";
+@import "forms";
+@import "default";
+@import "page";
+@import "admin";
+@import "page-colors";
+
+// breakpoints order fix
+@import "@{BASE}/variables/breakpoints";

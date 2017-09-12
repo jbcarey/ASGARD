@@ -1,0 +1,24 @@
+subtpl:
+  version: 1.x
+  js:
+    js/smooth-scroll.min.js: {}
+    js/lazyload.min.js: {}
+    js/swiper.min.js: {}
+    js/gallery.min.js: {}
+    js/template.js: {}
+  css:
+    theme:
+      css/template.min.css: {}
+      css/custom.css: {}
+      fonts/fonts.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery-once
+    
+gallery:
+  version: VERSION
+  js:
+    js/gallery.min.js: {}
+    
+    
+

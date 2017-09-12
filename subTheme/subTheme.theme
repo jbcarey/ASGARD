@@ -1,0 +1,238 @@
+<?php
+use Drupal\Core\Form\FormStateInterface;
+
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function subTheme_preprocess_html(&$variables) {
+
+  // add svg sprite
+  $svg = file_get_contents(__DIR__ . '/svg/svg.svg');
+  $variables['svg_sprite'] = $svg;
+
+  $path = \Drupal::service('path.current')->getPath();
+  $alias = \Drupal::service('path.alias_manager')->getAliasByPath($path);
+  $alias_array = explode('/',$alias);
+  if (isset($alias_array[1])) {
+    $variables['html_attributes']['class'][] = 'page-' . $alias_array[1];
+  }
+  
+}
+
+function subTheme_preprocess_page(&$variables) {
+  //$variables['logo'] = str_replace('.svg', '.png', $variables['logo']);
+}
+
+
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function subTheme_preprocess_node__page(&$variables) {
+
+  $elements = $variables['elements'];
+  
+  
+
+  if (isset($elements['field_content']) && $elements['field_content'][0]['#paragraph']->bundle() == 'blog') {
+    $variables['label'] = null;
+  }
+
+}
+
+
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function subTheme_preprocess_field(&$variables, $hook) {
+  
+  
+
+  $element = $variables['element'];
+
+  // creating variables for the template.
+  $variables['view_mode'] = $element['#view_mode'];
+  
+  if ($variables['field_name'] == 'field_images' && $variables['view_mode'] == 'teaser') {
+    $variables['items'][1]['content']['#image_style'] = 'medium';
+    $variables['items'][2]['content']['#image_style'] = 'medium';
+  }
+    
+  if( ($variables['field_name']  == 'field_images' || $variables['field_name'] == 'field_image' ) && $variables['view_mode'] == 'full' ) {
+    
+  $variables['#attached']['library'][] = 'baseTheme/baguettebox';
+  $variables['#attached']['library'][] = 'subTheme/gallery';
+    
+  }
+  
+  
+  // convert icon class to svg on fields with name "field_links":
+  if ($variables['field_name'] == 'field_links' || $variables['field_name'] == 'field_inline_links') {
+
+    foreach ($variables['items'] as $delta => &$item) {
+
+      $item['icon'] = false;
+
+      if(isset($item['content']['#options']['attributes']['class'])) {
+          
+        $classes = explode(" ", $item['content']['#options']['attributes']['class']);
+        $icons = preg_grep('/^icon-.*/', $classes);
+
+        if (!empty($icons)) {
+
+          $classes = array_diff($classes,$icons);
+          $icon = array_pop($icons);
+
+          $item['title'] = $item['content']['#title'];
+          $item['icon'] = preg_replace('/^icon-/', '', $icon);
+          $item['url'] = $item['content']['#url'];
+          $item['target'] = $item['content']['#options']['attributes']['target'];
+          $item['class'] = empty($classes) ? false : implode(' ', $classes);
+        }
+        
+      }
+    }
+  }
+
+  
+  // add icons to fields
+  if ($element['#entity_type'] == 'paragraph' && $element['#bundle'] == 'contact' && $variables['field_name'] != 'field_title') {
+    
+    $item['icon'] = false;
+    
+    $contact_icons = [
+      'field_email' => 'email',
+      'field_facebook' => 'facebook',
+      'field_telephone_number' => 'phone',
+    ];
+    
+    if (isset($contact_icons[$variables['field_name']])) {
+      $variables['icon'] = $contact_icons[$variables['field_name']];
+    }
+    
+  }
+  
+}
+
+
+
+ 
+
+
+/**
+* Implements hook_theme_suggestions_HOOK_alter() for field templates.
+*/
+function subTheme_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+  
+  $element = &$variables['element'];
+
+  // add custom icon-label template on specific templates
+  if ($element['#entity_type'] == 'paragraph' && $element['#bundle'] == 'contact' && $element['#field_name'] != 'field_title') {
+    $suggestions[] = 'field__icon_label';
+  }
+  
+}
+
+
+
+
+
+/**
+ * Implements hook_preprocess_paragraph__type
+ */
+function subTheme_preprocess_paragraph__text(&$variables) {
+  
+  $paragraph = $variables['paragraph'];
+
+  if ($variables['view_mode'] == 'block') {
+
+    if (isset($variables['content']['field_title'][0])) {
+      $variables['content']['field_title'] = array(
+        '#markup' => $variables['content']['field_title'][0]['#context']['value'],
+      );
+    }
+  }
+
+}
+
+
+/**
+ * Implements hook_preprocess_paragraph__type
+ */
+function subTheme_preprocess_paragraph__links(&$variables) {
+  
+  $paragraph = $variables['paragraph'];
+
+  if ($variables['view_mode'] == 'block') {
+
+    if (isset($variables['content']['field_title'][0])) {
+      $variables['content']['field_title'] = array(
+        '#markup' => $variables['content']['field_title'][0]['#context']['value'],
+      );
+    }
+  }
+
+}
+
+
+/**
+ * Implements hook_preprocess_search_result
+ */
+function subTheme_preprocess_search_result(&$variables) {
+  $node = $variables['result']['node'];
+  if (isset($node)) {
+    $variables['teaser'] = \Drupal::entityTypeManager()->getViewBuilder('node')->view($node,'teaser');
+  }
+};
+
+
+
+
+/**
+ * Implements hook_form_alter()
+ */
+function subTheme_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Alter login form and add own custom submit handler.
+  $form['#submit'][] = '_subTheme_user_login_form_submit';
+}
+
+function _subTheme_user_login_form_submit($form, FormStateInterface $form_state) {
+  // Set redirect to login form.
+  $path = \Drupal::service('path.validator')->getUrlIfValid('<front>');
+  $form_state->setRedirect($path->getRouteName());
+}
+
+
+
+
+/**
+ * Implements hook_preprocess_block()
+ */
+function subTheme_preprocess_block(&$variables) {
+  
+  
+  if($variables['attributes']['id'] == 'block-mailchimpinschrijfformulierinschrijvennieuwsbrief') {
+    $variables['attributes']['class'][] = 'add-teaserclass';
+  }
+  
+
+  if ($variables['attributes']['id'] == 'block-search-block') {
+  
+    $variables['content']['trefwoord']['#title_display'] = 'hidden';
+    $variables['content']['trefwoord']['#attributes']['placeholder'] = t('Search');
+
+    unset($variables['content']['blogs']);
+  }
+  
+  elseif ($variables['attributes']['id'] == 'block-search-block-page') {
+    $variables['content']['trefwoord']['#title_display'] = 'above';
+    $variables['content']['trefwoord']['#attributes']['placeholder'] = 'Trefwoord';
+    $variables['content']['blogs']['#title_display'] = 'hidden';
+    $variables['content']['blogs']['#options']['All'] = 'Alle categorieën';
+  } 
+}
+
+
+

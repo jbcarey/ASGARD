@@ -1,0 +1,98 @@
+{#
+/**
+ * @file
+ * Theme override for a field.
+ *
+ * To override output, copy the "field.html.twig" from the templates directory
+ * to your theme's directory and customize it, just like customizing other
+ * Drupal templates such as page.html.twig or node.html.twig.
+ *
+ * Instead of overriding the theming for all fields, you can also just override
+ * theming for a subset of fields using
+ * @link themeable Theme hook suggestions. @endlink For example,
+ * here are some theme hook suggestions that can be used for a field_foo field
+ * on an article node type:
+ * - field--node--field-foo--article.html.twig
+ * - field--node--field-foo.html.twig
+ * - field--node--article.html.twig
+ * - field--field-foo.html.twig
+ * - field--text-with-summary.html.twig
+ * - field.html.twig
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ *
+ * @see template_preprocess_field()
+ */
+#}
+
+{% if view_mode == 'teaser' %}
+<div class="picture-grid grid-tiny">
+  <div class="pane grid8">
+    <figure>
+      {{ items[0].content }}
+    </figure>
+  </div>
+  <div class="pane grid4">
+     <figure>
+    {{ items[1].content }}
+    </figure>
+    <figure>
+    {{ items[2].content }}
+    </figure>
+  </div>
+</div>
+
+{% elseif view_mode == 'full' %}
+  {% if items|length == 1 %}
+  
+  
+  <div class="gallery grid gt-small">
+  {% for item in items %}
+    <div class="pane thumbnail">
+      {{ item.content }}
+    </div>
+  {% endfor %}
+</div>
+
+  
+  {% else %}
+  <div class="slider swiper-container">
+    <div class="slides swiper-wrapper">
+    {% for item in items %}
+      <figure class="slide swiper-slide">
+        {{ item.content }}
+      </figure>
+    {% endfor %}
+    </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev">
+        <svg class="icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#left"></use>
+        </svg>
+      </div>
+      <div class="swiper-button-next">
+        <svg class="icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#right"></use>
+        </svg>
+      </div>
+  </div>
+  {% endif %}
+
+{% elseif view_mode == 'block' %}
+  <figure>
+    {{ items[0].content }}
+  </figure>
+{% endif %}

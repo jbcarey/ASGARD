@@ -1,0 +1,42 @@
+html, body { font-family: @ff; background: white;}
+
+.wrapper { position: inherit; }
+
+.relative { position: relative;} 
+
+
+.message { padding: @pd-medium; margin: @mg-medium 0; }
+.bgc-beige {  background: #ede3ca; color:#b18518;}
+
+
+#drupal-live-announce, .invisible, .visually-hidden, body>svg {
+    display: none;
+}
+
+.bgc-grey {background-color:@grey;}
+.bgc-dark {background-color:@bgc-dark;}
+
+
+// #tabs
+
+ul.tabs>li a { border: none;}
+
+.teaser { border: em(1) solid @border; padding: em(20);
+  & + .teaser { margin-top: @mg-medium;
+    &.sponsor { margin-top: 0; border-top:none;}}
+}
+
+.sidebar-right > article.block {  
+  & + .block { margin-top: @mg-medium;}
+}
+
+
+@media @bp-max-medium {
+  .grid8 { width:100%; }  
+}
+
+/*
+.pane.grid4 > article.block { border: em(1) solid @border; padding: em(20);
+  .teaser { border:none;}
+}
+*/

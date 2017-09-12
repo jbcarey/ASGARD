@@ -1,0 +1,90 @@
+// headers
+h1,h2,h3,h4,h5,h6 {
+  color: @maincolor;
+  font-weight: 500; margin: 0;
+  margin-bottom: @pd-medium;
+}
+
+h1 { font-size: em(18); }
+
+// lists
+ul,ol {
+  line-height: @lh-large;
+  padding-left: 1.2em;
+}
+
+
+// tables
+table {
+  margin-bottom: @mg-large;
+}
+
+// articles
+article {
+
+  &.box > header {
+    margin-bottom: 0;
+  }
+  
+  &.grid > .pane {
+    position: relative;
+  }
+  
+  footer a {
+    display: block;
+    padding: @pd-small;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    text-decoration: none;
+  }
+}
+
+header.tiny {
+  margin-bottom: 2em;
+  
+  h1 {
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: .1em;
+  }
+}
+
+.slider + header,
+figure + header {
+  margin-top: 2.2em;
+}
+
+.submitted {
+  margin-top: .6em;
+  display: block;
+  text-transform: lowercase;
+}
+
+
+// blockquote
+blockquote {
+  font-size: 1.2em;
+  font-weight: 300;
+  padding: 0 1em;
+  margin-top: @mg-medium;
+  
+  &:before,
+  &:after {
+    font-size: 1.5em;
+  }
+  
+  &:after {
+    top: auto;
+    left: auto;
+  }
+
+}
+
+// blocks
+.text-block {
+  p,ul,ol,a {
+    font-size: 0.9em;
+    line-height: @lh-large;
+  }
+}
+

@@ -1,0 +1,7 @@
+{% extends "field.html.twig" %}
+
+{%
+    set attributes = attributes.addClass([
+      parents[0] == 'product' or parents[0] == 'realization' or parents[0] == 'news_article' ? 'bd-full bgc-silver mg-medium ta-center gallery',
+    ])
+%}

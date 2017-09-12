@@ -1,0 +1,63 @@
+footer.meta { display: none;}
+
+// forms
+form {
+  text-align: left;
+  
+  input[type='submit'] {
+    margin-top: 2em;
+  }
+  
+  input[type='text'], input[type='email'], textarea  {
+    border: em(1) solid @border;
+
+    appearance: none;
+    box-sizing: padding-box;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ebebeb;
+    border-bottom-width: 4px;
+    border-radius: 4px;   
+    
+    margin:0 0 10px;
+    
+    &:focus { 
+    outline: none;
+    }
+    
+  }
+}
+
+.form-item {
+  min-height: em(50);
+} 
+
+
+  fieldset.fieldgroup.form-composite { padding: none; border: none;
+    legend {display: none;}
+    .form-item { min-height: auto;}
+  }
+
+form#mailchimp-signup-subscribe-block-inschrijven-nieuwsbrief-form {
+  .mailchimp-newsletter-mergefields { margin-top:@mg-small;}
+  
+
+  
+  input[type='submit'] {
+    
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(242, 241, 241);
+  border-radius: 3px;
+  margin: 0;
+  
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7bc157+1,67ae43+100 */
+    background: #7bc157; /* Old browsers */
+    background: -moz-linear-gradient(top, #7bc157 1%, #67ae43 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #7bc157 1%,#67ae43 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #7bc157 1%,#67ae43 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7bc157', endColorstr='#67ae43',GradientType=0 ); /* IE6-9 */ 
+    
+  }
+}

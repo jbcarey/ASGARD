@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Theme override of an image.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the img tag.
+ * - style_name: (optional) The name of the image style applied.
+ *
+ * @see template_preprocess_image()
+ */
+#}
+
+{% set style = style_name ? 'image-style-' ~ style_name|clean_class %}
+{% set placeholder = '/' ~ directory ~ '/img/' ~ style ~'.png' %}
+
+<noscript>
+<img{{ attributes.addClass([style]) }} />
+</noscript>
+
+<img{{ attributes.setAttribute('data-src',attributes.src).setAttribute('src',placeholder).addClass(['lazy',style]) }}/>

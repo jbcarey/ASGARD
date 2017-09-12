@@ -1,0 +1,291 @@
+/**
+ * Components template
+ * ...
+ */
+
+
+// structure
+
+.wrapper {
+  margin: 0 auto; min-width: em(264); max-width: em(1100); padding: 0 1.2em; position: relative;
+}
+.pane > .grid {
+  margin-top: 0;
+}
+
+
+// buttons
+.button,
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  
+  &.green {
+    .button-color(@green,white);
+  }
+  
+  &.red {
+    .button-color(@red,white);
+  }
+}
+
+
+// button icons
+.button .icon {
+  fill: white;
+  width: 1em;
+  height: 1em;
+  margin-right: .5em;
+}
+
+
+// message
+.message {
+  box-shadow: 0 -2px 0 fade(black,10) inset;
+  border-radius: .2em;
+}
+
+
+// box
+.box {
+  border-bottom: 1px solid @bc;
+  padding-bottom: @pd-large;
+
+  & > figure {
+    margin: -@pd-large -@pd-large @mg-medium;
+    text-align: center;
+    & > img {
+      width: 100%;
+    } 
+  }
+  
+  &.small {
+    padding: @pd-medium;
+    
+    h3 {
+      font-size: 1em;
+      font-weight: bold;
+      margin: 0;
+    }
+    
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.8em;
+    }
+    
+    & > figure {
+      margin: -@pd-medium -@pd-medium @mg-medium;
+    }
+  }
+}
+
+
+
+// gallery
+.gallery > a {
+  overflow: hidden;
+  position: relative;
+
+  img {
+    transition: 0.2s all ease-in-out;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: fade(black,0);
+  }
+
+  img,
+  &:before {
+    transition: .2s all ease-in-out;
+  }
+
+  &:hover {
+
+    img {
+      transform: scale(1.2);
+    }
+
+    &:before {
+      background-color: fade(black,50);
+    }
+
+    img,
+    &:before {
+      transition-duration: .5s;
+    }
+
+  }
+}
+
+
+// date
+.date-calendar {
+
+  width: 7.4em;
+  border-right: 1px solid fade(black,6);
+  padding: 1em 0;
+  background: fade(black,3);
+  
+  span {
+    text-align: center;
+    display: block;
+    line-height: 140%;
+  }
+  
+  .day {
+    text-transform: uppercase;
+    font-size: .8em;
+  }
+  
+  .day-nr {
+    font-weight: 300;
+    font-size: 2em;
+    margin-bottom: .1em;
+  }
+
+  .month-year {
+    fpnt-style: italic;
+    font-size: .7em;
+  }
+
+}
+
+
+// pager
+.pager {
+  & > a {
+    display: block;
+  }
+}
+
+.pager-nav span {
+  line-height: 100%;
+  font-size: 1.4em;
+}
+
+article.teaser + .pager {
+  margin-top: -5em;
+}
+
+
+// description
+.description {
+  font-size: .8em;
+  font-style: italic;
+  line-height: 1.5;
+  background-color: fade(@beige,98);
+  padding: @pd-tiny @pd-small;
+  border: 1px solid darken(@beige,15);
+}
+
+input + .description {
+  position: absolute;
+  z-index: 2;
+  margin-top: em(-@mg-medium,0.8);
+  display: none;
+}
+
+input:focus,
+input:active {
+  &+ .description {
+    display:block;
+    animate: fadeIn 0.2s;
+  }
+}
+
+
+.inline-menu { 
+  list-style: none; margin: 0; padding: 0;
+  li         { display: inline-block;}
+}
+
+nav.tabs { 
+  ul.tabs.primary {   list-style: none; margin: 0; padding: 0; border-bottom: em(1) solid @grey; width: 100%; margin: @mg-medium 0 @mg-large;
+    li            { display: inline-block; background: lighten(@grey,40); border: em(1) solid @grey; border-bottom:none; border-radius: em(8) em(8) 0 0;
+      &:hover     { background: @maincolor; color:white;
+        a { color:white; }
+      }
+      a { color:@bgc-dark; padding:em(10) em(25);}
+      & + li { border-left: none;}
+    }
+  }
+}
+
+// picture grid
+.picture-grid {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+
+  .grid4 figure {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    box-sizing: border-box;
+    
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: fade(@bgc,20);
+    }
+    
+    & + figure {
+      &:after {
+        background: fade(@bgc,30);
+      }
+    }
+    
+    @media @bp-min-medium {
+      width: auto;
+      height: 50%;
+      box-sizing: border-box;
+      overflow-y: hidden;
+      position: absolute;
+      top: 0;
+      bottom: 50%;
+      padding-bottom: @mg-tiny * 2;
+      
+      & + figure {
+        top: 50%;
+        bottom: 0;
+        padding-bottom: 0;
+        padding-top: @mg-tiny * 2;
+      }
+    }
+  }
+  
+  @media @bp-max-medium {
+    .grid4 {
+      width: 100%;
+      margin-top: @pd-tiny * 2;
+      
+      figure {
+        margin-bottom: 0;
+        padding-right: @mg-tiny;
+      
+        & + figure {
+          padding-right: 0;
+          padding-left: @mg-tiny;
+        }
+      }
+    }
+  }
+}
+

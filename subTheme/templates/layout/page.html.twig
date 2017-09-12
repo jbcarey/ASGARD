@@ -1,0 +1,77 @@
+
+
+
+
+<header class="">
+    <div class="wrapper grid relative">    
+    <div class="pane grid4"><a id="logo" href="{{ front_page }}">
+        <img src="{{ site_logo }}" alt="{{ site_name }}" />
+        <span>{{ site_name }}</span>
+    </a></div>
+      <div class="pane grid8" >
+        <div id="menubar">
+    <div class="wrapper">
+        {{ page.primary_menu }}
+       {# {{ page.secondary_menu }} #}
+    </div>
+</div>
+
+      </div>
+    
+    
+    
+
+    
+   </div>
+  <div class="banner bgc-grey">
+       <div class="wrapper"> {{ page.header.banner }}</div>
+  </div>
+</header>
+
+
+<div class="info wrapper">
+
+{{ page.highlighted }}
+
+{{ page.help }}
+
+</div>
+
+
+<main id="main">
+    <div class="wrapper">
+        {{ page.breadcrumb }}
+
+        {% if page.sidebar_first %}
+            <aside class="sidebar">
+                {{ page.sidebar_first }}
+            </aside>
+        {% endif %}
+
+        {{ page.content }}
+
+        {% if page.sidebar_second %}
+            <aside class="sidebar">
+                {{ page.sidebar_second }}
+            </aside>
+        {% endif %}
+    </div>
+</main>
+
+{% if page.footer %}
+<footer class="bgc-grey">
+    <div class="wrapper grid">
+      <div class="pane grid6">
+        <a id="logo-footer" href="{{ front_page }}">
+        <img src="{{ site_logo }}" alt="{{ site_name }}" />
+        <span>{{ site_name }}</span>
+        </a>
+      </div>
+       
+       <div class="pane grid6 ta-right va-center"> 
+       {{ page.footer }}
+         <small>design & implementation by <a href="http://www.e2e.be" target="_blank">e2e</a> nv</small>
+       </div>
+    </div>
+</footer>
+{% endif %}
