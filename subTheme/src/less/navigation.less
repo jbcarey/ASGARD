@@ -1,0 +1,48 @@
+
+// main-menu
+#main-menu {
+
+  a {
+    padding: 0 1.5em;
+    line-height: 3em;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    color: @maincolor;
+
+    
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background: lighten(@maincolor,40);
+      color: darken(@maincolor,10);
+    }
+  }
+  
+  & > a {
+    display: none;
+  }
+
+  @media @bp-medium {
+    & > ul > li {
+      border-color: lighten(@bgc-dark,10);
+      border-style: solid;
+      border-width: 0 1px;
+      
+      & + li {
+        border-left-width: 0;
+      }
+    }
+  }
+
+  @media @bp-small {
+    & > a {
+      display: inline-block;
+      border-color: lighten(@bgc-dark,10);
+      border-style: solid;
+      border-width: 0 1px;
+    }
+  }
+
+}

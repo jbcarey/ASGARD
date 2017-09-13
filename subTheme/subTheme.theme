@@ -11,17 +11,28 @@ function subTheme_preprocess_html(&$variables) {
   $svg = file_get_contents(__DIR__ . '/svg/svg.svg');
   $variables['svg_sprite'] = $svg;
 
-  $path = \Drupal::service('path.current')->getPath();
+  /*$path = \Drupal::service('path.current')->getPath();
   $alias = \Drupal::service('path.alias_manager')->getAliasByPath($path);
   $alias_array = explode('/',$alias);
   if (isset($alias_array[1])) {
     $variables['html_attributes']['class'][] = 'page-' . $alias_array[1];
-  }
+  }*/
   
 }
 
 function subTheme_preprocess_page(&$variables) {
   //$variables['logo'] = str_replace('.svg', '.png', $variables['logo']);
+  
+  
+  $site_config = \Drupal::config('system.site');
+  $variables['site_name'] = $site_config->get('name');
+  $variables['site_slogan'] = $site_config->get('slogan');
+
+  // logo needs to be placed within specified folder
+  $variables['logopath'] = '/' . drupal_get_path('theme','subTheme') . '/logo.svg';
+  
+  
+  
 }
 
 
@@ -32,8 +43,6 @@ function subTheme_preprocess_page(&$variables) {
 function subTheme_preprocess_node__page(&$variables) {
 
   $elements = $variables['elements'];
-  
-  
 
   if (isset($elements['field_content']) && $elements['field_content'][0]['#paragraph']->bundle() == 'blog') {
     $variables['label'] = null;

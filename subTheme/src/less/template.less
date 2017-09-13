@@ -2,14 +2,14 @@
  * Template imports 
  */
 
-@BASE: "../../../../themes/basetpl/src/less";
+@BASE: "../../../../themes/baseTheme/src/less";
 
 // helpers
 @import "@{BASE}/functions/loop";
 @import "@{BASE}/functions/unit";
 
 
-@import "@{BASE}/template";
+//@import "@{BASE}/template";
 
 // components
 @import (less) "@{BASE}/components/includes/normalize.css";
@@ -41,12 +41,17 @@
 @import "@{BASE}/components/widgets/swiper/swiper";
 @import "@{BASE}/components/widgets/maps";
 
+
+// components
+@import "components/layout";
+
 // template
 @import "animations";
 @import "typography";
 @import "components";
 @import "forms";
 @import "default";
+@import "navigation";
 @import "page";
 @import "admin";
 @import "page-colors";

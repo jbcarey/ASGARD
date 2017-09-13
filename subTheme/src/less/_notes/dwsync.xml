@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="template.less" server="62.213.218.204" local="131485662421823648" remote="131485662000000000" Dst="2" />
-<file name="page.less" server="62.213.218.204" local="131485717381707817" remote="131485717200000000" Dst="2" />
 <file name="admin.less" server="62.213.218.204" local="131478041345870726" remote="131478678000000000" Dst="2" />
 <file name="animations.less" server="62.213.218.204" local="131226639680000000" remote="131478678000000000" Dst="2" />
 <file name="components.less" server="62.213.218.204" local="131485569302208365" remote="131485569000000000" Dst="2" />
@@ -9,4 +8,6 @@
 <file name="page-colors.less" server="62.213.218.204" local="131478618832230228" remote="131478678000000000" Dst="2" />
 <file name="typography.less" server="62.213.218.204" local="131478880891729154" remote="131478880800000000" Dst="2" />
 <file name="default.less" server="62.213.218.204" local="131485704049965501" remote="131485704000000000" Dst="2" />
+<file name="page.less" server="62.213.218.204" local="131496979953962917" remote="131496979800000000" Dst="2" />
+<file name="navigation.less" server="62.213.218.204" local="131497005649942050" remote="131497005600000000" Dst="2" />
 </dwsync>

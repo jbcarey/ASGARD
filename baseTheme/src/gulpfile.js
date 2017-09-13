@@ -54,10 +54,6 @@ var paths = {
     output: '../',
     scripts: {
         input: './js/*',
-        plugins: [
-          'node_modules/smooth-scroll/dist/js/smooth-scroll.js',
-          'node_modules/swiper/dist/js/swiper.js',
-        ],
         output: '../js/'
     },
     styles: {
@@ -117,7 +113,7 @@ gulp.task('build:scripts', function() {
 			if ( file.isDirectory() ) {
 				var name = file.relative + '.js';
 				return gulp.src(file.path + '/*.js')
-					//.pipe(concat(name))
+					.pipe(concat(name))
 					.pipe(jsTasks());
 			}
 		}))

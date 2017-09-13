@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="template.css" server="62.213.218.204" local="131496769465757971" remote="131496772200000000" Dst="2" />
-<file name="template.min.css" server="62.213.218.204" local="131496769474748855" remote="131496772200000000" Dst="2" />
+<file name="template.css" server="62.213.218.204" local="131497687497175906" remote="131496772200000000" Dst="2" />
+<file name="template.min.css" server="62.213.218.204" local="131497687497936433" remote="131496772200000000" Dst="2" />
+<file name="colors.css" server="62.213.218.204" local="131497687475670570" remote="131496125400000000" Dst="2" />
+<file name="layout.css" server="62.213.218.204" local="131497687496148808" remote="131496125400000000" Dst="2" />
+<file name="maintenance-page.css" server="62.213.218.204" local="131497687496237273" remote="131496125400000000" Dst="2" />
+<file name="print.css" server="62.213.218.204" local="131497687497005796" remote="131496125400000000" Dst="2" />
 </dwsync>

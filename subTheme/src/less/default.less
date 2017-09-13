@@ -1,27 +1,31 @@
 html, body { font-family: @ff; background: white;}
 
 .wrapper { position: inherit; }
-
-.relative { position: relative;} 
-
+.relative { position: relative;}
 
 .message { padding: @pd-medium; margin: @mg-medium 0; }
 .bgc-beige {  background: #ede3ca; color:#b18518;}
 
 
-#drupal-live-announce, .invisible, .visually-hidden, body>svg {
-    display: none;
-}
+#drupal-live-announce, .invisible, .visually-hidden, body>svg {    display: none; }
 
 .bgc-grey {background-color:@grey;}
 .bgc-dark {background-color:@bgc-dark;}
+
+
+
+//BORDERS
+.br-top-grey     { border-top-color: @spotcolor;}
+.br-bottom-main  { border-bottom-color: @maincolor; }
+.br-top-large    { border-top-width: em(10); border-style: solid;}
+.br-bottom-large { border-bottom-width: em(10);  border-style: solid;}
 
 
 // #tabs
 
 ul.tabs>li a { border: none;}
 
-.teaser { border: em(1) solid @border; padding: em(20);
+.teaser { border: em(1) solid @bc; padding: em(20);
   & + .teaser { margin-top: @mg-medium;
     &.sponsor { margin-top: 0; border-top:none;}}
 }

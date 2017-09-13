@@ -12,6 +12,7 @@ var tap = require('gulp-tap');
 var rename = require('gulp-rename');
 var watch = require('gulp-watch');
 var livereload = require('gulp-livereload');
+var gutil = require('gulp-util');
 
 // html
 var htmlmin = require('gulp-htmlmin');
@@ -54,10 +55,6 @@ var paths = {
     output: '../',
     scripts: {
         input: './js/*',
-        plugins: [
-          'node_modules/smooth-scroll/dist/js/smooth-scroll.js',
-          'node_modules/swiper/dist/js/swiper.js',
-        ],
         output: '../js/'
     },
     styles: {
@@ -182,7 +179,8 @@ gulp.task('build:images', ['build:thumbs'], function() {
           width : 1200,
           height : 600,
           crop : true,
-          upscale : false
+          upscale : false,
+          imageMagick: true
         }))
         .pipe(gulp.dest(paths.images.output));
 });
@@ -277,8 +275,8 @@ gulp.task('default', [
     'build:plugins',
     'build:scripts',
     'build:styles',
-//  'build:images',
-//  'build:html',
+    //'build:images',
+    //'build:html',
     'build:svgs',
     'build:fonts',
     'build:favicon'
@@ -297,6 +295,8 @@ gulp.task('devel', [
 ]);
 
 
+
+
 // Compile files and generate docs when something changes
 gulp.task('watch', [
     'listen',
@@ -305,5 +305,7 @@ gulp.task('watch', [
 
 // Spin up livereload server and listen for file changes 
 gulp.task('watch-less', function () {
+    "use strict";
     gulp.watch('./less/**/*.less', ['build:styles']);
+    gutil.log('Less Compiled!');
 });

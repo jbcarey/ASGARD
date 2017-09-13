@@ -1,4 +1,4 @@
-subtpl:
+subTheme:
   version: 1.x
   js:
     js/smooth-scroll.min.js: {}
@@ -8,10 +8,11 @@ subtpl:
     js/template.js: {}
   css:
     theme:
-      css/template.min.css: {}
+      css/template.css: {}
       css/custom.css: {}
       fonts/fonts.css: {}
   dependencies:
+    - core/drupal
     - core/jquery
     - core/jquery-once
     

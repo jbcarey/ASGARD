@@ -1,16 +1,21 @@
-global-styling:
-  version: VERSION
+baseTheme:
+  version: 1.x
+  js:
+    js/plugins.min.js: {}
+    js/template.js: {}
   css:
-    layout:
+    theme:
       less-css/template.min.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery-once
     
-
 messages:
   version: VERSION
   css:
     component:
       css/components/messages.css: { preprocess: false }
-
 
 
 maintenance_page:

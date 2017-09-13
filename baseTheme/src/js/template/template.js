@@ -12,16 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             er: 2 
         }
     });
-
-/*
-    lory(document.querySelector('.slideshow'), {
-        classNameSlideContainer: 'slides',
-        classNameFrame: 'frame',
-        classNamePrevCtrl: 'prev',
-        classNameNextCtrl: 'next',
-        enableMouseEvents: true,
-    });
-*/
+  
 
 });
 

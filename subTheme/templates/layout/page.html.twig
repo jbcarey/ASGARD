@@ -1,77 +1,55 @@
-
+{{ page.page_top }}
+{{ page.highlighted }}
 
 
 
 <header class="">
-    <div class="wrapper grid relative">    
-    <div class="pane grid4"><a id="logo" href="{{ front_page }}">
-        <img src="{{ site_logo }}" alt="{{ site_name }}" />
-        <span>{{ site_name }}</span>
-    </a></div>
-      <div class="pane grid8" >
-        <div id="menubar">
-    <div class="wrapper">
-        {{ page.primary_menu }}
-       {# {{ page.secondary_menu }} #}
-    </div>
-</div>
-
+  <div class="wrapper grid relative">
+    <div class="pane grid3"> <a class="logo" href="{{ front_page }}"> <img src="{{ logopath }}" alt="{{ site_name }}" /> <span>{{ site_name }}</span> </a> </div>
+    <div class="pane grid9" >
+     
+      <div class="grid">
+      <div class="pane grid2 ta-right">social-btns</div>
+      <div class="pane grid10 ta-right" style="max-width: 570px;">{# {{ page.secondary_menu }} #} TOPMENU</div>
       </div>
-    
-    
-    
+      
+       <div id="menubar" class="absolute bottom">
+          {{ page.primary_menu }}  
+        </div>  
+      
 
-    
-   </div>
+     
+
+    </div>
+  </div>
   <div class="banner bgc-grey">
-       <div class="wrapper"> {{ page.header.banner }}</div>
+    <div class="wrapper"> {{ page.header.banner }}</div>
   </div>
 </header>
-
-
-<div class="info wrapper">
-
-{{ page.highlighted }}
-
-{{ page.help }}
-
-</div>
-
-
+<div class="info wrapper"> {{ page.help }} </div>
 <main id="main">
-    <div class="wrapper">
-        {{ page.breadcrumb }}
-
-        {% if page.sidebar_first %}
-            <aside class="sidebar">
-                {{ page.sidebar_first }}
-            </aside>
-        {% endif %}
-
-        {{ page.content }}
-
-        {% if page.sidebar_second %}
-            <aside class="sidebar">
-                {{ page.sidebar_second }}
-            </aside>
-        {% endif %}
-    </div>
+  <div class="wrapper"> {{ page.breadcrumb }}
+    
+    {% if page.sidebar_first %}
+    <aside class="sidebar"> {{ page.sidebar_first }} </aside>
+    {% endif %}
+    
+    {{ page.content }}
+    
+    {% if page.sidebar_second %}
+    <aside class="sidebar"> {{ page.sidebar_second }} </aside>
+    {% endif %} </div>
 </main>
-
-{% if page.footer %}
-<footer class="bgc-grey">
-    <div class="wrapper grid">
-      <div class="pane grid6">
-        <a id="logo-footer" href="{{ front_page }}">
-        <img src="{{ site_logo }}" alt="{{ site_name }}" />
-        <span>{{ site_name }}</span>
-        </a>
-      </div>
-       
-       <div class="pane grid6 ta-right va-center"> 
-       {{ page.footer }}
-         <small>design & implementation by <a href="http://www.e2e.be" target="_blank">e2e</a> nv</small>
-       </div>
+<footer class="br-top-grey br-bottom-main br-top-large br-bottom-large">
+  <div class="wrapper grid">
+    <div class="pane grid4"> 
+    <a class="logo" href="{{ front_page }}"> <img src="{{ logopath }}" alt="{{ site_name }}" /> <span>{{ site_name }}</span> </a>
+    {{ page.footer }}
     </div>
+    <div class="pane grid6"> {{ page.primary_menu }} </div>
+
+    <div class="pane ta-right va-center grid2">
+    {{ page.secondary_menu }}
+    </div>
+  </div>
 </footer>
-{% endif %}
