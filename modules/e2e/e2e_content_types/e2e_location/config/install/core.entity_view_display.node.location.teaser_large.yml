@@ -1,0 +1,65 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_large
+    - field.field.node.location.body
+    - field.field.node.location.field_banner
+    - field.field.node.location.field_block_tags
+    - field.field.node.location.field_bundles
+    - field.field.node.location.field_image
+    - field.field.node.location.field_images
+    - field.field.node.location.field_keywords
+    - field.field.node.location.field_location
+    - field.field.node.location.field_location_type
+    - field.field.node.location.field_section
+    - field.field.node.location.field_system_note
+    - field.field.node.location.field_tags
+    - field.field.node.location.field_weight
+    - image.style.large
+    - node.type.location
+  module:
+    - e2e_location_field
+    - image
+    - text
+    - user
+id: node.location.teaser_large
+targetEntityType: node
+bundle: location
+mode: teaser_large
+content:
+  body:
+    type: text_default
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: large
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+  field_location:
+    type: LocationAddressFormatter
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_banner: true
+  field_block_tags: true
+  field_bundles: true
+  field_images: true
+  field_keywords: true
+  field_location_type: true
+  field_section: true
+  field_system_note: true
+  field_tags: true
+  field_weight: true
+  links: true

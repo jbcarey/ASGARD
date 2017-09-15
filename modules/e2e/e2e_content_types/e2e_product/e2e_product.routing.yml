@@ -1,0 +1,14 @@
+e2e_product.form:
+    path: '/admin/config/services/e2e-ipdc-settings'
+    defaults:
+        _form: 'Drupal\e2e_product\Form\ProductForm'
+        _title: 'IPDC Settings'
+    requirements:
+        _permission: 'administer site configuration'
+e2e_product.test:
+    path: 'ipdc-import-test'
+    defaults:
+        _controller: 'e2e_product_productTest'
+        _title: 'IPDC Import Test'
+    requirements:
+        _permission: 'administer site configuration'

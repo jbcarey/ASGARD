@@ -1,0 +1,17 @@
+name: 'E2E Users'
+description: 'Extends user access.'
+type: module
+core: 8.x
+package: E2E
+dependencies:
+  - e2e_content_types_field
+  - e2e_folders_field
+  - field
+  - field_group
+  - file
+  - image
+  - options
+  - path
+  - taxonomy
+  - text
+  - user

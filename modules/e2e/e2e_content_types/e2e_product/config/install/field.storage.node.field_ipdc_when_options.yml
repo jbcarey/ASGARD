@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_ipdc_when_options
+field_name: field_ipdc_when_options
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: show_ipdc
+      label: 'Show ipdc content'
+    -
+      value: show_own
+      label: 'Show own content'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

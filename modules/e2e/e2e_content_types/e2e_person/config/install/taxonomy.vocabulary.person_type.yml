@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Person type'
+vid: person_type
+description: 'Type for content type person.'
+hierarchy: 0
+weight: 0

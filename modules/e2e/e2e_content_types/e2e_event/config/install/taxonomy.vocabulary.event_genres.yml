@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event genres'
+vid: event_genres
+description: 'Genre for content type event'
+hierarchy: 0
+weight: 0

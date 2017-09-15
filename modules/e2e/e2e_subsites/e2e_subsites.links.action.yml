@@ -1,0 +1,6 @@
+e2e_subsites.add_form:
+    title: 'Add new subsite'
+    description: 'Add new subsite'
+    route_name: entity.subsite.add_form
+    appears_on:
+        - entity.subsite.list

@@ -1,0 +1,11 @@
+name: 'E2E Media Paragraph'
+description: 'Paragraphs to render iframes in order to display external media.'
+type: module
+core: 8.x
+dependencies:
+  - e2e_paragraphs
+  - field
+  - options
+  - paragraphs
+version: 8.x
+package: E2E

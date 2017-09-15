@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="core.entity_form_display.node.frontpage.default.yml" server="62.213.218.204" local="131478033670027561" remote="131466576600000000" Dst="2" />
+<file name="core.base_field_override.node.frontpage.promote.yml" server="62.213.218.204" local="131478033670152665" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.frontpage.default.yml" server="62.213.218.204" local="131478033670510422" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.frontpage.teaser.yml" server="62.213.218.204" local="131478033670660536" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.frontpage.teaser_large.yml" server="62.213.218.204" local="131478033671159284" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.frontpage.teaser_small.yml" server="62.213.218.204" local="131478033671279359" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.frontpage.thumbnail.yml" server="62.213.218.204" local="131478033672652320" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.frontpage.body.yml" server="62.213.218.204" local="131478033672852454" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.frontpage.field_banner.yml" server="62.213.218.204" local="131478033674163447" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.frontpage.field_block_tags.yml" server="62.213.218.204" local="131478033674293532" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.frontpage.field_bundles.yml" server="62.213.218.204" local="131478033675321993" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.frontpage.field_image.yml" server="62.213.218.204" local="131478033675442071" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.frontpage.field_images.yml" server="62.213.218.204" local="131478033676937846" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.frontpage.field_keywords.yml" server="62.213.218.204" local="131478033677210561" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.frontpage.field_section.yml" server="62.213.218.204" local="131478033678317318" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.frontpage.field_system_note.yml" server="62.213.218.204" local="131478033679197803" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.frontpage.field_tags.yml" server="62.213.218.204" local="131478033679447957" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.frontpage.field_weight.yml" server="62.213.218.204" local="131478033680449366" remote="131466576600000000" Dst="2" />
+<file name="node.type.frontpage.yml" server="62.213.218.204" local="131478033680619480" remote="131466576600000000" Dst="2" />
+</dwsync>

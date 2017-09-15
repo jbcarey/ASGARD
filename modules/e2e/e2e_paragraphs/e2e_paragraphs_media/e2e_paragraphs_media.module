@@ -1,0 +1,39 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\e2e_paragraphs_media\Includes\MediaParagraph;
+
+/*
+ * Implements hook_theme()
+ */
+function e2e_paragraphs_media_theme(){
+  return array(
+    'paragraph_media' => array(
+      'variables' => array('media' => NULL,),
+      'template' => 'paragraph_media',
+    ),
+    'paragraph_media_youtube' => array(
+      'variables' => array('width' => NULL, 'height' => NULL, 'mediaid' => NULL,),
+      'template' => 'paragraph_media_youtube',
+    ),
+    'paragraph_media_vimeo' => array(
+      'variables' => array('width' => NULL, 'height' => NULL, 'mediaid' => NULL,),
+      'template' => 'paragraph_media_vimeo',
+    ),
+  );
+}
+
+/*
+ * Implements hook_entity_view()
+ */
+function e2e_paragraphs_media_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode){
+  
+  if($entity->getEntityTypeId() == 'paragraph' && $entity->bundle() == 'media'){
+    
+    $paragraph = new MediaParagraph($entity);
+    $build['field_media_id'] = ['#media' => $paragraph->getMedia(), '#theme' => 'paragraph_media'];
+  
+  }
+  
+}

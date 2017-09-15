@@ -1,0 +1,8 @@
+name: 'E2E Location Field'
+description: 'Provides Location field widget. '
+type: module
+core: 8.x
+package: Field types
+dependencies: 
+    - field
+configure: e2e_location_field.form

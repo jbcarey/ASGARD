@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.entity.field_entity_options
+    - field.field.paragraph.entity.field_entity_reference
+    - field.field.paragraph.entity.field_title
+    - paragraphs.paragraphs_type.entity
+id: paragraph.entity.default
+targetEntityType: paragraph
+bundle: entity
+mode: default
+content:
+  field_entity_options:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_entity_reference:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

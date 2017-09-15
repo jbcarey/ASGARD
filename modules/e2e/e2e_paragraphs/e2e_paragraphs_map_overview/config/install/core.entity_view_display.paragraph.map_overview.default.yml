@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.map_overview.field_location_type
+    - field.field.paragraph.map_overview.field_map_filters
+    - field.field.paragraph.map_overview.field_map_places
+    - field.field.paragraph.map_overview.field_map_search
+    - field.field.paragraph.map_overview.field_tags
+    - field.field.paragraph.map_overview.field_title
+    - paragraphs.paragraphs_type.map_overview
+  module:
+    - taxonomy
+id: paragraph.map_overview.default
+targetEntityType: paragraph
+bundle: map_overview
+mode: default
+content:
+  field_location_type:
+    type: entity_reference_rss_category
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  created: true
+  field_map_filters: true
+  field_map_places: true
+  field_map_search: true
+  field_tags: true
+  uid: true

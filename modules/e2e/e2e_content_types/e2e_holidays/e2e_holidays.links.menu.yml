@@ -1,0 +1,5 @@
+e2e_holidays.form:
+    title: 'Import holidays'
+    description: 'Import E2E holiday nodes from csv files.'
+    route_name: e2e_holidays.form
+    parent: 'system.admin_config_services'

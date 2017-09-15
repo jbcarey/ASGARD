@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Block tags'
+vid: block_tags
+description: 'Defines placement of block content.'
+hierarchy: 0
+weight: 0

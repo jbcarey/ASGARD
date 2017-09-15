@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ipdc_bringwhat
+    - node.type.product
+  module:
+    - text
+id: node.product.field_ipdc_bringwhat
+field_name: field_ipdc_bringwhat
+entity_type: node
+bundle: product
+label: 'What To Bring Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

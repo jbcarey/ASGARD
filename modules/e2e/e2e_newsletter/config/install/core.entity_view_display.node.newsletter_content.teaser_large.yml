@@ -1,0 +1,66 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_large
+    - field.field.node.newsletter_content.field_bundles
+    - field.field.node.newsletter_content.field_image
+    - field.field.node.newsletter_content.field_keywords
+    - field.field.node.newsletter_content.field_section
+    - field.field.node.newsletter_content.field_system_note
+    - node.type.newsletter_content
+  module:
+    - entity_reference_revisions
+    - image
+    - user
+id: node.newsletter_content.teaser_large
+targetEntityType: node
+bundle: newsletter_content
+mode: teaser_large
+content:
+  field_bundles:
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_image:
+    weight: 106
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_keywords:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_section:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_system_note:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

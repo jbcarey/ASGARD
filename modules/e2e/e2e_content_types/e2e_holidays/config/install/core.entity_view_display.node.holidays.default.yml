@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.holidays.field_days
+    - field.field.node.holidays.field_keywords
+    - field.field.node.holidays.field_system_note
+    - field.field.node.holidays.field_tags
+    - field.field.node.holidays.field_weight
+    - node.type.holidays
+  module:
+    - datetime_range
+    - user
+id: node.holidays.default
+targetEntityType: node
+bundle: holidays
+mode: default
+content:
+  field_days:
+    weight: 1
+    label: above
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+hidden:
+  field_keywords: true
+  field_system_note: true
+  field_tags: true
+  field_weight: true
+  links: true

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Product scope'
+vid: product_scope
+description: product_scope
+hierarchy: 0
+weight: 0

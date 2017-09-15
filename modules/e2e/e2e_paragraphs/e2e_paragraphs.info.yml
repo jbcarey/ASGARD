@@ -1,0 +1,15 @@
+name: 'E2E Paragraphs'
+description: 'Add paragraph bundles to content.'
+type: module
+core: 8.x
+dependencies:
+  - field
+  - file
+  - image
+  - link
+  - options
+  - paragraphs
+  - taxonomy
+  - text
+version: 8.x
+package: E2E

@@ -1,0 +1,5 @@
+e2e_product.form:
+    title: 'IPDC Settings'
+    description: 'IPDC Import Settings'
+    route_name: e2e_product.form
+    parent: 'system.admin_config_services'

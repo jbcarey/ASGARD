@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_genres
+    - node.type.event
+    - taxonomy.vocabulary.event_genres
+id: node.event.field_event_genres
+field_name: field_event_genres
+entity_type: node
+bundle: event
+label: Genres
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      event_genres: event_genres
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

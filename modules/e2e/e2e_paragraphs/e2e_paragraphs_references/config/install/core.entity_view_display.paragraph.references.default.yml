@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.references.field_content_reference
+    - field.field.paragraph.references.field_display
+    - field.field.paragraph.references.field_title
+    - paragraphs.paragraphs_type.references
+id: paragraph.references.default
+targetEntityType: paragraph
+bundle: references
+mode: default
+content:
+  field_content_reference:
+    type: entity_reference_label
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  created: true
+  field_display: true
+  uid: true

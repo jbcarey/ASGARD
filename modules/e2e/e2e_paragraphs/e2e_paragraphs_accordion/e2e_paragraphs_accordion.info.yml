@@ -1,0 +1,16 @@
+name: 'E2E Accordions Paragraph'
+description: 'Create accordion display with paragraphs.'
+type: module
+core: 8.x
+dependencies:
+  - e2e_paragraphs
+  - e2e_paragraphs_button
+  - entity_reference_revisions
+  - field
+  - image
+  - imce
+  - link
+  - paragraphs
+  - text
+version: 8.x
+package: E2E

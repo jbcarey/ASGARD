@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.slideshow.field_slide_autoplay
+    - field.field.paragraph.slideshow.field_slide_navigation
+    - field.field.paragraph.slideshow.field_slide_pagination
+    - field.field.paragraph.slideshow.field_slide_transition
+    - field.field.paragraph.slideshow.field_slides
+    - field.field.paragraph.slideshow.field_title
+    - paragraphs.paragraphs_type.slideshow
+  module:
+    - entity_reference_revisions
+id: paragraph.slideshow.default
+targetEntityType: paragraph
+bundle: slideshow
+mode: default
+content:
+  field_slides:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  created: true
+  field_slide_autoplay: true
+  field_slide_navigation: true
+  field_slide_pagination: true
+  field_slide_transition: true
+  uid: true

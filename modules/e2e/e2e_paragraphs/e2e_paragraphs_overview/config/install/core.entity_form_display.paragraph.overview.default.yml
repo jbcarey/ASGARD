@@ -1,0 +1,174 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.overview.field_columns_amount
+    - field.field.paragraph.overview.field_content_type
+    - field.field.paragraph.overview.field_display
+    - field.field.paragraph.overview.field_filters
+    - field.field.paragraph.overview.field_filters_position
+    - field.field.paragraph.overview.field_items_per_page
+    - field.field.paragraph.overview.field_order
+    - field.field.paragraph.overview.field_pagination
+    - field.field.paragraph.overview.field_sections
+    - field.field.paragraph.overview.field_sortorder
+    - field.field.paragraph.overview.field_tags
+    - field.field.paragraph.overview.field_title
+    - paragraphs.paragraphs_type.overview
+  module:
+    - e2e_content_types_field
+    - field_group
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_settings
+        - group_display
+        - group_filters
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Tabs
+    group_settings:
+      children:
+        - field_content_type
+        - field_tags
+        - field_sections
+        - field_pagination
+        - field_items_per_page
+        - field_columns_amount
+        - field_order
+        - field_sortorder
+      parent_name: group_tabs
+      weight: 11
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Settings
+    group_display:
+      children:
+        - field_display
+      parent_name: group_tabs
+      weight: 12
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Display
+    group_filters:
+      children:
+        - field_filters
+        - field_filters_position
+      parent_name: group_tabs
+      weight: 13
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Filters
+id: paragraph.overview.default
+targetEntityType: paragraph
+bundle: overview
+mode: default
+content:
+  field_columns_amount:
+    weight: 22
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_content_type:
+    type: ContentTypesWidget
+    weight: 17
+    settings:
+      exclusive: {  }
+    third_party_settings: {  }
+    region: content
+  field_display:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_filters:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_filters_position:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_items_per_page:
+    weight: 21
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_order:
+    weight: 23
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_pagination:
+    weight: 20
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_sections:
+    weight: 19
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_sortorder:
+    weight: 24
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_tags:
+    weight: 18
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

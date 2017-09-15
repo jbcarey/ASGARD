@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hours_exception.field_exception_day
+    - field.field.paragraph.hours_exception.field_hours
+    - paragraphs.paragraphs_type.hours_exception
+  module:
+    - datetime
+    - e2e_hours_field
+id: paragraph.hours_exception.default
+targetEntityType: paragraph
+bundle: hours_exception
+mode: default
+content:
+  field_exception_day:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_hours:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: HoursWidget
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

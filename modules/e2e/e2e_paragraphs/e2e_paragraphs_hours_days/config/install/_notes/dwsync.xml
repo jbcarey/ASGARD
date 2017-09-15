@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="core.entity_form_display.paragraph.hours.default.yml" server="62.213.218.204" local="131478034018914224" remote="131466501000000000" Dst="2" />
+<file name="core.entity_form_display.paragraph.hours_exception.default.yml" server="62.213.218.204" local="131478034019031477" remote="131466501000000000" Dst="2" />
+<file name="core.entity_view_display.paragraph.hours.default.yml" server="62.213.218.204" local="131478034019671913" remote="131466501000000000" Dst="2" />
+<file name="core.entity_view_display.paragraph.hours_exception.default.yml" server="62.213.218.204" local="131478034019876074" remote="131466501000000000" Dst="2" />
+<file name="field.field.paragraph.hours.field_days.yml" server="62.213.218.204" local="131478034020206311" remote="131466501000000000" Dst="2" />
+<file name="field.field.paragraph.hours.field_holidays_reference.yml" server="62.213.218.204" local="131478034020466481" remote="131466501000000000" Dst="2" />
+<file name="field.field.paragraph.hours.field_hours_exceptions.yml" server="62.213.218.204" local="131478034021505716" remote="131466501000000000" Dst="2" />
+<file name="field.field.paragraph.hours.field_hours_friday.yml" server="62.213.218.204" local="131478034021745869" remote="131466501000000000" Dst="2" />
+<file name="field.field.paragraph.hours.field_hours_saturday.yml" server="62.213.218.204" local="131478034022801688" remote="131466501000000000" Dst="2" />
+<file name="field.field.paragraph.hours.field_hours_monday.yml" server="62.213.218.204" local="131478034022941779" remote="131466501000000000" Dst="2" />
+<file name="field.field.paragraph.hours.field_hours_sunday.yml" server="62.213.218.204" local="131478034023919230" remote="131466501000000000" Dst="2" />
+<file name="field.field.paragraph.hours.field_hours_thursday.yml" server="62.213.218.204" local="131478034024069343" remote="131466501000000000" Dst="2" />
+<file name="field.field.paragraph.hours.field_hours_tuesday.yml" server="62.213.218.204" local="131478034025270185" remote="131466501000000000" Dst="2" />
+<file name="field.field.paragraph.hours.field_hours_wednesday.yml" server="62.213.218.204" local="131478034025270185" remote="131466501000000000" Dst="2" />
+<file name="field.field.paragraph.hours.field_period.yml" server="62.213.218.204" local="131478034026243479" remote="131466501000000000" Dst="2" />
+<file name="field.field.paragraph.hours.field_period_name.yml" server="62.213.218.204" local="131478034027389752" remote="131466501000000000" Dst="2" />
+<file name="field.field.paragraph.hours.field_status_today.yml" server="62.213.218.204" local="131478034027519846" remote="131466501000000000" Dst="2" />
+<file name="field.field.paragraph.hours_exception.field_exception_day.yml" server="62.213.218.204" local="131478034028564906" remote="131466501000000000" Dst="2" />
+<file name="field.field.paragraph.hours.field_status_tomorrow.yml" server="62.213.218.204" local="131478034028664963" remote="131466501000000000" Dst="2" />
+<file name="field.field.paragraph.hours_exception.field_hours.yml" server="62.213.218.204" local="131478034029621485" remote="131466501000000000" Dst="2" />
+<file name="field.storage.paragraph.field_days.yml" server="62.213.218.204" local="131478034029741561" remote="131466501000000000" Dst="2" />
+<file name="field.storage.paragraph.field_exception_day.yml" server="62.213.218.204" local="131478034030886602" remote="131466501000000000" Dst="2" />
+<file name="field.storage.paragraph.field_holidays_reference.yml" server="62.213.218.204" local="131478034030997404" remote="131466501000000000" Dst="2" />
+<file name="field.storage.paragraph.field_hours_exceptions.yml" server="62.213.218.204" local="131478034032093294" remote="131466501000000000" Dst="2" />
+<file name="field.storage.paragraph.field_hours.yml" server="62.213.218.204" local="131478034032203366" remote="131466501000000000" Dst="2" />
+<file name="field.storage.paragraph.field_hours_friday.yml" server="62.213.218.204" local="131478034033152738" remote="131466501000000000" Dst="2" />
+<file name="field.storage.paragraph.field_hours_monday.yml" server="62.213.218.204" local="131478034033282841" remote="131466501000000000" Dst="2" />
+<file name="field.storage.paragraph.field_hours_saturday.yml" server="62.213.218.204" local="131478034034296991" remote="131466501000000000" Dst="2" />
+<file name="field.storage.paragraph.field_hours_sunday.yml" server="62.213.218.204" local="131478034034397054" remote="131466501000000000" Dst="2" />
+<file name="field.storage.paragraph.field_hours_thursday.yml" server="62.213.218.204" local="131478034035324981" remote="131466501000000000" Dst="2" />
+<file name="field.storage.paragraph.field_hours_tuesday.yml" server="62.213.218.204" local="131478034036345688" remote="131466501000000000" Dst="2" />
+<file name="field.storage.paragraph.field_hours_wednesday.yml" server="62.213.218.204" local="131478034036465763" remote="131466501000000000" Dst="2" />
+<file name="field.storage.paragraph.field_period.yml" server="62.213.218.204" local="131478034037756658" remote="131466501000000000" Dst="2" />
+<file name="field.storage.paragraph.field_period_name.yml" server="62.213.218.204" local="131478034037756658" remote="131466501000000000" Dst="2" />
+<file name="field.storage.paragraph.field_status_today.yml" server="62.213.218.204" local="131478034038397122" remote="131466501000000000" Dst="2" />
+<file name="field.storage.paragraph.field_status_tomorrow.yml" server="62.213.218.204" local="131478034038557227" remote="131466501000000000" Dst="2" />
+<file name="paragraphs.paragraphs_type.hours.yml" server="62.213.218.204" local="131478034038801504" remote="131466501000000000" Dst="2" />
+<file name="paragraphs.paragraphs_type.hours_exception.yml" server="62.213.218.204" local="131478034039234762" remote="131466501000000000" Dst="2" />
+</dwsync>

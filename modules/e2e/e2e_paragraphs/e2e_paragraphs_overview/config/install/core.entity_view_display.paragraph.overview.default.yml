@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.overview.field_columns_amount
+    - field.field.paragraph.overview.field_content_type
+    - field.field.paragraph.overview.field_display
+    - field.field.paragraph.overview.field_filters
+    - field.field.paragraph.overview.field_filters_position
+    - field.field.paragraph.overview.field_items_per_page
+    - field.field.paragraph.overview.field_order
+    - field.field.paragraph.overview.field_pagination
+    - field.field.paragraph.overview.field_sections
+    - field.field.paragraph.overview.field_sortorder
+    - field.field.paragraph.overview.field_tags
+    - field.field.paragraph.overview.field_title
+    - paragraphs.paragraphs_type.overview
+  module:
+    - e2e_content_types_field
+id: paragraph.overview.default
+targetEntityType: paragraph
+bundle: overview
+mode: default
+content:
+  field_content_type:
+    type: ContentTypesFormatter
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  created: true
+  field_columns_amount: true
+  field_display: true
+  field_filters: true
+  field_filters_position: true
+  field_items_per_page: true
+  field_order: true
+  field_pagination: true
+  field_sections: true
+  field_sortorder: true
+  field_tags: true
+  uid: true

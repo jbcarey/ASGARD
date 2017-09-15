@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_menu_access
+field_name: field_menu_access
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: main
+      label: 'Main navigation'
+    -
+      value: custom
+      label: Custom
+    -
+      value: 'menu_link_content:e70f464f-1399-42a9-92a1-18f9eaa61711'
+      label: 'Test Bundels'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

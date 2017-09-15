@@ -1,0 +1,19 @@
+name: 'E2E Newsletter'
+description: 'Configure newsletter themes.'
+type: module
+core: 8.x
+dependencies:
+  - e2e_users
+  - entity_reference_revisions
+  - field
+  - field_group
+  - image
+  - menu_ui
+  - node
+  - paragraphs
+  - path
+  - taxonomy
+  - text
+  - user
+version: 8.x
+package: E2E

@@ -1,0 +1,9 @@
+name: 'E2E System Block Paragraph'
+description: 'Render system blocks in paragraphs.'
+type: module
+core: 8.x
+dependencies:
+  - field
+  - paragraphs
+version: 8.x
+package: E2E

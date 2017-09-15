@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="core.entity_form_display.paragraph.overview.default.yml" server="62.213.218.204" local="131478034111325700" remote="131466501600000000" Dst="2" />
+<file name="core.entity_view_display.paragraph.overview.default.yml" server="62.213.218.204" local="131478034111485802" remote="131466501600000000" Dst="2" />
+<file name="field.field.paragraph.overview.field_columns.yml" server="62.213.218.204" local="131478034112606583" remote="131466501600000000" Dst="2" />
+<file name="field.field.paragraph.overview.field_columns_amount.yml" server="62.213.218.204" local="131478034112726661" remote="131466501600000000" Dst="2" />
+<file name="field.field.paragraph.overview.field_content_type.yml" server="62.213.218.204" local="131478034113743872" remote="131466501600000000" Dst="2" />
+<file name="field.field.paragraph.overview.field_display.yml" server="62.213.218.204" local="131478034113863945" remote="131466501600000000" Dst="2" />
+<file name="field.field.paragraph.overview.field_filters.yml" server="62.213.218.204" local="131478034114934062" remote="131466501600000000" Dst="2" />
+<file name="field.field.paragraph.overview.field_filters_position.yml" server="62.213.218.204" local="131478034115064869" remote="131466501600000000" Dst="2" />
+<file name="field.field.paragraph.overview.field_order.yml" server="62.213.218.204" local="131478034116649235" remote="131466501600000000" Dst="2" />
+<file name="field.field.paragraph.overview.field_items_per_page.yml" server="62.213.218.204" local="131478034116859375" remote="131466501600000000" Dst="2" />
+<file name="field.field.paragraph.overview.field_pagination.yml" server="62.213.218.204" local="131478034118400554" remote="131466501600000000" Dst="2" />
+<file name="field.field.paragraph.overview.field_sections.yml" server="62.213.218.204" local="131478034118520645" remote="131466501600000000" Dst="2" />
+<file name="field.field.paragraph.overview.field_sortorder.yml" server="62.213.218.204" local="131478034119467376" remote="131466501600000000" Dst="2" />
+<file name="field.field.paragraph.overview.field_tags.yml" server="62.213.218.204" local="131478034119606821" remote="131466501600000000" Dst="2" />
+<file name="field.field.paragraph.overview.field_title.yml" server="62.213.218.204" local="131478034120801931" remote="131466501600000000" Dst="2" />
+<file name="field.storage.paragraph.field_columns_amount.yml" server="62.213.218.204" local="131478034121922872" remote="131466501600000000" Dst="2" />
+<file name="field.storage.paragraph.field_content_type.yml" server="62.213.218.204" local="131478034122052969" remote="131466501600000000" Dst="2" />
+<file name="field.storage.paragraph.field_filters.yml" server="62.213.218.204" local="131478034123095877" remote="131466501600000000" Dst="2" />
+<file name="field.storage.paragraph.field_filters_position.yml" server="62.213.218.204" local="131478034123235945" remote="131466501600000000" Dst="2" />
+<file name="field.storage.paragraph.field_items_per_page.yml" server="62.213.218.204" local="131478034124246675" remote="131466501600000000" Dst="2" />
+<file name="field.storage.paragraph.field_order.yml" server="62.213.218.204" local="131478034124386772" remote="131466501600000000" Dst="2" />
+<file name="field.storage.paragraph.field_pagination.yml" server="62.213.218.204" local="131478034125366903" remote="131466501600000000" Dst="2" />
+<file name="field.storage.paragraph.field_sections.yml" server="62.213.218.204" local="131478034125486982" remote="131466501600000000" Dst="2" />
+<file name="field.storage.paragraph.field_sortorder.yml" server="62.213.218.204" local="131478034126432967" remote="131466501600000000" Dst="2" />
+<file name="paragraphs.paragraphs_type.overview.yml" server="62.213.218.204" local="131478034126763053" remote="131466501600000000" Dst="2" />
+</dwsync>

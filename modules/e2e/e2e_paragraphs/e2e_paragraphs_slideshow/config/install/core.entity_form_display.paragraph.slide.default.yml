@@ -1,0 +1,117 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.slide.field_horizontal_align
+    - field.field.paragraph.slide.field_image
+    - field.field.paragraph.slide.field_link
+    - field.field.paragraph.slide.field_text
+    - field.field.paragraph.slide.field_title
+    - field.field.paragraph.slide.field_vertical_align
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.slide
+  module:
+    - field_group
+    - image
+    - imce
+    - link
+    - text
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_image
+        - group_caption
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Tabs
+    group_image:
+      children:
+        - field_image
+      parent_name: group_tabs
+      weight: 7
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Image
+    group_caption:
+      children:
+        - field_title
+        - field_text
+        - field_link
+        - field_vertical_align
+        - field_horizontal_align
+      parent_name: group_tabs
+      weight: 8
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Caption
+id: paragraph.slide.default
+targetEntityType: paragraph
+bundle: slide
+mode: default
+content:
+  field_horizontal_align:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_image:
+    weight: 1
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+    region: content
+  field_link:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_text:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vertical_align:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

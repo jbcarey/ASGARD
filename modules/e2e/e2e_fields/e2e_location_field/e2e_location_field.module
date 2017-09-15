@@ -1,0 +1,49 @@
+<?php
+
+/*
+ * Implements hook_theme()
+ */
+function e2e_location_field_theme(){
+  return array(
+    'field_location_widget' => array(
+      'variables' => array(
+        'street' => NULL, 'street_nr' => NULL, 'zip_code' => NULL, 'city' => NULL, 
+        'state' => NULL, 'country' => NULL, 'lat' => NULL, 'lng' => NULL, 'marker' => NULL,
+        'title' => NULL, 'info' => NULL, 'show_title' => NULL, 'show_info' => NULL,
+        'show_marker' => NULL, 'show_map' => NULL,
+      ),'template' => 'field_location_widget',
+    ),
+    'field_location_formatter' => array(
+      'variables' => array('addresses' => NULL, 'map' => NULL,),
+      'template' => 'field_location',
+    ),
+  );
+}
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function e2e_location_field_library_info_alter(&$libraries, $extension){
+  
+  $librarynames = array('location_field', 'location_field_widget');
+  $apikey = '';
+  
+  foreach($librarynames as $libraryname){
+  
+    if(isset($libraries[$libraryname]['js'])){
+
+      $config = \Drupal::config('e2e_location_field.settings');
+      
+      if(!$apikey)
+        $apikey = $config->get('e2e_location_field.google_maps_key');
+      
+      foreach($libraries[$libraryname]['js'] as $url => $params){
+        if(strpos($url, 'gapi_placeholderkey') !== FALSE){
+          $libraries[$libraryname]['js'][str_replace('gapi_placeholderkey', $apikey, $url)] = $params;
+          unset($libraries[$libraryname]['js'][$url]);
+        }
+      }
+
+    }
+  }
+}

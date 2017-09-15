@@ -1,0 +1,8 @@
+hours_field_widget:
+  version: 1.x
+  js:
+    js/hours_field_widget.js: {}
+    js/jquery.timeentry.min.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

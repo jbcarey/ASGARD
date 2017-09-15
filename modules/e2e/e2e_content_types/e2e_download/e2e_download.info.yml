@@ -1,0 +1,20 @@
+name: 'E2E Download'
+description: 'Download content type'
+type: module
+core: 8.x
+dependencies:
+  - e2e_content_types
+  - e2e_users
+  - field
+  - field_group
+  - file
+  - image
+  - imce
+  - menu_ui
+  - node
+  - options
+  - path
+  - text
+  - user
+version: 8.x
+package: E2E

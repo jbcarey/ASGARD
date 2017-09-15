@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_persons
+    - node.type.event
+id: node.event.field_event_persons
+field_name: field_event_persons
+entity_type: node
+bundle: event
+label: 'Max persons'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

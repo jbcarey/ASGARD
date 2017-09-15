@@ -1,0 +1,7 @@
+field.widget.settings.FoldersWidget:
+    type: mapping
+    label: 'Folders widget settings'
+    mapping:
+        exclusive:
+            type: text
+            label: 'Exclude selected folders'

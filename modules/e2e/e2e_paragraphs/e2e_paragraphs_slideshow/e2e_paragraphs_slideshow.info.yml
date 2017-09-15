@@ -1,0 +1,17 @@
+name: 'E2E Slideshow Paragraph'
+description: 'Show image slideshows in paragraphs.'
+type: module
+core: 8.x
+dependencies:
+  - e2e_paragraphs
+  - entity_reference_revisions
+  - field
+  - field_group
+  - image
+  - imce
+  - link
+  - options
+  - paragraphs
+  - text
+version: 8.x
+package: E2E

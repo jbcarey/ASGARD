@@ -1,0 +1,7 @@
+hours_days:
+  version: 1.x
+  js:
+    js/e2e_hours_days.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

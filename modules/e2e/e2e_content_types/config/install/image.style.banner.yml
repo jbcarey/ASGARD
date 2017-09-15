@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: banner
+label: 'Banner (1200x280)'
+effects:
+  82d34f8f-c82a-4ad1-889c-bf2e3e1ead44:
+    uuid: 82d34f8f-c82a-4ad1-889c-bf2e3e1ead44
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1200
+      height: 280

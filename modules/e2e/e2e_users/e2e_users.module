@@ -1,0 +1,48 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\node\NodeInterface;
+use Drupal\e2e_users\Includes\UserNodeAccess;
+use Drupal\e2e_users\Includes\UserMenuAccess;
+
+/**
+ * Implements hook_form_alter()
+ */
+function e2e_users_form_alter(&$form, FormStateInterface $form_state, $form_id){
+  
+  $user = \Drupal::currentUser();
+  
+  if($user->id() != 1 && isset($form['menu']['link']['#parents'])){
+    $menuAccess = new UserMenuAccess($user, $form['menu']);
+    $form['menu'] = $menuAccess->getMenu();
+  }
+}
+
+/**
+ * Implements hook_node_access()
+ */
+function e2e_users_node_access(NodeInterface $node, $op, AccountInterface $account){
+  $nodeAccess = new UserNodeAccess($account, $node, $op);
+  
+  return $nodeAccess->getAccessResult();
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function e2e_users_module_implements_alter(&$implementations, $hook) {
+  //change module weight to alter menu settings in form_alter
+  if ($hook == 'form_alter') {
+    $moduleimplement = $implementations['e2e_users'];
+    unset($implementations['e2e_users']);
+    $implementations['e2e_users'] = $moduleimplement;      
+  }
+}
+
+/*function e2e_users_field_widget_form_alter(&$element, FormStateInterface $form_state, $context){
+  if($context['items']->getFieldDefinition()->getType() == 'image'){
+    dpm($element);
+  }
+}*/
+

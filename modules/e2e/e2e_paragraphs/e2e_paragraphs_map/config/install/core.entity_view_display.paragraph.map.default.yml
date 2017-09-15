@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.map.field_map
+    - field.field.paragraph.map.field_title
+    - paragraphs.paragraphs_type.map
+  module:
+    - e2e_location_field
+id: paragraph.map.default
+targetEntityType: paragraph
+bundle: map
+mode: default
+content:
+  field_map:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: LocationMapMarkerAddressFormatter
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  created: true
+  uid: true

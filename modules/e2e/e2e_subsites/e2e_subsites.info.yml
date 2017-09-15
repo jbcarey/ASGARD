@@ -1,0 +1,5 @@
+name: 'E2E Subsites'
+description: 'Support subsites based on url and section.'
+type: module
+core: 8.x
+package: E2E

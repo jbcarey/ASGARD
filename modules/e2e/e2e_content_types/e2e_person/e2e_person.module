@@ -1,0 +1,22 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+/**
+ * Implement hook_node_view()
+ */
+function e2e_person_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display){
+  
+  if($entity->getEntityTypeId() == 'node' && $entity->bundle() == 'person'){
+    if(!isset($entity->field_private_show->value) || $entity->field_private_show->value != 1){
+      
+      $privatefields = array('field_private_address', 'field_private_phone', 'field_private_fax', 'field_private_email');
+      
+      foreach($privatefields as $privatefield){
+        if(isset($build[$privatefield]))
+          unset($build[$privatefield]);
+      }
+    }
+  }
+}

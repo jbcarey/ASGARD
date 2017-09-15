@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_entity_options
+field_name: field_entity_options
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: field_location_reference
+      label: 'Show address'
+    -
+      value: field_phone
+      label: 'Show phone'
+    -
+      value: field_fax
+      label: 'Show fax'
+    -
+      value: field_email
+      label: 'Show email'
+    -
+      value: field_website
+      label: 'Show website'
+    -
+      value: show_hours
+      label: 'Show hours'
+    -
+      value: show_today
+      label: 'Show today''s hours'
+    -
+      value: show_readmore
+      label: 'Show more info link'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

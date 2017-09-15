@@ -1,0 +1,36 @@
+{% if period %}
+    <div class="field field-hours-days {{ period.class }}">
+    	<div class="field period grid">
+            <div class="col label">{{ period.name }}</div>
+            <div class="col"><span class="period-date">{{ period.date }}</span></div>
+	</div>
+{% else %}
+    <div class="field field-hours-days active-period">
+{% endif %}
+{% if week %}
+        <div class="field opening-hours grid">
+            <div class="col label">{{ 'Opening hours'|t }}</div>
+            <div class="col">
+                {{ week }}
+
+                {% if todaystatus %}
+                    <div class="status status-today">{{ todaystatus|t }}</div>
+                {% endif %}
+                {% if tomorrowstatus %}
+                    <div class="status status-tomorrowstatus">{{ tomorrowstatus|t }}</div>
+                {% endif %}
+            </div>
+        </div>
+{% endif %}
+{% if daysoff%}
+        <div class="field closing-days grid">
+            <div class="col label">{{ 'Closing days'|t }}</div>
+            <div class="col">
+                {% for dayoff in daysoff %}
+                    <time class="closing-day">{{ dayoff }}</time>
+                {% endfor %}
+            </div>
+        </div>
+{% endif %}
+    </div>
+</div>

@@ -1,0 +1,5 @@
+services:
+    theme.negotiator.e2e_newsletter:
+        class: Drupal\e2e_newsletter\Theme\ThemeNegotiator
+        tags:
+            - { name: theme_negotiator, priority: 0 }

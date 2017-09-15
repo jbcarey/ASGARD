@@ -1,0 +1,51 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
+
+use Drupal\node\Entity\Node;
+
+/**
+ * Implement hook_node_view()
+ */
+function e2e_entity_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode){
+  
+  if($entity->getEntityTypeId() == 'node' && $entity->bundle() == 'entity'){
+    
+    if($view_mode == 'full'){
+      if(!empty($entity->field_location_reference->entity)){
+        $location = $entity->field_location_reference->entity;
+        
+        $address = $location->field_location->view(array('type' => 'LocationAddressFormatter','label' => 'inline'));
+        
+        $locationlink = Link::fromTextAndUrl($location->title->value, Url::fromUri('internal:/node/'. $location->id()));
+        
+        $address[0]['#prefix'] = '<strong>' . $locationlink->toString() . '</strong>';
+        $build['field_location_reference'] = $address;
+        
+        $build['map'] = $location->field_location->view(array('type' => 'LocationMapFormatter','label' => 'hidden'));
+        $build['map']['#weight'] = 100;
+      }
+      
+      if(!empty($entity->field_person_reference->target_id)) {
+        
+        $nids = array_column($entity->field_person_reference->getValue(), 'target_id');
+        
+        $persons = Node::loadMultiple($nids);
+        $build['field_person_reference'] = node_view_multiple($persons,'thumbnail');
+      }
+    }
+    
+    if($view_mode == 'full' || $view_mode == 'teaser_large') {
+
+      if(!empty($entity->field_hoursdays_reference->entity)){
+		$hours = $entity->field_hoursdays_reference->entity;
+		$build['field_hoursdays_reference'] = $hours->field_hours_paragraph->view(array('label' => 'hidden'));
+		$build['field_hoursdays_reference']['#weight'] = 15;
+      }
+	}
+
+  }
+}

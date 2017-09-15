@@ -1,0 +1,16 @@
+e2e_product.settings:
+    type: config_object
+    label: 'IPDC Import Settings'
+    mapping:
+        e2e_product:
+            type: mapping
+            mapping:
+                baseurl:
+                    type: text
+                    label: 'Base URL'
+                uuid:
+                    type: text
+                    label: 'UUID'
+                section:
+                    type: integer
+                    label: 'Section'

@@ -1,0 +1,79 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+use Drupal\e2e_product\Includes\ProductForm;
+use Drupal\e2e_product\Includes\ProductGroup;
+use Drupal\e2e_product\Includes\ProductImport;
+
+
+/**
+ * Implement hook_cron()
+ */
+function e2e_product_cron(){
+  
+  $importer = new ProductImport();
+  $importer->update();
+  
+}
+
+function e2e_product_productTest(){
+  
+  $importer = new ProductImport();
+  $importer->update();
+  
+  return ['#markup' => '<p>Nothing to see here.</p>'];
+}
+
+/**
+ * Implement hook_form_alter()
+ */
+function e2e_product_form_alter(&$form, FormStateInterface &$form_state, $form_id){
+  
+  if($form_id == 'node_product_form' || $form_id == 'node_product_edit_form'){
+  
+    $productform = new ProductForm($form);
+    $fieldnames = $productform->getFieldNames();
+
+    foreach($fieldnames as $fieldname){
+
+      if(isset($form[$fieldname])){
+        $form[$fieldname] = $productform->getFormField($fieldname);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_field_group_pre_render().
+ */
+function e2e_product_field_group_pre_render(&$element, &$group, &$rendering_object){
+  
+  if($group->bundle == 'product' && $group->format_type == 'html_element'){
+    
+    $productgroup = new ProductGroup($element);
+    $markup = $productgroup->getMarkup();
+    
+    if($markup){
+      $element = [
+        'title' => ['#markup' => '<div class="content-header padding-small bg-main rounded text-light">' . t($group->label) . '</div>', '#weight' => 0,],
+        'main' => ['#markup' => $markup, '#weight' => 1,],
+      ];
+    }else
+      $element = NULL;
+    
+  }
+  
+}
+
+/**
+ * Implement hook_node_view()
+ */
+function e2e_product_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display){
+  
+  if($entity->getEntityTypeId() == 'node' && $entity->bundle() == 'product'){
+    $build['#attached']['library'][] = 'e2e_paragraphs_accordion/accordion';
+  }
+}

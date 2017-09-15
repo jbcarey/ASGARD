@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="core.entity_view_mode.node.teaser_small.yml" server="62.213.218.204" local="131478033541653565" remote="131466561000000000" Dst="2" />
+<file name="core.entity_view_mode.node.teaser_large.yml" server="62.213.218.204" local="131478033541938771" remote="131466561000000000" Dst="2" />
+<file name="core.entity_view_mode.node.thumbnail.yml" server="62.213.218.204" local="131478033541943788" remote="131466561000000000" Dst="2" />
+<file name="field.storage.node.field_banner.yml" server="62.213.218.204" local="131478033542569216" remote="131466561000000000" Dst="2" />
+<file name="field.storage.node.field_block_tags.yml" server="62.213.218.204" local="131478033542799358" remote="131466561000000000" Dst="2" />
+<file name="field.storage.node.field_bundles.yml" server="62.213.218.204" local="131478033542809358" remote="131466561000000000" Dst="2" />
+<file name="field.storage.node.field_email.yml" server="62.213.218.204" local="131478033543429525" remote="131466561000000000" Dst="2" />
+<file name="field.storage.node.field_files.yml" server="62.213.218.204" local="131478033543562843" remote="131466561000000000" Dst="2" />
+<file name="field.storage.node.field_fax.yml" server="62.213.218.204" local="131478033543699847" remote="131466561000000000" Dst="2" />
+<file name="field.storage.node.field_keywords.yml" server="62.213.218.204" local="131478033544179617" remote="131466561000000000" Dst="2" />
+<file name="field.storage.node.field_images.yml" server="62.213.218.204" local="131478033544320201" remote="131466561000000000" Dst="2" />
+<file name="field.storage.node.field_phone.yml" server="62.213.218.204" local="131478033544470770" remote="131466561000000000" Dst="2" />
+<file name="field.storage.node.field_section.yml" server="62.213.218.204" local="131478033544913563" remote="131466561000000000" Dst="2" />
+<file name="field.storage.node.field_system_note.yml" server="62.213.218.204" local="131478033545028223" remote="131466561000000000" Dst="2" />
+<file name="field.storage.node.field_website.yml" server="62.213.218.204" local="131478033546697737" remote="131466561000000000" Dst="2" />
+<file name="field.storage.node.field_weight.yml" server="62.213.218.204" local="131478033548043718" remote="131466561000000000" Dst="2" />
+<file name="image.style.banner.yml" server="62.213.218.204" local="131478033548293827" remote="131466561000000000" Dst="2" />
+<file name="image.style.small.yml" server="62.213.218.204" local="131478033549354457" remote="131466580800000000" Dst="2" />
+<file name="taxonomy.vocabulary.block_tags.yml" server="62.213.218.204" local="131478033549481116" remote="131466561000000000" Dst="2" />
+</dwsync>

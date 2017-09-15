@@ -1,0 +1,38 @@
+name: 'E2E Entity'
+description: 'Entity content type'
+type: module
+core: 8.x
+dependencies:
+  - e2e_content_types
+  - e2e_location
+  - e2e_paragraphs_button
+  - e2e_paragraphs_gallery
+  - e2e_paragraphs_hours_days
+  - e2e_paragraphs_map
+  - e2e_paragraphs_map_overview
+  - e2e_paragraphs_media
+  - e2e_paragraphs_menu
+  - e2e_paragraphs_overview
+  - e2e_paragraphs_references
+  - e2e_paragraphs_shortcuts
+  - e2e_paragraphs_slideshow
+  - e2e_paragraphs_system_block
+  - e2e_paragraphs_text
+  - e2e_person
+  - e2e_users
+  - entity_reference_revisions
+  - field
+  - field_group
+  - image
+  - imce
+  - link
+  - menu_ui
+  - node
+  - options
+  - paragraphs
+  - path
+  - taxonomy
+  - text
+  - user
+version: 8.x
+package: E2E

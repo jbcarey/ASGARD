@@ -1,0 +1,7 @@
+e2e_holidays.form:
+    path: '/admin/config/services/e2e-import-holidays'
+    defaults:
+        _form: 'Drupal\e2e_holidays\Form\HolidayImportForm'
+        _title: 'Import holidays'
+    requirements:
+        _permission: 'edit any holidays content'

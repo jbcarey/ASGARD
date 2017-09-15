@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.media.field_height
+    - field.field.paragraph.media.field_media_format
+    - field.field.paragraph.media.field_media_id
+    - field.field.paragraph.media.field_media_provider
+    - field.field.paragraph.media.field_title
+    - field.field.paragraph.media.field_width
+    - paragraphs.paragraphs_type.media
+id: paragraph.media.default
+targetEntityType: paragraph
+bundle: media
+mode: default
+content:
+  field_media_id:
+    type: string
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  created: true
+  field_height: true
+  field_media_format: true
+  field_media_provider: true
+  field_width: true
+  uid: true

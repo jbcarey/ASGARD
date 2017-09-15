@@ -1,0 +1,21 @@
+name: 'E2E Report'
+description: 'Report content type.'
+type: module
+core: 8.x
+dependencies:
+  - datetime
+  - e2e_content_types
+  - e2e_users
+  - field
+  - field_group
+  - file
+  - image
+  - menu_ui
+  - node
+  - options
+  - path
+  - taxonomy
+  - text
+  - user
+version: 8.x
+package: E2E

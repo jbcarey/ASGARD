@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.accordions.field_accordions
+    - field.field.paragraph.accordions.field_title
+    - paragraphs.paragraphs_type.accordions
+  module:
+    - paragraphs
+id: paragraph.accordions.default
+targetEntityType: paragraph
+bundle: accordions
+mode: default
+content:
+  field_accordions:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="core.base_field_override.node.downloads.sticky.yml" server="62.213.218.204" local="131478033586783968" remote="131466576600000000" Dst="2" />
+<file name="core.entity_form_display.node.downloads.default.yml" server="62.213.218.204" local="131478033586924090" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.downloads.default.yml" server="62.213.218.204" local="131478033588275236" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.downloads.teaser.yml" server="62.213.218.204" local="131478033588445338" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.downloads.teaser_large.yml" server="62.213.218.204" local="131478033589866321" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.downloads.teaser_small.yml" server="62.213.218.204" local="131478033589986418" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.downloads.body.yml" server="62.213.218.204" local="131478033591107211" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.downloads.thumbnail.yml" server="62.213.218.204" local="131478033591237299" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.downloads.field_block_tags.yml" server="62.213.218.204" local="131478033592748314" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.downloads.field_files.yml" server="62.213.218.204" local="131478033592868407" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.downloads.field_image.yml" server="62.213.218.204" local="131478033593929200" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.downloads.field_keywords.yml" server="62.213.218.204" local="131478033594034264" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.downloads.field_section.yml" server="62.213.218.204" local="131478033595502639" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.downloads.field_system_note.yml" server="62.213.218.204" local="131478033595632715" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.downloads.field_tags.yml" server="62.213.218.204" local="131478033597323986" remote="131466576600000000" Dst="2" />
+<file name="node.type.downloads.yml" server="62.213.218.204" local="131478033598626409" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.downloads.field_weight.yml" server="62.213.218.204" local="131478033598766501" remote="131466576600000000" Dst="2" />
+</dwsync>

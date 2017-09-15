@@ -1,0 +1,26 @@
+location_field_widget:
+  version: 1.x
+  js:
+    //maps.googleapis.com/maps/api/js?key=gapi_placeholderkey: {type: external}
+    js/location_field_widget.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+location_field:
+  version: 1.x
+  js:
+    //maps.googleapis.com/maps/api/js?libraries=places&key=gapi_placeholderkey: {type: external}
+location_field_map:
+  version: 1.x
+  js:
+    js/location_field_map.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+location_field_route:
+  version: 1.x
+  js:
+    js/location_field_route.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

@@ -1,0 +1,63 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+use Drupal\e2e_paragraphs_map_overview\Includes\MapOverviewParagraph;
+
+/*
+ * Implements hook_theme()
+ */
+function e2e_paragraphs_map_overview_theme(){
+  return array(
+    'paragraph_map_overview' => [
+      'variables' => ['filters' => NULL, 'searchfilter' => NULL,],
+      'template' => 'paragraph_map_overview',
+    ],
+  );
+}
+
+/*
+ * Implements hook_entity_view()
+ */
+function e2e_paragraphs_map_overview_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode){
+  
+  if($entity->getEntityTypeId() == 'paragraph' && $entity->bundle() == 'map_overview'){
+    
+    $paragraph = new MapOverviewParagraph($entity);
+    
+    $mapoverview = [];
+    
+    $mapoverview['#attached']['library'][] = 'e2e_paragraphs_map_overview/map_overview_paragraph';
+    $mapoverview['#attached']['drupalSettings']['e2e_paragraphs_map_overview'] = $paragraph->getDrupalSettings();
+    
+    $mapoverview['#filters'] = $paragraph->getFilters();
+    $mapoverview['#searchfilter'] = $paragraph->getSetting('search');
+    
+    $mapoverview['#theme'] = 'paragraph_map_overview';
+    
+    $build['field_location_type'] = $mapoverview;
+    
+    if($mapoverview['#filters'])
+      $build['#cache'] = array('max-age' => 0);
+  }
+}
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function e2e_paragraphs_map_overview_library_info_alter(&$libraries, $extension){
+  
+  if(isset($libraries['map_overview_paragraph']['js'])){
+
+    $config = \Drupal::config('e2e_location_field.settings');
+    $apikey = $config->get('e2e_location_field.google_maps_key');
+      
+    foreach($libraries['map_overview_paragraph']['js'] as $url => $params){
+      if(strpos($url, 'gapi_placeholderkey') !== FALSE){
+        $libraries['map_overview_paragraph']['js'][str_replace('gapi_placeholderkey', $apikey, $url)] = $params;
+        unset($libraries['map_overview_paragraph']['js'][$url]);
+      }
+    }
+  }
+}

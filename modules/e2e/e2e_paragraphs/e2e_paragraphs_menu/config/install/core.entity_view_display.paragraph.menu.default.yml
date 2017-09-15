@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.menu.field_menu
+    - field.field.paragraph.menu.field_title
+    - paragraphs.paragraphs_type.menu
+  module:
+    - e2e_menu_field
+id: paragraph.menu.default
+targetEntityType: paragraph
+bundle: menu
+mode: default
+content:
+  field_menu:
+    type: MenuFormatter
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  created: true
+  uid: true

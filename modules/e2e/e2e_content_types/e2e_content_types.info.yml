@@ -1,0 +1,19 @@
+name: 'E2E Content types'
+description: 'Helpers to manage the e2e content types'
+type: module
+core: 8.x
+dependencies:
+  - entity_reference_revisions
+  - field
+  - file
+  - image
+  - link
+  - node
+  - options
+  - paragraphs
+  - path
+  - taxonomy
+  - text
+  - user
+  - e2e_users
+package: E2E

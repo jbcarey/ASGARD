@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="core.base_field_override.node.report.sticky.yml" server="62.213.218.204" local="131478033843835748" remote="131466576600000000" Dst="2" />
+<file name="core.entity_form_display.node.report.default.yml" server="62.213.218.204" local="131478033843955857" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.report.default.yml" server="62.213.218.204" local="131478033845007151" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.report.teaser.yml" server="62.213.218.204" local="131478033845132258" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.report.teaser_large.yml" server="62.213.218.204" local="131478033846154208" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.report.teaser_small.yml" server="62.213.218.204" local="131478033846283255" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.report.thumbnail.yml" server="62.213.218.204" local="131478033847272683" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.report.body.yml" server="62.213.218.204" local="131478033847517383" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.report.field_block_tags.yml" server="62.213.218.204" local="131478033848726249" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.report.field_files.yml" server="62.213.218.204" local="131478033848866334" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.report.field_image.yml" server="62.213.218.204" local="131478033849793483" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.report.field_keywords.yml" server="62.213.218.204" local="131478033850098512" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.report.field_report_date.yml" server="62.213.218.204" local="131478033851112282" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.report.field_report_type.yml" server="62.213.218.204" local="131478033851312419" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.report.field_section.yml" server="62.213.218.204" local="131478033852394592" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.report.field_system_note.yml" server="62.213.218.204" local="131478033853383800" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.report.field_tags.yml" server="62.213.218.204" local="131478033853543914" remote="131466576600000000" Dst="2" />
+<file name="field.storage.node.field_report_date.yml" server="62.213.218.204" local="131478033854641283" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.report.field_weight.yml" server="62.213.218.204" local="131478033854871442" remote="131466576600000000" Dst="2" />
+<file name="node.type.report.yml" server="62.213.218.204" local="131478033855932199" remote="131466576600000000" Dst="2" />
+<file name="field.storage.node.field_report_type.yml" server="62.213.218.204" local="131478033856042274" remote="131466576600000000" Dst="2" />
+<file name="taxonomy.vocabulary.report_type.yml" server="62.213.218.204" local="131478033857312872" remote="131466576600000000" Dst="2" />
+</dwsync>

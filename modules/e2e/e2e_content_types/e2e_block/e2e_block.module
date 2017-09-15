@@ -1,0 +1,19 @@
+<?php
+
+use Drupal\e2e_block\Includes\BlockMarkup;
+
+
+/**
+ * Implement hook_preprocess_node()
+ * Add blocks to nodes on full view
+ */
+function e2e_block_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  
+  if($variables['view_mode'] == 'full' && !empty($node->field_block_tags) && !empty($node->field_block_tags->getValue()) && $node->getType() != 'block'){
+    
+    $markup = new BlockMarkup($node);
+    
+    $variables += $markup->getMarkup();
+  }
+}

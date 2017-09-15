@@ -1,0 +1,6 @@
+name: 'E2E Social'
+description: 'Display social buttons under nodes.'
+type: module
+core: 8.x
+version: 8.x
+package: E2E

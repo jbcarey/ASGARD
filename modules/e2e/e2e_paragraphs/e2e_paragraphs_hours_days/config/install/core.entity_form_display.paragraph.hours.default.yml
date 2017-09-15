@@ -1,0 +1,128 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hours.field_days
+    - field.field.paragraph.hours.field_holidays_reference
+    - field.field.paragraph.hours.field_hours_exceptions
+    - field.field.paragraph.hours.field_hours_friday
+    - field.field.paragraph.hours.field_hours_monday
+    - field.field.paragraph.hours.field_hours_saturday
+    - field.field.paragraph.hours.field_hours_sunday
+    - field.field.paragraph.hours.field_hours_thursday
+    - field.field.paragraph.hours.field_hours_tuesday
+    - field.field.paragraph.hours.field_hours_wednesday
+    - field.field.paragraph.hours.field_period
+    - field.field.paragraph.hours.field_period_name
+    - field.field.paragraph.hours.field_status_today
+    - field.field.paragraph.hours.field_status_tomorrow
+    - paragraphs.paragraphs_type.hours
+  module:
+    - datetime_range
+    - e2e_hours_field
+    - paragraphs
+id: paragraph.hours.default
+targetEntityType: paragraph
+bundle: hours
+mode: default
+content:
+  field_days:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_holidays_reference:
+    weight: 10
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_hours_exceptions:
+    type: entity_reference_paragraphs
+    weight: 9
+    settings:
+      title: Exception
+      title_plural: Exceptions
+      edit_mode: closed
+      add_mode: button
+      form_display_mode: default
+    third_party_settings: {  }
+    region: content
+  field_hours_friday:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: HoursWidget
+    region: content
+  field_hours_monday:
+    type: HoursWidget
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_hours_saturday:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: HoursWidget
+    region: content
+  field_hours_sunday:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: HoursWidget
+    region: content
+  field_hours_thursday:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: HoursWidget
+    region: content
+  field_hours_tuesday:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: HoursWidget
+    region: content
+  field_hours_wednesday:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: HoursWidget
+    region: content
+  field_period:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_period_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_status_today:
+    weight: 12
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_status_tomorrow:
+    weight: 13
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

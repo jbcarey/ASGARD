@@ -1,0 +1,7 @@
+accordion:
+  version: 1.x
+  js:
+    js/accordion.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

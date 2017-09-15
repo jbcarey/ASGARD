@@ -1,0 +1,5 @@
+e2e_location_field.form:
+    title: 'Location field settings'
+    description: 'Configure settings for location field module'
+    route_name: e2e_location_field.form
+    parent: 'system.admin_config_regional'

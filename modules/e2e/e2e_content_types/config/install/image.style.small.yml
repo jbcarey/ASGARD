@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: small
+label: 'Small (80 x 80)'
+effects:
+  9ec105be-3a1a-49e4-8043-056a602b62aa:
+    uuid: 9ec105be-3a1a-49e4-8043-056a602b62aa
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 80
+      height: 80

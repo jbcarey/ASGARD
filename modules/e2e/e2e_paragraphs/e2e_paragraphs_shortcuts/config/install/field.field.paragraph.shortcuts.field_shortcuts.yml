@@ -1,0 +1,62 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_shortcuts
+    - paragraphs.paragraphs_type.shortcut
+    - paragraphs.paragraphs_type.shortcuts
+  module:
+    - entity_reference_revisions
+id: paragraph.shortcuts.field_shortcuts
+field_name: field_shortcuts
+entity_type: paragraph
+bundle: shortcuts
+label: Shortcuts
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      shortcut: shortcut
+    target_bundles_drag_drop:
+      accordion:
+        weight: 14
+        enabled: false
+      accordions:
+        weight: 15
+        enabled: false
+      button:
+        weight: 16
+        enabled: false
+      gallery:
+        weight: 17
+        enabled: false
+      links:
+        weight: 19
+        enabled: false
+      map_overview:
+        weight: 20
+        enabled: false
+      media:
+        weight: 21
+        enabled: false
+      menu:
+        weight: 22
+        enabled: false
+      references:
+        weight: 23
+        enabled: false
+      shortcut:
+        enabled: true
+        weight: 24
+      shortcuts:
+        weight: 25
+        enabled: false
+      text:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

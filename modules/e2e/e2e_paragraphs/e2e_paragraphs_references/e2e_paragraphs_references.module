@@ -1,0 +1,35 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\e2e_paragraphs_references\Includes\ReferencesParagraph;
+
+/*
+ * Implements hook_theme()
+ */
+function e2e_paragraphs_references_theme(){
+  return array(
+    'paragraph_references' => array(
+      'variables' => array('references' => NULL, 'display' => NULL,),
+      'template' => 'paragraph_references',
+    ),
+  );
+}
+
+/*
+ * Implements hook_entity_view()
+ */
+function e2e_paragraphs_references_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode){
+  
+  if($entity->getEntityTypeId() == 'paragraph' && $entity->bundle() == 'references'){
+    
+    $paragraph = new ReferencesParagraph($entity);
+    
+    $build['field_content_reference'] = [
+      '#references' => $paragraph->getMarkup(),
+      '#display' => $paragraph->getDisplay(),
+      '#theme' => 'paragraph_references'
+    ];
+    
+  }
+}

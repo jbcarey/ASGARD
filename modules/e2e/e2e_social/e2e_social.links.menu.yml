@@ -1,0 +1,5 @@
+e2e_social.form:
+    title: 'Social Settings'
+    description: 'Social Button Settings'
+    route_name: e2e_social.form
+    parent: 'system.admin_config_services'

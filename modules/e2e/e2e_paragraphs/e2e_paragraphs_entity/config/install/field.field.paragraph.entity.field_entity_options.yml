@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_entity_options
+    - paragraphs.paragraphs_type.entity
+  module:
+    - options
+id: paragraph.entity.field_entity_options
+field_name: field_entity_options
+entity_type: paragraph
+bundle: entity
+label: Options
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,109 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bundles
+    - node.type.location
+    - paragraphs.paragraphs_type.accordions
+    - paragraphs.paragraphs_type.button
+    - paragraphs.paragraphs_type.gallery
+    - paragraphs.paragraphs_type.links
+    - paragraphs.paragraphs_type.map
+    - paragraphs.paragraphs_type.map_overview
+    - paragraphs.paragraphs_type.media
+    - paragraphs.paragraphs_type.menu
+    - paragraphs.paragraphs_type.overview
+    - paragraphs.paragraphs_type.references
+    - paragraphs.paragraphs_type.shortcuts
+    - paragraphs.paragraphs_type.slideshow
+    - paragraphs.paragraphs_type.system_block
+    - paragraphs.paragraphs_type.text
+  module:
+    - entity_reference_revisions
+id: node.location.field_bundles
+field_name: field_bundles
+entity_type: node
+bundle: location
+label: Bundles
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      accordions: accordions
+      button: button
+      entity: entity
+      gallery: gallery
+      links: links
+      map: map
+      map_overview: map_overview
+      media: media
+      menu: menu
+      overview: overview
+      shortcuts: shortcuts
+      slideshow: slideshow
+      system_block: system_block
+      text: text
+    target_bundles_drag_drop:
+      accordion:
+        weight: 22
+        enabled: false
+      accordions:
+        enabled: true
+        weight: 23
+      button:
+        enabled: true
+        weight: 24
+      entity:
+        enabled: true
+        weight: 25
+      gallery:
+        enabled: true
+        weight: 26
+      hours:
+        weight: 27
+        enabled: false
+      hours_exception:
+        weight: 28
+        enabled: false
+      links:
+        enabled: true
+        weight: 30
+      map:
+        enabled: true
+        weight: 31
+      map_overview:
+        enabled: true
+        weight: 32
+      media:
+        enabled: true
+        weight: 33
+      menu:
+        enabled: true
+        weight: 34
+      overview:
+        enabled: true
+        weight: 35
+      shortcut:
+        weight: 37
+        enabled: false
+      shortcuts:
+        enabled: true
+        weight: 38
+      slide:
+        weight: 39
+        enabled: false
+      slideshow:
+        enabled: true
+        weight: 40
+      system_block:
+        enabled: true
+        weight: 41
+      text:
+        enabled: true
+        weight: 42
+field_type: entity_reference_revisions

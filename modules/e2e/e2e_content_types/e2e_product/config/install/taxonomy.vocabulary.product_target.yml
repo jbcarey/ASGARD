@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Product target group'
+vid: product_target
+description: ''
+hierarchy: 0
+weight: 0

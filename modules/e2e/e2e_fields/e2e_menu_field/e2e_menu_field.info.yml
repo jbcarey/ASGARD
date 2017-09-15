@@ -1,0 +1,7 @@
+name: 'E2E Menu Field'
+description: 'Widget to display a menu in nodes and paragraphs.'
+type: module
+core: 8.x
+package: Field types
+dependencies: 
+    - field

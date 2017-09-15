@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hours_sunday
+    - paragraphs.paragraphs_type.hours
+  module:
+    - e2e_hours_field
+id: paragraph.hours.field_hours_sunday
+field_name: field_hours_sunday
+entity_type: paragraph
+bundle: hours
+label: Sunday
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: Hours

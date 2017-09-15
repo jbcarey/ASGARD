@@ -1,0 +1,10 @@
+{% if filters %}
+    <div class="grid gutter-small">
+    <div class="col grid3 col-type"><div class="node-block padding bg-light-blue"><h3 class="node-title">{{ 'Location types'|t }}</h3>{{  filters }}</div></div>
+{% endif %}
+<div id="map" class="field field-map" style="width:100%; height:{% if filters %}500px;{% else %}400px;{% endif %}"></div>
+
+{% if searchfilter %}<input id="map-search" type="text" placeholder="{{ 'Search street'|t }}" style="margin-top:9px;" />{% endif %}
+{% if filters %}
+    </div>
+{% endif %}

@@ -1,0 +1,7 @@
+e2e_location_field.form:
+    path: '/admin/config/regional/e2e-location-field'
+    defaults:
+        _form: 'Drupal\e2e_location_field\Form\LocationFieldForm'
+        _title: 'Location field settings'
+    requirements:
+        _permission: 'administer site configuration'

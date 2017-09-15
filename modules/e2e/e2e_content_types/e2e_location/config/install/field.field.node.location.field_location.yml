@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.location
+  module:
+    - e2e_location_field
+id: node.location.field_location
+field_name: field_location
+entity_type: node
+bundle: location
+label: Location
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    title: null
+    street: ''
+    street_nr: ''
+    zip_code: '1000'
+    city: Brussel
+    state: Oost-Vlaanderen
+    country: België
+    lat: '50.8427501'
+    lng: '4.351549900000009'
+    info: null
+    marker: marker-red
+default_value_callback: ''
+settings: {  }
+field_type: Location

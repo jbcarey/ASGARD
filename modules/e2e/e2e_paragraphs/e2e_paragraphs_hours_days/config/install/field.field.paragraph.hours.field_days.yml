@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_days
+    - paragraphs.paragraphs_type.hours
+  module:
+    - datetime_range
+id: paragraph.hours.field_days
+field_name: field_days
+entity_type: paragraph
+bundle: hours
+label: 'Days off'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

@@ -1,0 +1,13 @@
+name: 'E2E Entity Paragraph'
+description: 'Show entity data.'
+type: module
+core: 8.x
+version: 8.x
+package: E2E
+dependencies:
+  - e2e_entity
+  - e2e_paragraphs
+  - field
+  - node
+  - options
+  - paragraphs

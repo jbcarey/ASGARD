@@ -1,0 +1,86 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hours_exceptions
+    - paragraphs.paragraphs_type.hours
+    - paragraphs.paragraphs_type.hours_exception
+  module:
+    - entity_reference_revisions
+id: paragraph.hours.field_hours_exceptions
+field_name: field_hours_exceptions
+entity_type: paragraph
+bundle: hours
+label: Exceptions
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      hours_exception: hours_exception
+    target_bundles_drag_drop:
+      hours_exception:
+        enabled: true
+        weight: 21
+      accordion:
+        weight: 22
+        enabled: false
+      accordions:
+        weight: 23
+        enabled: false
+      button:
+        weight: 24
+        enabled: false
+      entity:
+        weight: 25
+        enabled: false
+      gallery:
+        weight: 26
+        enabled: false
+      hours:
+        weight: 27
+        enabled: false
+      jscript:
+        weight: 28
+        enabled: false
+      links:
+        weight: 29
+        enabled: false
+      map_overview:
+        weight: 30
+        enabled: false
+      media:
+        weight: 31
+        enabled: false
+      menu:
+        weight: 32
+        enabled: false
+      overview:
+        weight: 33
+        enabled: false
+      references:
+        weight: 34
+        enabled: false
+      shortcut:
+        weight: 35
+        enabled: false
+      shortcuts:
+        weight: 36
+        enabled: false
+      slide:
+        weight: 37
+        enabled: false
+      slideshow:
+        weight: 38
+        enabled: false
+      system_block:
+        weight: 39
+        enabled: false
+      text:
+        weight: 40
+        enabled: false
+field_type: entity_reference_revisions

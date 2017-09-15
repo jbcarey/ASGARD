@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.thumbnail
+    - field.field.node.newsletter_content.field_bundles
+    - field.field.node.newsletter_content.field_image
+    - field.field.node.newsletter_content.field_keywords
+    - field.field.node.newsletter_content.field_section
+    - field.field.node.newsletter_content.field_system_note
+    - image.style.thumbnail
+    - node.type.newsletter_content
+  module:
+    - image
+    - user
+id: node.newsletter_content.thumbnail
+targetEntityType: node
+bundle: newsletter_content
+mode: thumbnail
+content:
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  field_bundles: true
+  field_keywords: true
+  field_section: true
+  field_system_note: true
+  links: true

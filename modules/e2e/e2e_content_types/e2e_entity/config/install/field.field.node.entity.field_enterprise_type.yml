@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_enterprise_type
+    - node.type.entity
+    - taxonomy.vocabulary.enterprise_type
+id: node.entity.field_enterprise_type
+field_name: field_enterprise_type
+entity_type: node
+bundle: entity
+label: 'Enterprise type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      enterprise_type: enterprise_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

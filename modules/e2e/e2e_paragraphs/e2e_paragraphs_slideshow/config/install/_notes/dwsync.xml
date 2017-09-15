@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="core.entity_form_display.paragraph.slide.default.yml" server="62.213.218.204" local="131478034165486143" remote="131474551800000000" Dst="2" />
+<file name="core.entity_form_display.paragraph.slideshow.default.yml" server="62.213.218.204" local="131478034165616212" remote="131474551800000000" Dst="2" />
+<file name="core.entity_view_display.paragraph.slide.default.yml" server="62.213.218.204" local="131478034166572687" remote="131474551800000000" Dst="2" />
+<file name="core.entity_view_display.paragraph.slideshow.default.yml" server="62.213.218.204" local="131478034166812853" remote="131474551800000000" Dst="2" />
+<file name="field.field.paragraph.slide.field_image.yml" server="62.213.218.204" local="131478034167984476" remote="131474551800000000" Dst="2" />
+<file name="field.field.paragraph.slide.field_horizontal_align.yml" server="62.213.218.204" local="131478034168114373" remote="131474551800000000" Dst="2" />
+<file name="field.field.paragraph.slide.field_link.yml" server="62.213.218.204" local="131478034169127663" remote="131474551800000000" Dst="2" />
+<file name="field.field.paragraph.slide.field_text.yml" server="62.213.218.204" local="131478034169237729" remote="131474551800000000" Dst="2" />
+<file name="field.field.paragraph.slide.field_title.yml" server="62.213.218.204" local="131478034170138357" remote="131474551800000000" Dst="2" />
+<file name="field.field.paragraph.slide.field_vertical_align.yml" server="62.213.218.204" local="131478034170268442" remote="131474551800000000" Dst="2" />
+<file name="field.field.paragraph.slideshow.field_slide_navigation.yml" server="62.213.218.204" local="131478034171315042" remote="131474551800000000" Dst="2" />
+<file name="field.field.paragraph.slideshow.field_slide_autoplay.yml" server="62.213.218.204" local="131478034171465137" remote="131474551800000000" Dst="2" />
+<file name="field.field.paragraph.slideshow.field_slide_pagination.yml" server="62.213.218.204" local="131478034172494123" remote="131474551800000000" Dst="2" />
+<file name="field.field.paragraph.slideshow.field_slide_transition.yml" server="62.213.218.204" local="131478034172725131" remote="131474551800000000" Dst="2" />
+<file name="field.field.paragraph.slideshow.field_slides.yml" server="62.213.218.204" local="131478034173812083" remote="131474551800000000" Dst="2" />
+<file name="field.field.paragraph.slideshow.field_title.yml" server="62.213.218.204" local="131478034174922869" remote="131474551800000000" Dst="2" />
+<file name="field.storage.paragraph.field_horizontal_align.yml" server="62.213.218.204" local="131478034175017948" remote="131474551800000000" Dst="2" />
+<file name="field.storage.paragraph.field_slide_autoplay.yml" server="62.213.218.204" local="131478034176076453" remote="131474551800000000" Dst="2" />
+<file name="field.storage.paragraph.field_slide_navigation.yml" server="62.213.218.204" local="131478034176196544" remote="131474551800000000" Dst="2" />
+<file name="field.storage.paragraph.field_slide_pagination.yml" server="62.213.218.204" local="131478034177402469" remote="131474551800000000" Dst="2" />
+<file name="field.storage.paragraph.field_slide_transition.yml" server="62.213.218.204" local="131478034177511777" remote="131474551800000000" Dst="2" />
+<file name="field.storage.paragraph.field_vertical_align.yml" server="62.213.218.204" local="131478034178505051" remote="131474551800000000" Dst="2" />
+<file name="image.style.slide.yml" server="62.213.218.204" local="131478034178625127" remote="131474551800000000" Dst="2" />
+<file name="field.storage.paragraph.field_slides.yml" server="62.213.218.204" local="131478034178765221" remote="131474551800000000" Dst="2" />
+<file name="paragraphs.paragraphs_type.slide.yml" server="62.213.218.204" local="131478034179463741" remote="131474551800000000" Dst="2" />
+<file name="paragraphs.paragraphs_type.slideshow.yml" server="62.213.218.204" local="131478034180404401" remote="131474551800000000" Dst="2" />
+</dwsync>

@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_small
+    - field.field.node.newsletter_content.field_bundles
+    - field.field.node.newsletter_content.field_image
+    - field.field.node.newsletter_content.field_keywords
+    - field.field.node.newsletter_content.field_section
+    - field.field.node.newsletter_content.field_system_note
+    - image.style.small
+    - node.type.newsletter_content
+  module:
+    - image
+    - user
+id: node.newsletter_content.teaser_small
+targetEntityType: node
+bundle: newsletter_content
+mode: teaser_small
+content:
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: small
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  field_bundles: true
+  field_keywords: true
+  field_section: true
+  field_system_note: true
+  links: true

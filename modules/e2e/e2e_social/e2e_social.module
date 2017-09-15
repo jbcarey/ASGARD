@@ -1,0 +1,37 @@
+<?php
+
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Url;
+
+function e2e_social_theme(){
+  return [
+    'social_buttons' => [
+      'variables' => ['url' => NULL, 'settings' => NULL],
+      'template' => 'social_buttons',
+    ],
+  ];
+}
+
+function e2e_social_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode){
+  
+  if($entity->show_social_buttons->value && $view_mode == 'full'){
+    
+    $build['social_buttons'] = [
+      '#theme' => 'social_buttons',
+      '#weight' => 100,
+      '#url' => Url::fromRoute('<current>',[], ['absolute' => TRUE,])->toString(),
+      '#settings' => [],
+    ];
+    
+    $config = \Drupal::config('e2e_social.settings');
+    $fields = ['facebook', 'twitter', 'linkedin', 'googleplus', 'instagram', 'pinterest',];
+    
+    foreach($fields as $field){
+      $build['social_buttons']['#settings'][$field] = $config->get('e2e_social.' . $field); 
+    }
+  }
+}
+
+
+

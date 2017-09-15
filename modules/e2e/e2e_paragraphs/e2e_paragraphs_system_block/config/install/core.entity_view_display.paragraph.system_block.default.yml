@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.system_block.field_block_id
+    - paragraphs.paragraphs_type.system_block
+id: paragraph.system_block.default
+targetEntityType: paragraph
+bundle: system_block
+mode: default
+content: {  }
+hidden:
+  created: true
+  field_block_id: true
+  uid: true

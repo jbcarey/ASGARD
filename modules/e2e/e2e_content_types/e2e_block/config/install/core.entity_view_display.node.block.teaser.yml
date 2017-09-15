@@ -1,0 +1,33 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.block.field_block_style
+    - field.field.node.block.field_block_tags
+    - field.field.node.block.field_bundles
+    - field.field.node.block.field_images
+    - field.field.node.block.field_position
+    - field.field.node.block.field_section
+    - field.field.node.block.field_system_note
+    - field.field.node.block.field_weight
+    - node.type.block
+  module:
+    - user
+id: node.block.teaser
+targetEntityType: node
+bundle: block
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_block_style: true
+  field_block_tags: true
+  field_bundles: true
+  field_images: true
+  field_position: true
+  field_section: true
+  field_system_note: true
+  field_weight: true

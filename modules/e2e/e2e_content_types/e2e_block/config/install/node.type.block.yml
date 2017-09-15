@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Block
+type: block
+description: 'Use <em>blocks</em> to display content in Drupal blocks outside the main content.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

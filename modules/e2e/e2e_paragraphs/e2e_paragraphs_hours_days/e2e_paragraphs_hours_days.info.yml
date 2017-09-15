@@ -1,0 +1,15 @@
+name: 'E2E Hours and Days Paragraph'
+description: 'Opening hours and closing days with status and microdata.'
+type: module
+core: 8.x
+dependencies:
+  - datetime
+  - datetime_range
+  - e2e_holidays
+  - e2e_hours_field
+  - entity_reference_revisions
+  - field
+  - node
+  - paragraphs
+version: 8.x
+package: E2E

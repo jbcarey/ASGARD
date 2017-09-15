@@ -1,0 +1,8 @@
+map_overview_paragraph:
+  version: 1.x
+  js:
+    //maps.googleapis.com/maps/api/js?libraries=places&key=gapi_placeholderkey: {type: external}
+    js/map_overview.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

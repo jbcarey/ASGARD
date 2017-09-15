@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.holidays.field_days
+    - field.field.node.holidays.field_keywords
+    - field.field.node.holidays.field_system_note
+    - field.field.node.holidays.field_tags
+    - field.field.node.holidays.field_weight
+    - node.type.holidays
+  module:
+    - user
+id: node.holidays.teaser
+targetEntityType: node
+bundle: holidays
+mode: teaser
+content: {  }
+hidden:
+  field_days: true
+  field_keywords: true
+  field_system_note: true
+  field_tags: true
+  field_weight: true
+  links: true

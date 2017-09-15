@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Newsletter category'
+vid: newsletter_category
+description: 'Category for custom newsletters.'
+hierarchy: 0
+weight: 0

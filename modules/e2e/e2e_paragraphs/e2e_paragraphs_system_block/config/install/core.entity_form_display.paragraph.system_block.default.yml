@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.system_block.field_block_id
+    - paragraphs.paragraphs_type.system_block
+id: paragraph.system_block.default
+targetEntityType: paragraph
+bundle: system_block
+mode: default
+content:
+  field_block_id:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

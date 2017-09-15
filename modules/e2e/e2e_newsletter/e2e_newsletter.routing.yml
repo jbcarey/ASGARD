@@ -1,0 +1,28 @@
+entity.newslettertheme.list:
+    path: '/admin/config/services/e2e-newsletter'
+    defaults:
+        _entity_list: 'newslettertheme'
+        _title: 'Newsletter themes'
+    requirements:
+        _permission: 'administer site configuration'
+entity.newslettertheme.add_form:
+    path: '/admin/config/services/e2e-newsletter/add'
+    defaults:
+        _entity_form: 'newslettertheme.add'
+        _title: 'Add newsletter theme'
+    requirements:
+        _permission: 'administer site configuration'
+entity.newslettertheme.edit_form:
+    path: '/admin/config/services/e2e-newsletter/{newslettertheme}'
+    defaults:
+        _entity_form: 'newslettertheme.edit'
+        _title: 'Edit newsletter theme'
+    requirements:
+        _permission: 'administer site configuration'
+entity.newslettertheme.delete_form:
+    path: '/admin/config/services/e2e-newsletter/delete/{newslettertheme}'
+    defaults:
+        _entity_form: 'newslettertheme.delete'
+        _title: 'Delete newsletter theme'
+    requirements:
+        _permission: 'administer site configuration'

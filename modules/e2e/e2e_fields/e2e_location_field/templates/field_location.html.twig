@@ -1,0 +1,13 @@
+{% if map %}
+  <div class="map" style="width:400px;height:320px;"></div>
+{% endif %}
+
+{% if addresses %}
+    {% for address in addresses %}
+    <address class="field field-address">
+      <span class="street">{{ address.street }} {{ address.street_nr }}</span><br/>
+      <span class="city">{{ address.zip_code }} {{ address.city }}</span>
+      <span class="state-country hidden"><br/>{{ address.state }} {{ address.country }}</span>
+    </address>
+    {% endfor %}
+{% endif %}

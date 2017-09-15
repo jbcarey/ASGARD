@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.newsletter_content.field_bundles
+    - field.field.node.newsletter_content.field_image
+    - field.field.node.newsletter_content.field_keywords
+    - field.field.node.newsletter_content.field_section
+    - field.field.node.newsletter_content.field_system_note
+    - image.style.medium
+    - node.type.newsletter_content
+  module:
+    - entity_reference_revisions
+    - image
+    - user
+id: node.newsletter_content.teaser
+targetEntityType: node
+bundle: newsletter_content
+mode: teaser
+content:
+  field_bundles:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_image:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  field_keywords: true
+  field_section: true
+  field_system_note: true
+  links: true

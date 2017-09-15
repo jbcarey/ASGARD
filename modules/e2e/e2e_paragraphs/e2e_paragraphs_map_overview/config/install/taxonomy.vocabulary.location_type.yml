@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Location type'
+vid: location_type
+description: 'Location type for map overview paragraph.'
+hierarchy: 0
+weight: 0

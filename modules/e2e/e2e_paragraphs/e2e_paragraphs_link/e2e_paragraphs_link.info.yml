@@ -1,0 +1,11 @@
+name: 'E2E Links Paragraph'
+description: "Create links with paragraphs\r\n"
+type: module
+core: 8.x
+dependencies:
+  - e2e_paragraphs
+  - field
+  - link
+  - paragraphs
+version: 8.x
+package: E2E

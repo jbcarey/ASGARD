@@ -1,0 +1,28 @@
+e2e_subsites.subsite.*:
+    type: config_entity
+    label: 'Subsite Settings'
+    mapping:
+        id:
+            type: string
+            label: 'ID'
+        label:
+            type: label
+            label: 'Label'
+        theme:
+            type: string
+            label: 'Theme'
+        section:
+            type: integer
+            label: 'Section'
+        role:
+            type: string
+            label: 'Role'
+        weight:
+            type: integer
+            label: 'Weight'
+        paths:
+            type: text
+            label: 'Paths'
+        nodetypepaths:
+            type: text
+            label: 'Node type paths'

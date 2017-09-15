@@ -1,0 +1,62 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.slide.field_horizontal_align
+    - field.field.paragraph.slide.field_image
+    - field.field.paragraph.slide.field_link
+    - field.field.paragraph.slide.field_text
+    - field.field.paragraph.slide.field_title
+    - field.field.paragraph.slide.field_vertical_align
+    - image.style.slide
+    - paragraphs.paragraphs_type.slide
+  module:
+    - image
+    - link
+    - text
+id: paragraph.slide.default
+targetEntityType: paragraph
+bundle: slide
+mode: default
+content:
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: slide
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_text:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  created: true
+  field_horizontal_align: true
+  field_vertical_align: true
+  uid: true

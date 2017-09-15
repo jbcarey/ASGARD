@@ -1,0 +1,7 @@
+e2e_social.form:
+    path: '/admin/config/services/e2e-social-settings'
+    defaults:
+        _form: 'Drupal\e2e_social\Form\SocialForm'
+        _title: 'Social Button Settings'
+    requirements:
+        _permission: 'administer site configuration'

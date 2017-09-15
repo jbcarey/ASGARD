@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_order
+field_name: field_order
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: title
+      label: Alphabetical
+    -
+      value: created
+      label: 'Creation date'
+    -
+      value: changed
+      label: 'Last edited'
+    -
+      value: field_weight.value
+      label: Weight
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,73 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+/**
+ * Implements hook_theme_registry_alter
+ */
+function e2e_paragraphs_slideshow_theme_registry_alter(&$theme_registry) {
+  
+  $types = ['slideshow', 'slide'];
+  $templatepath = drupal_get_path('module', 'e2e_paragraphs_slideshow');
+  
+  //field__entity_reference_revisions
+  //field__field_slides
+  
+  foreach($types as $type){
+    $theme_registry['paragraph__' . $type] = $theme_registry['paragraph'];
+    $theme_registry['paragraph__' . $type]['template'] = 'paragraph_' . $type;
+    $theme_registry['paragraph__' . $type]['theme path'] = $templatepath;
+    $theme_registry['paragraph__' . $type]['path'] = $templatepath . '/templates';
+  }
+  
+  //render slides field without field wrapper
+  $theme_registry['field__field_slides'] = $theme_registry['field'];
+  $theme_registry['field__field_slides']['template'] = 'field_slides';
+  $theme_registry['field__field_slides']['theme path'] = $templatepath;
+  $theme_registry['field__field_slides']['path'] = $templatepath . '/templates';
+  
+}
+
+/*
+ * Implements hook_entity_view()
+ */
+function e2e_paragraphs_slideshow_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode){
+  
+  if($entity->getEntityTypeId() == 'paragraph'){
+    
+    if($entity->bundle() == 'slide') {
+      
+      $va = 'va-' . $entity->field_vertical_align->value;
+      $ta = 'ta-' . $entity->field_horizontal_align->value;
+      $build['#classes'] = trim($va . ' ' . $ta);
+      
+    }elseif($entity->bundle() == 'slideshow') {
+      
+      $pagination = ((bool)$entity->field_slide_pagination->value)?'.swiper-pagination':NULL;
+      
+      if((bool)$entity->field_slide_navigation->value){
+        $nextButton = '.swiper-button-next';
+        $prevButton = '.swiper-button-prev';
+      }else{
+        $nextButton = $prevButton = NULL;
+      }
+      
+      $build['#settings'] = [
+        'direction' => 'horizontal',
+        'loop' => TRUE,
+		    'pagination' => $pagination,
+        'prevButton' => $prevButton,
+		    'nextButton' => $nextButton,
+		    'autoplay' => is_numeric($entity->field_slide_autoplay->value) ? $entity->field_slide_autoplay->value : FALSE,
+		    'effect' => !is_bool($entity->field_slide_transition->value) ? $entity->field_slide_transition->value : FALSE,
+      ];
+      
+      $build['#attached']['library'][] = 'e2e_paragraphs_slideshow/swiper';
+      $build['#attached']['library'][] = 'e2e_paragraphs_slideshow/slideshow';
+      $build['#attached']['drupalSettings']['e2e_paragraphs_slideshow'] = $build['#settings'];
+      
+	}
+    
+  }
+}

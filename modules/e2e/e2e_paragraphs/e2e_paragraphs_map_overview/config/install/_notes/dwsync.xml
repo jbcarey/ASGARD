@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="core.entity_view_display.paragraph.map_overview.default.yml" server="62.213.218.204" local="131478034067450555" remote="131466517200000000" Dst="2" />
+<file name="core.entity_form_display.paragraph.map_overview.default.yml" server="62.213.218.204" local="131478034067570624" remote="131466517200000000" Dst="2" />
+<file name="field.field.paragraph.map_overview.field_map_filters.yml" server="62.213.218.204" local="131478034068546502" remote="131466517200000000" Dst="2" />
+<file name="field.field.paragraph.map_overview.field_location_type.yml" server="62.213.218.204" local="131478034068665645" remote="131466517200000000" Dst="2" />
+<file name="field.field.paragraph.map_overview.field_map_search.yml" server="62.213.218.204" local="131478034069626581" remote="131466517200000000" Dst="2" />
+<file name="field.field.paragraph.map_overview.field_map_places.yml" server="62.213.218.204" local="131478034069756666" remote="131466517200000000" Dst="2" />
+<file name="field.field.paragraph.map_overview.field_title.yml" server="62.213.218.204" local="131478034070696864" remote="131466517200000000" Dst="2" />
+<file name="field.field.paragraph.map_overview.field_tags.yml" server="62.213.218.204" local="131478034070832072" remote="131466517200000000" Dst="2" />
+<file name="field.storage.paragraph.field_location_type.yml" server="62.213.218.204" local="131478034071712653" remote="131466517200000000" Dst="2" />
+<file name="field.storage.paragraph.field_map_filters.yml" server="62.213.218.204" local="131478034071837764" remote="131466517200000000" Dst="2" />
+<file name="field.storage.paragraph.field_map_search.yml" server="62.213.218.204" local="131478034073135586" remote="131466517200000000" Dst="2" />
+<file name="field.storage.paragraph.field_map_places.yml" server="62.213.218.204" local="131478034073285769" remote="131466517200000000" Dst="2" />
+<file name="paragraphs.paragraphs_type.map_overview.yml" server="62.213.218.204" local="131478034074660882" remote="131466517200000000" Dst="2" />
+<file name="taxonomy.vocabulary.location_type.yml" server="62.213.218.204" local="131478034074841495" remote="131466517200000000" Dst="2" />
+</dwsync>

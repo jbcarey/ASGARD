@@ -1,0 +1,15 @@
+name: 'E2E Overview Paragraphs'
+description: 'Show content overviews'
+type: module
+core: 8.x
+dependencies:
+  - e2e_content_types_field
+  - e2e_paragraphs
+  - e2e_users
+  - field
+  - field_group
+  - options
+  - paragraphs
+  - taxonomy
+version: 8.x
+package: E2E

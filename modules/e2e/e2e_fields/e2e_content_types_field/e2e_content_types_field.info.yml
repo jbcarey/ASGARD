@@ -1,0 +1,7 @@
+name: 'E2E Content Types Field'
+description: 'Provides Content Types field widget. '
+type: module
+core: 8.x
+package: Field types
+dependencies: 
+    - field

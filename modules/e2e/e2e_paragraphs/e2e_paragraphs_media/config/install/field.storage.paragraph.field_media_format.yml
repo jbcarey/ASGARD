@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_media_format
+field_name: field_media_format
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 560px_315px
+      label: '560 x 315'
+    -
+      value: 640px_360px
+      label: '640 x 360'
+    -
+      value: 853px_480px
+      label: '853 x 480'
+    -
+      value: 1280px_720px
+      label: '1280 x 720'
+    -
+      value: custom
+      label: Custom
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Enterprise type'
+vid: enterprise_type
+description: 'Enterprise type for content type entity'
+hierarchy: 0
+weight: 0

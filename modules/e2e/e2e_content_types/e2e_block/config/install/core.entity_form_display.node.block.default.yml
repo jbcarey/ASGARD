@@ -1,0 +1,192 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.block.field_block_style
+    - field.field.node.block.field_block_tags
+    - field.field.node.block.field_bundles
+    - field.field.node.block.field_images
+    - field.field.node.block.field_position
+    - field.field.node.block.field_section
+    - field.field.node.block.field_system_note
+    - field.field.node.block.field_weight
+    - image.style.thumbnail
+    - node.type.block
+  module:
+    - field_group
+    - image
+    - imce
+    - paragraphs
+    - path
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_system
+        - group_content
+        - group_images
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      format_settings:
+        label: Tabs
+        direction: horizontal
+        id: ''
+        classes: ''
+      label: Tabs
+    group_system:
+      children:
+        - field_section
+        - field_system_note
+        - field_block_tags
+        - field_weight
+        - field_position
+        - field_block_style
+      parent_name: group_tabs
+      weight: 7
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: System
+    group_content:
+      children:
+        - field_bundles
+      parent_name: group_tabs
+      weight: 8
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Content
+    group_images:
+      children:
+        - field_images
+      parent_name: group_tabs
+      weight: 9
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Images
+id: node.block.default
+targetEntityType: node
+bundle: block
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_block_style:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_block_tags:
+    weight: 28
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_bundles:
+    weight: 15
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_images:
+    weight: 16
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+    region: content
+  field_position:
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_section:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_system_note:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_weight:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  path:
+    type: path
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    third_party_settings: {  }
+    region: content
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

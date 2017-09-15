@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_height
+    - paragraphs.paragraphs_type.media
+id: paragraph.media.field_height
+field_name: field_height
+entity_type: paragraph
+bundle: media
+label: Height
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

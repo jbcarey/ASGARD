@@ -1,0 +1,38 @@
+name: 'E2E Event'
+description: 'Event content type'
+type: module
+core: 8.x
+dependencies:
+  - datetime_range
+  - e2e_content_types
+  - e2e_hours_field
+  - e2e_location_field
+  - e2e_paragraphs_button
+  - e2e_paragraphs_entity
+  - e2e_paragraphs_gallery
+  - e2e_paragraphs_map
+  - e2e_paragraphs_map_overview
+  - e2e_paragraphs_media
+  - e2e_paragraphs_menu
+  - e2e_paragraphs_overview
+  - e2e_paragraphs_references
+  - e2e_paragraphs_shortcuts
+  - e2e_paragraphs_slideshow
+  - e2e_paragraphs_system_block
+  - e2e_paragraphs_text
+  - e2e_users
+  - entity_reference_revisions
+  - field
+  - field_group
+  - image
+  - imce
+  - menu_ui
+  - node
+  - options
+  - paragraphs
+  - path
+  - taxonomy
+  - text
+  - user
+version: 8.x
+package: E2E

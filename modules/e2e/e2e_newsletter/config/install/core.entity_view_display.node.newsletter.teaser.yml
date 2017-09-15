@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.newsletter.body
+    - field.field.node.newsletter.field_banner
+    - field.field.node.newsletter.field_keywords
+    - field.field.node.newsletter.field_newsletter_bottom
+    - field.field.node.newsletter.field_newsletter_category
+    - field.field.node.newsletter.field_newsletter_left
+    - field.field.node.newsletter.field_newsletter_middle
+    - field.field.node.newsletter.field_newsletter_right
+    - field.field.node.newsletter.field_newsletter_top
+    - field.field.node.newsletter.field_section
+    - field.field.node.newsletter.field_system_note
+    - node.type.newsletter
+  module:
+    - text
+    - user
+id: node.newsletter.teaser
+targetEntityType: node
+bundle: newsletter
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 0
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_banner: true
+  field_keywords: true
+  field_newsletter_bottom: true
+  field_newsletter_category: true
+  field_newsletter_left: true
+  field_newsletter_middle: true
+  field_newsletter_right: true
+  field_newsletter_top: true
+  field_section: true
+  field_system_note: true
+  links: true

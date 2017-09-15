@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_menu_access
+    - taxonomy.vocabulary.section
+  module:
+    - options
+id: taxonomy_term.section.field_menu_access
+field_name: field_menu_access
+entity_type: taxonomy_term
+bundle: section
+label: 'Menu access'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

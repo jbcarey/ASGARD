@@ -1,0 +1,93 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bundles
+    - node.type.newsletter_content
+    - paragraphs.paragraphs_type.button
+    - paragraphs.paragraphs_type.links
+    - paragraphs.paragraphs_type.text
+  module:
+    - entity_reference_revisions
+id: node.newsletter_content.field_bundles
+field_name: field_bundles
+entity_type: node
+bundle: newsletter_content
+label: Bundles
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      button: button
+      links: links
+      text: text
+    target_bundles_drag_drop:
+      accordion:
+        weight: 22
+        enabled: false
+      accordions:
+        weight: 23
+        enabled: false
+      button:
+        enabled: true
+        weight: 24
+      entity:
+        weight: 25
+        enabled: false
+      gallery:
+        weight: 26
+        enabled: false
+      hours:
+        weight: 27
+        enabled: false
+      hours_exception:
+        weight: 28
+        enabled: false
+      jscript:
+        weight: 29
+        enabled: false
+      links:
+        enabled: true
+        weight: 30
+      map:
+        weight: 31
+        enabled: false
+      map_overview:
+        weight: 32
+        enabled: false
+      media:
+        weight: 33
+        enabled: false
+      menu:
+        weight: 34
+        enabled: false
+      overview:
+        weight: 35
+        enabled: false
+      references:
+        weight: 36
+        enabled: false
+      shortcut:
+        weight: 37
+        enabled: false
+      shortcuts:
+        weight: 38
+        enabled: false
+      slide:
+        weight: 39
+        enabled: false
+      slideshow:
+        weight: 40
+        enabled: false
+      system_block:
+        weight: 41
+        enabled: false
+      text:
+        enabled: true
+        weight: 42
+field_type: entity_reference_revisions

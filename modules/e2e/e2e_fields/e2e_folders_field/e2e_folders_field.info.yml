@@ -1,0 +1,7 @@
+name: 'E2E Folders Field'
+description: 'Provides Folders field widget. '
+type: module
+core: 8.x
+package: Field types
+dependencies: 
+    - field

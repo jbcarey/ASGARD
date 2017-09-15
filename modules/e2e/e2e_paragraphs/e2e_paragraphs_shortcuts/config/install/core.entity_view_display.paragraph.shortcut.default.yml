@@ -1,0 +1,46 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.shortcut.field_icon
+    - field.field.paragraph.shortcut.field_link
+    - field.field.paragraph.shortcut.field_text
+    - paragraphs.paragraphs_type.shortcut
+  module:
+    - link
+    - options
+    - text
+id: paragraph.shortcut.default
+targetEntityType: paragraph
+bundle: shortcut
+mode: default
+content:
+  field_icon:
+    type: list_default
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_link:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_text:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  created: true
+  uid: true

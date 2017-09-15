@@ -1,0 +1,21 @@
+<div class="social-buttons field">
+    {% if settings.facebook %}
+        <a class="iblock social-button icon icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url}}" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{ url }}', 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Delen</a>
+    {% endif %}
+    {% if settings.twitter %}
+        <a class="iblock social-button icon icon-twitter" href="https://twitter.com/home?status={{url}}" onclick="window.open('https://twitter.com/home?status={{ url }}', 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Tweet</a>
+    {% endif %}
+    {% if settings.linkedin %}
+        <a class="iblock social-button icon icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url }}', 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">Linkedin</a>
+    {% endif %}
+    {% if settings.googleplus %}
+        <a class="iblock social-button icon icon-google-plus" href="https://plus.google.com/share?url={{ url }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">Google+</a>
+    {% endif %}
+    {% if settings.instagram %}
+        <a class="iblock ig-follow social-button icon icon-instagram" href="#" data-id="5479dee" data-handle="igfbdotcom" data-count="false" data-size="large" data-username="false">Volgen</a>
+        <script>(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src="//x.instagramfollowbutton.com/follow.js";s.parentNode.insertBefore(g,s);}(document,"script"));</script>
+    {% endif %}
+    {% if settings.pinterest %}
+        <a class="iblock social-button icon icon-pinterest" href="http://pinterest.com/pin/create/button/?url={{ url }}" class="pin-it-button" count-layout="horizontal" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">Pinterest</a>
+    {% endif %}
+</div>

@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_slide_autoplay
+field_name: field_slide_autoplay
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'false'
+      label: 'Off'
+    -
+      value: '10000'
+      label: Slow
+    -
+      value: '5000'
+      label: Normal
+    -
+      value: '3000'
+      label: Fast
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

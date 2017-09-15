@@ -1,0 +1,73 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\e2e_paragraphs_hours_days\Includes\HoursDaysParagraph;
+
+/*
+ * Implements hook_theme()
+ */
+function e2e_paragraphs_hours_days_theme(){
+  return array(
+    'paragraph_hours' => array(
+      'variables' => array('period' => NULL, 'week' => NULL, 'todaystatus' => NULL, 'tomorrowstatus' => NULL, 'daysoff' => NULL,),
+      'template' => 'paragraph_hours',
+    ),
+  );
+}
+
+/*
+ * Implements hook_entity_view()
+ */
+function e2e_paragraphs_hours_days_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode){
+  
+  if($entity->getEntityTypeId() == 'paragraph' && $entity->bundle() == 'hours'){
+    
+    $paragraph = new HoursDaysParagraph($entity);
+    
+    //get period
+    $period = $paragraph->getPeriod();
+    
+    if(empty($period['value']) || empty($period['end_value']))
+      $period = FALSE;
+    else
+      $period['name'] = ($entity->field_period_name->value)?$entity->field_period_name->value:'';
+    
+    $build['#period'] = $period;
+    
+    //get week days
+    $build['#week'] = $paragraph->getWeekField();
+    
+    //get todays status
+    if($entity->field_status_today->value){
+      
+      $today = \Drupal::service('date.formatter')->format(time(), 'custom', 'Y-m-d H:i');
+      
+      $todaystatus = $paragraph->getStatus($today);
+       
+      if($todaystatus)
+        $build['#todaystatus'] = ucfirst($todaystatus) . ' now';
+      
+    }
+    
+    //get tomorrows status
+    if($entity->field_status_tomorrow->value){
+      
+      $tomorrow = \Drupal::service('date.formatter')->format(strtotime('tomorrow'), 'custom', 'Y-m-d 00:00');
+      $tomorrowstatus = $paragraph->getStatus($tomorrow, FALSE);
+      
+      if($tomorrowstatus)
+        $build['#tomorrowstatus'] = ucfirst($tomorrowstatus) . ' tomorrow';
+    
+    }
+    
+    //get daysoff
+    $build['#daysoff'] = $paragraph->getAllDaysOff();
+    
+    $build['#theme'] = 'paragraph_hours';
+    
+    $build['#attached']['library'][] = 'e2e_paragraphs_hours_days/hours_days';
+        
+  }
+  
+}

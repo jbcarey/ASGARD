@@ -1,0 +1,5 @@
+langcode: en
+status: true
+dependencies: {  }
+id: hours_exception
+label: 'Hours exception'

@@ -1,0 +1,13 @@
+<div class="accordion field">
+    <div class="content-header">{{ content.field_title }}</div>
+    <div class="content-main padding">
+	<div class="gutter">
+            <div class="grid gutter-small">
+                {% if content.field_image %}
+                    <div class="col col-teaser-image">{{ content.field_image }}</div>
+		{% endif %}
+		<div class="col va-top">{{ content }}</div>
+            </div>
+	</div>
+    </div>
+</div>

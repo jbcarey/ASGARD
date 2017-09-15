@@ -1,0 +1,23 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+/*
+ * Implements hook_entity_view()
+ */
+function e2e_paragraphs_link_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode){
+  
+  if($entity->getEntityTypeId() == 'paragraph' && $entity->bundle() == 'links'){
+    if($entity->field_download->value == 1){
+      
+      $linkvalues = $entity->field_links->getValue();
+        
+      foreach($build['field_links'] as $index => &$linkfield){
+        if(is_numeric($index) && isset($linkvalues[$index]['uri'])){
+          $linkfield['#attributes']['download'] = basename($linkvalues[$index]['uri']);
+        }
+      }
+    }
+  }
+}

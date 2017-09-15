@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_exception_day
+    - paragraphs.paragraphs_type.hours_exception
+  module:
+    - datetime
+id: paragraph.hours_exception.field_exception_day
+field_name: field_exception_day
+entity_type: paragraph
+bundle: hours_exception
+label: Day
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

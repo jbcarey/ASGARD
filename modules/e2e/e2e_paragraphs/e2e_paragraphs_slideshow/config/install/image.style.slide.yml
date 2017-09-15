@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: slide
+label: 'Slide (1200 x 540)'
+effects:
+  327bc806-e57e-47b8-9562-46d818c534d6:
+    uuid: 327bc806-e57e-47b8-9562-46d818c534d6
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1200
+      height: 540

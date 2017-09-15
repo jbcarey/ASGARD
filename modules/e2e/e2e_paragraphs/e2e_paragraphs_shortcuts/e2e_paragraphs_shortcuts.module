@@ -1,0 +1,49 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+use Drupal\Core\Url;
+use Drupal\Core\Link;
+
+/*
+ * Implements hook_theme()
+ */
+function e2e_paragraphs_shortcuts_theme(){
+  return array(
+    'paragraph_shortcut' => [
+      'variables' => ['overlay_link' => NULL, 'link' => NULL, 'description' => NULL,],
+      'template' => 'paragraph_shortcut',
+    ],
+  );
+}
+
+/*
+ * Implements hook_entity_view()
+ */
+function e2e_paragraphs_shortcuts_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode){
+  
+  if($entity->getEntityTypeId() == 'paragraph'){
+    
+    if($entity->bundle() == 'shortcuts' && $entity->field_columns->value){
+      $build['field_shortcuts']['#prefix'] = '<div class="columns gutter-small">';
+      $build['field_shortcuts']['#suffix'] = '</div>';
+    }elseif($entity->bundle() == 'shortcut'){
+      
+      $linkvalues = $entity->field_link->getValue();
+      $uri = $linkvalues[0]['uri'];
+      $title = !empty($linkvalues[0]['title']) ? $linkvalues[0]['title'] : $uri;
+      $target = !empty($linkvalues[0]['_attributes']['target']) ? $linkvalues[0]['_attributes']['target'] : '_parent';
+      
+      $url = Url::fromUri($uri);
+      $url->setOptions(['attributes' => ['class' => ['shortcut-link', $entity->field_icon->value], 'target' => $target],]);
+    
+      $build['#overlay_link'] = 'window.open(\'' . $uri . '\', \'' . $target . '\')';
+      $build['#link'] = Link::fromTextAndUrl($title, $url)->toString();
+      $build['#description'] = $entity->field_text->value;
+      $build['#theme'] = 'paragraph_shortcut';
+      
+    }
+    
+  }
+}

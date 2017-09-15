@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="core.entity_form_display.taxonomy_term.section.default.yml" server="62.213.218.204" local="131478034233398340" remote="131466507000000000" Dst="2" />
+<file name="core.entity_view_display.taxonomy_term.section.default.yml" server="62.213.218.204" local="131478034233528431" remote="131466507000000000" Dst="2" />
+<file name="field.field.taxonomy_term.section.field_banner.yml" server="62.213.218.204" local="131478034234599177" remote="131466507000000000" Dst="2" />
+<file name="field.field.taxonomy_term.section.field_internal_section.yml" server="62.213.218.204" local="131478034234719264" remote="131466507000000000" Dst="2" />
+<file name="field.field.taxonomy_term.section.field_menu_access.yml" server="62.213.218.204" local="131478034235775421" remote="131466507000000000" Dst="2" />
+<file name="field.field.taxonomy_term.section.field_user_content_types.yml" server="62.213.218.204" local="131478034235935546" remote="131466507000000000" Dst="2" />
+<file name="field.field.taxonomy_term.section.field_user_folders.yml" server="62.213.218.204" local="131478034237096740" remote="131466507000000000" Dst="2" />
+<file name="field.field.user.user.field_content_types.yml" server="62.213.218.204" local="131478034237221838" remote="131466507000000000" Dst="2" />
+<file name="field.storage.taxonomy_term.field_banner.yml" server="62.213.218.204" local="131478034238212570" remote="131466507000000000" Dst="2" />
+<file name="field.field.user.user.field_sections.yml" server="62.213.218.204" local="131478034238342655" remote="131466507000000000" Dst="2" />
+<file name="field.storage.taxonomy_term.field_internal_section.yml" server="62.213.218.204" local="131478034239313317" remote="131466507000000000" Dst="2" />
+<file name="field.storage.taxonomy_term.field_menu_access.yml" server="62.213.218.204" local="131478034239443402" remote="131466507000000000" Dst="2" />
+<file name="field.storage.taxonomy_term.field_user_content_types.yml" server="62.213.218.204" local="131478034240324032" remote="131466507000000000" Dst="2" />
+<file name="field.storage.taxonomy_term.field_user_folders.yml" server="62.213.218.204" local="131478034240484134" remote="131466507000000000" Dst="2" />
+<file name="field.storage.user.field_content_types.yml" server="62.213.218.204" local="131478034241593939" remote="131466507000000000" Dst="2" />
+<file name="field.storage.user.field_sections.yml" server="62.213.218.204" local="131478034242630040" remote="131466507000000000" Dst="2" />
+<file name="taxonomy.vocabulary.section.yml" server="62.213.218.204" local="131478034242760122" remote="131466507000000000" Dst="2" />
+</dwsync>

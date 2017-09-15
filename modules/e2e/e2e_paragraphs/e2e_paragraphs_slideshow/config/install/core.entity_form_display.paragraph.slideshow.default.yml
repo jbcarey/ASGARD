@@ -1,0 +1,113 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.slideshow.field_slide_autoplay
+    - field.field.paragraph.slideshow.field_slide_navigation
+    - field.field.paragraph.slideshow.field_slide_pagination
+    - field.field.paragraph.slideshow.field_slide_transition
+    - field.field.paragraph.slideshow.field_slides
+    - field.field.paragraph.slideshow.field_title
+    - paragraphs.paragraphs_type.slideshow
+  module:
+    - field_group
+    - paragraphs
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_slides
+        - group_settings
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Tabs
+    group_slides:
+      children:
+        - field_slides
+      parent_name: group_tabs
+      weight: 8
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Slides
+    group_settings:
+      children:
+        - field_slide_autoplay
+        - field_slide_transition
+        - field_slide_navigation
+        - field_slide_pagination
+        - field_slide_random
+      parent_name: group_tabs
+      weight: 9
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Settings
+id: paragraph.slideshow.default
+targetEntityType: paragraph
+bundle: slideshow
+mode: default
+content:
+  field_slide_autoplay:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_slide_navigation:
+    weight: 17
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_slide_pagination:
+    weight: 18
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_slide_transition:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_slides:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

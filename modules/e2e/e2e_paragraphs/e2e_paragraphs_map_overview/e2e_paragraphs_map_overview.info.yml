@@ -1,0 +1,12 @@
+name: 'E2E Map Overview Paragraph'
+description: 'Paragraph to show a set of locations on a map.'
+type: module
+core: 8.x
+dependencies:
+  - e2e_location
+  - e2e_paragraphs
+  - field
+  - paragraphs
+  - taxonomy
+version: 8.x
+package: E2E

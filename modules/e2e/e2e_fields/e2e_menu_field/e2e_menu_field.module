@@ -1,0 +1,12 @@
+<?php
+/*
+ * Implements hook_theme()
+ */
+function e2e_menu_field_theme(){
+  return array(
+    'field_menu_tree' => array(
+      'variables' => array('tree' => NULL, 'columns' => NULL),
+      'template' => 'field_menu_tree',
+    ),
+  );
+}

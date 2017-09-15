@@ -1,0 +1,17 @@
+<?php
+
+/*
+ * Implements hook_theme()
+ */
+function e2e_hours_field_theme(){
+  return array(
+    'field_hours' => array(
+      'variables' => array('time_from' => NULL, 'time_until' => NULL, 'time_note' => NULL,),
+      'template' => 'field_hours',
+    ),
+    'field_hours_widget' => array(
+      'variables' => array('time_from' => NULL, 'time_until' => NULL, 'time_note' => NULL,),
+      'template' => 'field_hours_widget',
+    ),
+  );
+}

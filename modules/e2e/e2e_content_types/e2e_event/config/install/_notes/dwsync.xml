@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="core.entity_form_display.node.event.default.yml" server="62.213.218.204" local="131478033639207305" remote="131466576600000000" Dst="2" />
+<file name="core.base_field_override.node.event.sticky.yml" server="62.213.218.204" local="131478033639317374" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.event.default.yml" server="62.213.218.204" local="131478033640557808" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.event.teaser.yml" server="62.213.218.204" local="131478033640567805" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.event.teaser_small.yml" server="62.213.218.204" local="131478033641258208" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.event.teaser_large.yml" server="62.213.218.204" local="131478033641409100" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.event.thumbnail.yml" server="62.213.218.204" local="131478033641731154" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.body.yml" server="62.213.218.204" local="131478033642029083" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_banner.yml" server="62.213.218.204" local="131478033643178266" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_block_tags.yml" server="62.213.218.204" local="131478033643288347" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_bundles.yml" server="62.213.218.204" local="131478033644314167" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_event_date.yml" server="62.213.218.204" local="131478033644594151" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_event_duration.yml" server="62.213.218.204" local="131478033645858947" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_event_executor.yml" server="62.213.218.204" local="131478033645974069" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_event_genres.yml" server="62.213.218.204" local="131478033647057559" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_event_hours.yml" server="62.213.218.204" local="131478033648228318" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_event_location.yml" server="62.213.218.204" local="131478033648328378" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_event_organiser.yml" server="62.213.218.204" local="131478033649478858" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_event_persons.yml" server="62.213.218.204" local="131478033649619076" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_event_price.yml" server="62.213.218.204" local="131478033651029920" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_event_price_desc.yml" server="62.213.218.204" local="131478033651039921" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_event_types.yml" server="62.213.218.204" local="131478033651906602" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_image.yml" server="62.213.218.204" local="131478033652056718" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_images.yml" server="62.213.218.204" local="131478033652161816" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_keywords.yml" server="62.213.218.204" local="131478033652582087" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_system_note.yml" server="62.213.218.204" local="131478033653506559" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_section.yml" server="62.213.218.204" local="131478033653646669" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_weight.yml" server="62.213.218.204" local="131478033654885961" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.event.field_tags.yml" server="62.213.218.204" local="131478033655016077" remote="131466576600000000" Dst="2" />
+<file name="field.storage.node.field_event_date.yml" server="62.213.218.204" local="131478033656121873" remote="131466576600000000" Dst="2" />
+<file name="field.storage.node.field_event_duration.yml" server="62.213.218.204" local="131478033657259477" remote="131466576600000000" Dst="2" />
+<file name="field.storage.node.field_event_executor.yml" server="62.213.218.204" local="131478033657409578" remote="131466576600000000" Dst="2" />
+<file name="field.storage.node.field_event_genres.yml" server="62.213.218.204" local="131478033658465318" remote="131466576600000000" Dst="2" />
+<file name="field.storage.node.field_event_hours.yml" server="62.213.218.204" local="131478033658735479" remote="131466576600000000" Dst="2" />
+<file name="field.storage.node.field_event_organiser.yml" server="62.213.218.204" local="131478033659776214" remote="131466576600000000" Dst="2" />
+<file name="field.storage.node.field_event_location.yml" server="62.213.218.204" local="131478033659896289" remote="131466576600000000" Dst="2" />
+<file name="field.storage.node.field_event_persons.yml" server="62.213.218.204" local="131478033661006336" remote="131466576600000000" Dst="2" />
+<file name="field.storage.node.field_event_price.yml" server="62.213.218.204" local="131478033661126439" remote="131466576600000000" Dst="2" />
+<file name="field.storage.node.field_event_types.yml" server="62.213.218.204" local="131478033662607464" remote="131466576600000000" Dst="2" />
+<file name="field.storage.node.field_event_price_desc.yml" server="62.213.218.204" local="131478033662747556" remote="131466576600000000" Dst="2" />
+<file name="node.type.event.yml" server="62.213.218.204" local="131478033663808572" remote="131466576600000000" Dst="2" />
+<file name="taxonomy.vocabulary.event_genres.yml" server="62.213.218.204" local="131478033663938214" remote="131466576600000000" Dst="2" />
+<file name="taxonomy.vocabulary.event_types.yml" server="62.213.218.204" local="131478033665307326" remote="131466576600000000" Dst="2" />
+</dwsync>

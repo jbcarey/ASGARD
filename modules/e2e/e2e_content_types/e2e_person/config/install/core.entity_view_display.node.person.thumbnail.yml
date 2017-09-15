@@ -1,0 +1,73 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.thumbnail
+    - field.field.node.person.body
+    - field.field.node.person.field_banner
+    - field.field.node.person.field_block_tags
+    - field.field.node.person.field_bundles
+    - field.field.node.person.field_email
+    - field.field.node.person.field_entity_reference
+    - field.field.node.person.field_fax
+    - field.field.node.person.field_image
+    - field.field.node.person.field_images
+    - field.field.node.person.field_keywords
+    - field.field.node.person.field_person_function
+    - field.field.node.person.field_person_type
+    - field.field.node.person.field_phone
+    - field.field.node.person.field_private_address
+    - field.field.node.person.field_private_email
+    - field.field.node.person.field_private_fax
+    - field.field.node.person.field_private_phone
+    - field.field.node.person.field_private_show
+    - field.field.node.person.field_section
+    - field.field.node.person.field_social_links
+    - field.field.node.person.field_system_note
+    - field.field.node.person.field_tags
+    - field.field.node.person.field_website
+    - field.field.node.person.field_weight
+    - image.style.thumbnail
+    - node.type.person
+  module:
+    - image
+    - user
+id: node.person.thumbnail
+targetEntityType: node
+bundle: person
+mode: thumbnail
+content:
+  field_image:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_banner: true
+  field_block_tags: true
+  field_bundles: true
+  field_email: true
+  field_entity_reference: true
+  field_fax: true
+  field_images: true
+  field_keywords: true
+  field_person_function: true
+  field_person_type: true
+  field_phone: true
+  field_private_address: true
+  field_private_email: true
+  field_private_fax: true
+  field_private_phone: true
+  field_private_show: true
+  field_section: true
+  field_social_links: true
+  field_system_note: true
+  field_tags: true
+  field_website: true
+  field_weight: true
+  links: true

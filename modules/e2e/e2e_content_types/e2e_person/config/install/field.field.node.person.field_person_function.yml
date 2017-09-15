@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_function
+    - node.type.person
+    - taxonomy.vocabulary.person_function
+id: node.person.field_person_function
+field_name: field_person_function
+entity_type: node
+bundle: person
+label: Function
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      person_function: person_function
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

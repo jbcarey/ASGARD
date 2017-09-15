@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ipdc_keywords
+    - node.type.product
+    - taxonomy.vocabulary.product_keyword
+id: node.product.field_ipdc_keywords
+field_name: field_ipdc_keywords
+entity_type: node
+bundle: product
+label: 'Keywords Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      product_keyword: product_keyword
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_status_tomorrow
+    - paragraphs.paragraphs_type.hours
+id: paragraph.hours.field_status_tomorrow
+field_name: field_status_tomorrow
+entity_type: paragraph
+bundle: hours
+label: 'Show tomorrow''s status'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

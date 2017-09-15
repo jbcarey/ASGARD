@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_system_note
+    - node.type.holidays
+id: node.holidays.field_system_note
+field_name: field_system_note
+entity_type: node
+bundle: holidays
+label: Note
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

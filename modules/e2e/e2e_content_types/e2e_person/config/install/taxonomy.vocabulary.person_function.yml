@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Person function'
+vid: person_function
+description: 'Function for content type person.'
+hierarchy: 0
+weight: 0

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Service type'
+vid: service_type
+description: 'Service type for content type entity'
+hierarchy: 0
+weight: 0

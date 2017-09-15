@@ -1,0 +1,16 @@
+<section class="bundle bundle-overview">
+    {% if filters %}
+        {% if filters.position == 'top' %}
+            {{ filters.form }}
+            {{ overview }}
+        {% else %}
+            <div class="grid gutter">
+                {% if filters.position == 'left' %}<div class="col grid3">{{ filters.form }}</div>{% endif %}
+                <div class="col">{{ overview }}</div>
+                {% if filters.position == 'right' %}<div class="col grid3">{{ filters.form }}</div>{% endif %}
+            </div>
+        {% endif %}
+    {% else %}
+        {{ overview }}
+    {% endif %}
+</section>

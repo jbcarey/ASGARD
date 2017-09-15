@@ -1,0 +1,14 @@
+<div class="slide swiper-slide">
+    {{ content.field_image }}
+    {% if content|without('field_image') %}
+        <div class="layer stretch">
+            <div class="table fixed stretch-y">
+                <div class="col {{ classes }}">
+                    <div class="caption iblock ta-left">
+                        {{ content|without('field_image') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>

@@ -1,0 +1,56 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.thumbnail
+    - field.field.node.report.body
+    - field.field.node.report.field_block_tags
+    - field.field.node.report.field_files
+    - field.field.node.report.field_image
+    - field.field.node.report.field_keywords
+    - field.field.node.report.field_report_date
+    - field.field.node.report.field_report_type
+    - field.field.node.report.field_section
+    - field.field.node.report.field_system_note
+    - field.field.node.report.field_tags
+    - field.field.node.report.field_weight
+    - image.style.thumbnail
+    - node.type.report
+  module:
+    - datetime
+    - image
+    - user
+id: node.report.thumbnail
+targetEntityType: node
+bundle: report
+mode: thumbnail
+content:
+  field_image:
+    type: image
+    weight: 1
+    label: hidden
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+  field_report_date:
+    weight: 0
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+hidden:
+  body: true
+  field_block_tags: true
+  field_files: true
+  field_keywords: true
+  field_report_type: true
+  field_section: true
+  field_system_note: true
+  field_tags: true
+  field_weight: true
+  links: true

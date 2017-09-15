@@ -1,0 +1,86 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.newsletter.body
+    - field.field.node.newsletter.field_banner
+    - field.field.node.newsletter.field_keywords
+    - field.field.node.newsletter.field_newsletter_bottom
+    - field.field.node.newsletter.field_newsletter_category
+    - field.field.node.newsletter.field_newsletter_left
+    - field.field.node.newsletter.field_newsletter_middle
+    - field.field.node.newsletter.field_newsletter_right
+    - field.field.node.newsletter.field_newsletter_top
+    - field.field.node.newsletter.field_section
+    - field.field.node.newsletter.field_system_note
+    - image.style.banner
+    - node.type.newsletter
+  module:
+    - image
+    - user
+id: node.newsletter.default
+targetEntityType: node
+bundle: newsletter
+mode: default
+content:
+  field_banner:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: banner
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_newsletter_bottom:
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: teaser_large
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_newsletter_left:
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: teaser_small
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_newsletter_middle:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: teaser_large
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_newsletter_right:
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: teaser_small
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_newsletter_top:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: teaser_large
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  body: true
+  field_keywords: true
+  field_newsletter_category: true
+  field_section: true
+  field_system_note: true
+  links: true

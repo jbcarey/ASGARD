@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vertical_align
+    - paragraphs.paragraphs_type.slide
+  module:
+    - options
+id: paragraph.slide.field_vertical_align
+field_name: field_vertical_align
+entity_type: paragraph
+bundle: slide
+label: 'Vertical align'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

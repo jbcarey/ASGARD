@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slide_transition
+    - paragraphs.paragraphs_type.slideshow
+  module:
+    - options
+id: paragraph.slideshow.field_slide_transition
+field_name: field_slide_transition
+entity_type: paragraph
+bundle: slideshow
+label: Transition
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sortorder
+    - paragraphs.paragraphs_type.overview
+  module:
+    - options
+id: paragraph.overview.field_sortorder
+field_name: field_sortorder
+entity_type: paragraph
+bundle: overview
+label: Sortorder
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

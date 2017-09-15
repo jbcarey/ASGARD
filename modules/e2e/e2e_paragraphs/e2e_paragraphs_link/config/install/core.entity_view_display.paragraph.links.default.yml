@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.links.field_download
+    - field.field.paragraph.links.field_link_description
+    - field.field.paragraph.links.field_links
+    - field.field.paragraph.links.field_title
+    - paragraphs.paragraphs_type.links
+  module:
+    - link
+id: paragraph.links.default
+targetEntityType: paragraph
+bundle: links
+mode: default
+content:
+  field_link_description:
+    weight: 2
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_links:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  created: true
+  field_download: true
+  uid: true

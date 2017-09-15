@@ -1,0 +1,19 @@
+name: 'E2E Holidays'
+description: 'Holidays content type'
+type: module
+core: 8.x
+dependencies:
+  - datetime
+  - datetime_range
+  - e2e_content_types
+  - e2e_hours_field
+  - field
+  - field_group
+  - menu_ui
+  - node
+  - options
+  - paragraphs
+  - path
+  - user
+version: 8.x
+package: E2E

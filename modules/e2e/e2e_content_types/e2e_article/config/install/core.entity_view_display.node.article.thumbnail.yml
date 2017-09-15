@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.thumbnail
+    - field.field.node.article.body
+    - field.field.node.article.comment
+    - field.field.node.article.field_banner
+    - field.field.node.article.field_block_tags
+    - field.field.node.article.field_bundles
+    - field.field.node.article.field_external_link
+    - field.field.node.article.field_image
+    - field.field.node.article.field_images
+    - field.field.node.article.field_keywords
+    - field.field.node.article.field_section
+    - field.field.node.article.field_system_note
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_weight
+    - image.style.thumbnail
+    - node.type.article
+  module:
+    - image
+    - user
+id: node.article.thumbnail
+targetEntityType: node
+bundle: article
+mode: thumbnail
+content:
+  field_image:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  comment: true
+  field_banner: true
+  field_block_tags: true
+  field_bundles: true
+  field_external_link: true
+  field_images: true
+  field_keywords: true
+  field_section: true
+  field_system_note: true
+  field_tags: true
+  field_weight: true
+  links: true

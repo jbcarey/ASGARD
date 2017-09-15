@@ -1,0 +1,39 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+/*
+ * Implements hook_theme()
+ */
+function e2e_paragraphs_accordion_theme(){
+  return [
+    'paragraph_accordion' => [
+      'render element' => 'element',
+      'template' => 'paragraph_accordion',
+      'base hook' => 'paragraph',
+      'preprocess functions' => [
+        'template_preprocess',
+        'template_preprocess_paragraph',
+        'contextual_preprocess',
+      ]  
+    ]
+  ];
+}
+
+function e2e_paragraphs_accordion_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+  
+  if(in_array('paragraph__accordion', $suggestions)){
+    $suggestions[] = 'paragraph_accordion';
+  }
+}
+
+/*
+ * Implements hook_entity_view()
+ */
+function e2e_paragraphs_accordion_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode){
+  
+  if($entity->getEntityTypeId() == 'paragraph' && $entity->bundle() == 'accordion'){
+    $build['#attached']['library'][] = 'e2e_paragraphs_accordion/accordion';
+  }
+}

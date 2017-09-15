@@ -1,0 +1,7 @@
+bundle: e2e
+excluded:
+  - field.storage.node.field_person_reference
+  - core.entity_form_display.node.entity.default
+  - core.entity_view_display.node.entity.default
+  - core.entity_view_display.node.entity.teaser
+required: true

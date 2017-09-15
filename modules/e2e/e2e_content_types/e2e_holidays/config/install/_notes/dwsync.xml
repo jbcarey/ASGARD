@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="core.entity_form_display.node.holidays.default.yml" server="62.213.218.204" local="131478033685451592" remote="131466576600000000" Dst="2" />
+<file name="core.base_field_override.node.holidays.promote.yml" server="62.213.218.204" local="131478033685591684" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.holidays.default.yml" server="62.213.218.204" local="131478033686741452" remote="131466576600000000" Dst="2" />
+<file name="core.entity_view_display.node.holidays.teaser.yml" server="62.213.218.204" local="131478033686861536" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.holidays.field_days.yml" server="62.213.218.204" local="131478033688077924" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.holidays.field_keywords.yml" server="62.213.218.204" local="131478033688208930" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.holidays.field_system_note.yml" server="62.213.218.204" local="131478033689224665" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.holidays.field_tags.yml" server="62.213.218.204" local="131478033689354741" remote="131466576600000000" Dst="2" />
+<file name="field.storage.node.field_days.yml" server="62.213.218.204" local="131478033690323600" remote="131466576600000000" Dst="2" />
+<file name="field.field.node.holidays.field_weight.yml" server="62.213.218.204" local="131478033690463701" remote="131466576600000000" Dst="2" />
+<file name="node.type.holidays.yml" server="62.213.218.204" local="131478033691709140" remote="131466576600000000" Dst="2" />
+</dwsync>

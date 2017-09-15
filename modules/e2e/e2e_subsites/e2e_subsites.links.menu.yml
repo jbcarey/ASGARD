@@ -1,0 +1,10 @@
+entity.subsite.list:
+    title: 'Subsite settings'
+    description: 'Subsite settings'
+    route_name: entity.subsite.list
+    parent: 'system.admin_config_services'
+entity.subsite.add_form:
+    title: 'Add new subsite'
+    description: 'Add new subsite'
+    route_name: entity.subsite.add_form
+    parent: entity.subsite.list

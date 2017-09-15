@@ -1,0 +1,4 @@
+e2e_product:
+  baseurl: 'http://test-productencatalogus.vlaanderen.be'
+  uuid: 2ad7b2a5-da41-9804-71f7-f503bde35e7c
+  section: 15

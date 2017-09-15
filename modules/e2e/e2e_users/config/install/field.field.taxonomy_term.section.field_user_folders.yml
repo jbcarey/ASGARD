@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_user_folders
+    - taxonomy.vocabulary.section
+  module:
+    - e2e_folders_field
+id: taxonomy_term.section.field_user_folders
+field_name: field_user_folders
+entity_type: taxonomy_term
+bundle: section
+label: 'Allowed upload folders'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    folders: public
+default_value_callback: ''
+settings: {  }
+field_type: Folders

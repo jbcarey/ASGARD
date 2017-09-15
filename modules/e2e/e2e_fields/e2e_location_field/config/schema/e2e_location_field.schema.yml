@@ -1,0 +1,44 @@
+e2e_location_field.settings:
+    type: config_object
+    label: 'Location Field Settings'
+    mapping:
+        e2e_location_field:
+            type: mapping
+            mapping:
+                city:
+                    type: text
+                    label: 'City'
+                zip_code:
+                    type: text
+                    label: 'Zip code'
+                country:
+                    type: text
+                    label: 'Country'
+                state:
+                    type: text
+                    label: 'Province'
+                lat:
+                    type: text
+                    label: 'Latitude'
+                lng:
+                    type: text
+                    label: 'Longitude'
+                google_maps_key:
+                    type: text
+                    label: 'Google maps API key'
+field.widget.settings.LocationWidget:
+    type: mapping
+    label: 'Location widget settings'
+    mapping:
+        show_map:
+            type: boolean
+            label: 'Show map and coördinates on form'
+        show_markers:
+            type: boolean
+            label: 'Show markers'
+        show_title:
+            type: boolean
+            label: 'Show title'
+        show_info:
+            type: boolean
+            label: 'Show info'

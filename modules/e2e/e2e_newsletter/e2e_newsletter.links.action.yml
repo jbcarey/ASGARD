@@ -1,0 +1,6 @@
+e2e_newsletter.add_form:
+    title: 'Add new newsletter theme'
+    description: 'Add new newsletter theme'
+    route_name: entity.newslettertheme.add_form
+    appears_on:
+        - entity.newslettertheme.list

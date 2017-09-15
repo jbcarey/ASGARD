@@ -1,0 +1,7 @@
+name: 'E2E Hours Field'
+description: 'Provides Hours field widget. '
+type: module
+core: 8.x
+package: Field types
+dependencies: 
+    - field

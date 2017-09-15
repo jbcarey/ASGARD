@@ -1,0 +1,23 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+/*
+ * Implements hook_entity_view()
+ */
+function e2e_paragraphs_button_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode){
+  
+  if($entity->getEntityTypeId() == 'paragraph' && $entity->bundle() == 'button'){
+    if($entity->field_download->value == 1){
+      
+      $buttonvalues = $entity->field_buttons->getValue();
+        
+      foreach($build['field_buttons'] as $index => &$buttonfield){
+        if(is_numeric($index) && isset($buttonvalues[$index]['uri'])){
+          $buttonfield['#attributes']['download'] = basename($buttonvalues[$index]['uri']);
+        }
+      }
+    }
+  }
+}

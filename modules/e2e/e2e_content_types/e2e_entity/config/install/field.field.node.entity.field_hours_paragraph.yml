@@ -1,0 +1,86 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hours_paragraph
+    - node.type.entity
+    - paragraphs.paragraphs_type.hours
+  module:
+    - entity_reference_revisions
+id: node.entity.field_hours_paragraph
+field_name: field_hours_paragraph
+entity_type: node
+bundle: entity
+label: 'Hours and closing days'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      hours: hours
+    target_bundles_drag_drop:
+      accordion:
+        weight: 22
+        enabled: false
+      accordions:
+        weight: 23
+        enabled: false
+      button:
+        weight: 24
+        enabled: false
+      entity:
+        weight: 25
+        enabled: false
+      gallery:
+        weight: 26
+        enabled: false
+      hours:
+        enabled: true
+        weight: 27
+      hours_exception:
+        weight: 28
+        enabled: false
+      links:
+        weight: 30
+        enabled: false
+      map:
+        weight: 31
+        enabled: false
+      map_overview:
+        weight: 32
+        enabled: false
+      media:
+        weight: 33
+        enabled: false
+      menu:
+        weight: 34
+        enabled: false
+      overview:
+        weight: 35
+        enabled: false
+      references:
+        weight: 36
+        enabled: false
+      shortcut:
+        weight: 37
+        enabled: false
+      shortcuts:
+        weight: 38
+        enabled: false
+      slide:
+        weight: 39
+        enabled: false
+      slideshow:
+        weight: 40
+        enabled: false
+      system_block:
+        weight: 41
+        enabled: false
+      text:
+        weight: 42
+        enabled: false
+field_type: entity_reference_revisions

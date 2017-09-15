@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_user_content_types
+    - taxonomy.vocabulary.section
+  module:
+    - e2e_content_types_field
+id: taxonomy_term.section.field_user_content_types
+field_name: field_user_content_types
+entity_type: taxonomy_term
+bundle: section
+label: 'Allowed content types'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: ContentTypes

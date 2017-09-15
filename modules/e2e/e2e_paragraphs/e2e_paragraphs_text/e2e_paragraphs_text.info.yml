@@ -1,0 +1,10 @@
+name: 'E2E Text Paragraph'
+description: 'Display text fields in paragraphs.'
+type: module
+core: 8.x
+dependencies:
+  - e2e_paragraphs
+  - field
+  - paragraphs
+  - text
+package: E2E

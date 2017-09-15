@@ -1,0 +1,28 @@
+entity.subsite.list:
+    path: '/admin/config/services/e2e-subsites'
+    defaults:
+        _entity_list: 'subsite'
+        _title: 'Subsites'
+    requirements:
+        _permission: 'administer site configuration'
+entity.subsite.add_form:
+    path: '/admin/config/services/e2e-subsites-settings/add'
+    defaults:
+        _entity_form: 'subsite.add'
+        _title: 'Add subsite'
+    requirements:
+        _permission: 'administer site configuration'
+entity.subsite.edit_form:
+    path: '/admin/config/services/e2e-subsites-settings/{subsite}'
+    defaults:
+        _entity_form: 'subsite.edit'
+        _title: 'Edit subsite'
+    requirements:
+        _permission: 'administer site configuration'
+entity.subsite.delete_form:
+    path: '/admin/config/services/e2e-subsites-settings/delete/{subsite}'
+    defaults:
+        _entity_form: 'subsite.delete'
+        _title: 'Delete subsite'
+    requirements:
+        _permission: 'administer site configuration'

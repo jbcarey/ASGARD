@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Section
+vid: section
+description: 'Used to divide and restrict content.'
+hierarchy: 0
+weight: 0

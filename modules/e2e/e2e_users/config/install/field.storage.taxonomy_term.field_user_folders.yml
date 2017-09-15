@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - e2e_folders_field
+    - taxonomy
+id: taxonomy_term.field_user_folders
+field_name: field_user_folders
+entity_type: taxonomy_term
+type: Folders
+settings: {  }
+module: e2e_folders_field
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

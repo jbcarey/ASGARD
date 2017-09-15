@@ -1,0 +1,13 @@
+baguetteBox:
+  version: 1.8.2
+  css:
+      theme:
+        css/baguetteBox.css: {}
+  js:
+    js/baguetteBox.js: {}
+gallery:
+  version: 1.x
+  js:
+    js/e2e_gallery.js: {}
+  dependencies:
+    - core/jquery

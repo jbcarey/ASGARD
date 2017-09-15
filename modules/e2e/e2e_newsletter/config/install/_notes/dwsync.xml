@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="core.entity_form_display.node.newsletter.default.yml" server="62.213.218.204" local="131478033930990483" remote="131469294600000000" Dst="2" />
+<file name="core.entity_form_display.node.newsletter_content.default.yml" server="62.213.218.204" local="131478033931270711" remote="131469294600000000" Dst="2" />
+<file name="core.entity_view_display.node.newsletter.teaser.yml" server="62.213.218.204" local="131478033932266415" remote="131469294600000000" Dst="2" />
+<file name="core.entity_view_display.node.newsletter.default.yml" server="62.213.218.204" local="131478033932380592" remote="131469294600000000" Dst="2" />
+<file name="core.entity_view_display.node.newsletter_content.teaser.yml" server="62.213.218.204" local="131478033933476729" remote="131469294600000000" Dst="2" />
+<file name="core.entity_view_display.node.newsletter_content.default.yml" server="62.213.218.204" local="131478033933616827" remote="131469294600000000" Dst="2" />
+<file name="core.entity_view_display.node.newsletter_content.teaser_large.yml" server="62.213.218.204" local="131478033934567621" remote="131469294600000000" Dst="2" />
+<file name="core.entity_view_display.node.newsletter_content.teaser_small.yml" server="62.213.218.204" local="131478033934857819" remote="131469294600000000" Dst="2" />
+<file name="core.entity_view_display.node.newsletter_content.thumbnail.yml" server="62.213.218.204" local="131478033935855247" remote="131469294600000000" Dst="2" />
+<file name="field.field.node.newsletter.body.yml" server="62.213.218.204" local="131478033935965316" remote="131469294600000000" Dst="2" />
+<file name="field.field.node.newsletter.field_banner.yml" server="62.213.218.204" local="131478033936960412" remote="131469294600000000" Dst="2" />
+<file name="field.field.node.newsletter.field_keywords.yml" server="62.213.218.204" local="131478033937080500" remote="131469294600000000" Dst="2" />
+<file name="field.field.node.newsletter.field_newsletter_bottom.yml" server="62.213.218.204" local="131478033938196385" remote="131469294600000000" Dst="2" />
+<file name="field.field.node.newsletter.field_newsletter_category.yml" server="62.213.218.204" local="131478033938451577" remote="131469294600000000" Dst="2" />
+<file name="field.field.node.newsletter.field_newsletter_left.yml" server="62.213.218.204" local="131478033939301714" remote="131469294600000000" Dst="2" />
+<file name="field.field.node.newsletter.field_newsletter_middle.yml" server="62.213.218.204" local="131478033940392457" remote="131469294600000000" Dst="2" />
+<file name="field.field.node.newsletter.field_newsletter_right.yml" server="62.213.218.204" local="131478033940502526" remote="131469294600000000" Dst="2" />
+<file name="field.field.node.newsletter.field_newsletter_top.yml" server="62.213.218.204" local="131478033941438154" remote="131469294600000000" Dst="2" />
+<file name="field.field.node.newsletter.field_section.yml" server="62.213.218.204" local="131478033941583247" remote="131469294600000000" Dst="2" />
+<file name="field.field.node.newsletter.field_system_note.yml" server="62.213.218.204" local="131478033942513862" remote="131469294600000000" Dst="2" />
+<file name="field.field.node.newsletter_content.field_bundles.yml" server="62.213.218.204" local="131478033942643947" remote="131469294600000000" Dst="2" />
+<file name="field.field.node.newsletter_content.field_keywords.yml" server="62.213.218.204" local="131478033943714731" remote="131469294600000000" Dst="2" />
+<file name="field.field.node.newsletter_content.field_image.yml" server="62.213.218.204" local="131478033943904855" remote="131469294600000000" Dst="2" />
+<file name="field.field.node.newsletter_content.field_section.yml" server="62.213.218.204" local="131478033944745444" remote="131469294600000000" Dst="2" />
+<file name="field.field.node.newsletter_content.field_system_note.yml" server="62.213.218.204" local="131478033944855516" remote="131469294600000000" Dst="2" />
+<file name="field.storage.node.field_newsletter_bottom.yml" server="62.213.218.204" local="131478033945840377" remote="131469294600000000" Dst="2" />
+<file name="field.storage.node.field_newsletter_category.yml" server="62.213.218.204" local="131478033945960453" remote="131469294600000000" Dst="2" />
+<file name="field.storage.node.field_newsletter_middle.yml" server="62.213.218.204" local="131478033946976169" remote="131469294600000000" Dst="2" />
+<file name="field.storage.node.field_newsletter_left.yml" server="62.213.218.204" local="131478033947116261" remote="131469294600000000" Dst="2" />
+<file name="field.storage.node.field_newsletter_right.yml" server="62.213.218.204" local="131478033948387152" remote="131469294600000000" Dst="2" />
+<file name="node.type.newsletter.yml" server="62.213.218.204" local="131478033948992679" remote="131473545600000000" Dst="2" />
+<file name="field.storage.node.field_newsletter_top.yml" server="62.213.218.204" local="131478033949112797" remote="131469294600000000" Dst="2" />
+<file name="node.type.newsletter_content.yml" server="62.213.218.204" local="131478033949462990" remote="131473545600000000" Dst="2" />
+<file name="taxonomy.vocabulary.newsletter_category.yml" server="62.213.218.204" local="131478033949718170" remote="131469294600000000" Dst="2" />
+</dwsync>

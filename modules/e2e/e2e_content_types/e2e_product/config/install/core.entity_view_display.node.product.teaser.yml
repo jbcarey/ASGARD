@@ -1,0 +1,148 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.product.body
+    - field.field.node.product.field_banner
+    - field.field.node.product.field_block_tags
+    - field.field.node.product.field_bundles
+    - field.field.node.product.field_image
+    - field.field.node.product.field_images
+    - field.field.node.product.field_ipdc_amount
+    - field.field.node.product.field_ipdc_amount_custom
+    - field.field.node.product.field_ipdc_amount_options
+    - field.field.node.product.field_ipdc_bringwhat
+    - field.field.node.product.field_ipdc_bringwhat_custom
+    - field.field.node.product.field_ipdc_bringwhat_options
+    - field.field.node.product.field_ipdc_conditions
+    - field.field.node.product.field_ipdc_conditions_custom
+    - field.field.node.product.field_ipdc_conditions_options
+    - field.field.node.product.field_ipdc_exceptions
+    - field.field.node.product.field_ipdc_exceptions_custom
+    - field.field.node.product.field_ipdc_exceptions_options
+    - field.field.node.product.field_ipdc_keywords
+    - field.field.node.product.field_ipdc_keywords_custom
+    - field.field.node.product.field_ipdc_keywords_options
+    - field.field.node.product.field_ipdc_procedure
+    - field.field.node.product.field_ipdc_procedure_custom
+    - field.field.node.product.field_ipdc_procedure_options
+    - field.field.node.product.field_ipdc_reference
+    - field.field.node.product.field_ipdc_reference_custom
+    - field.field.node.product.field_ipdc_reference_options
+    - field.field.node.product.field_ipdc_rules
+    - field.field.node.product.field_ipdc_rules_custom
+    - field.field.node.product.field_ipdc_rules_options
+    - field.field.node.product.field_ipdc_scope
+    - field.field.node.product.field_ipdc_scope_custom
+    - field.field.node.product.field_ipdc_scope_options
+    - field.field.node.product.field_ipdc_target
+    - field.field.node.product.field_ipdc_target_custom
+    - field.field.node.product.field_ipdc_target_options
+    - field.field.node.product.field_ipdc_theme
+    - field.field.node.product.field_ipdc_theme_custom
+    - field.field.node.product.field_ipdc_theme_options
+    - field.field.node.product.field_ipdc_title
+    - field.field.node.product.field_ipdc_title_custom
+    - field.field.node.product.field_ipdc_title_options
+    - field.field.node.product.field_ipdc_type
+    - field.field.node.product.field_ipdc_type_custom
+    - field.field.node.product.field_ipdc_type_options
+    - field.field.node.product.field_ipdc_webid
+    - field.field.node.product.field_ipdc_what
+    - field.field.node.product.field_ipdc_what_custom
+    - field.field.node.product.field_ipdc_what_options
+    - field.field.node.product.field_ipdc_when
+    - field.field.node.product.field_ipdc_when_custom
+    - field.field.node.product.field_ipdc_when_options
+    - field.field.node.product.field_keywords
+    - field.field.node.product.field_section
+    - field.field.node.product.field_system_note
+    - field.field.node.product.field_tags
+    - field.field.node.product.field_timestamp
+    - field.field.node.product.field_weight
+    - image.style.medium
+    - node.type.product
+  module:
+    - image
+    - text
+    - user
+id: node.product.teaser
+targetEntityType: node
+bundle: product
+mode: teaser
+content:
+  body:
+    type: text_default
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_banner: true
+  field_block_tags: true
+  field_bundles: true
+  field_images: true
+  field_ipdc_amount: true
+  field_ipdc_amount_custom: true
+  field_ipdc_amount_options: true
+  field_ipdc_bringwhat: true
+  field_ipdc_bringwhat_custom: true
+  field_ipdc_bringwhat_options: true
+  field_ipdc_conditions: true
+  field_ipdc_conditions_custom: true
+  field_ipdc_conditions_options: true
+  field_ipdc_exceptions: true
+  field_ipdc_exceptions_custom: true
+  field_ipdc_exceptions_options: true
+  field_ipdc_keywords: true
+  field_ipdc_keywords_custom: true
+  field_ipdc_keywords_options: true
+  field_ipdc_procedure: true
+  field_ipdc_procedure_custom: true
+  field_ipdc_procedure_options: true
+  field_ipdc_reference: true
+  field_ipdc_reference_custom: true
+  field_ipdc_reference_options: true
+  field_ipdc_rules: true
+  field_ipdc_rules_custom: true
+  field_ipdc_rules_options: true
+  field_ipdc_scope: true
+  field_ipdc_scope_custom: true
+  field_ipdc_scope_options: true
+  field_ipdc_target: true
+  field_ipdc_target_custom: true
+  field_ipdc_target_options: true
+  field_ipdc_theme: true
+  field_ipdc_theme_custom: true
+  field_ipdc_theme_options: true
+  field_ipdc_title: true
+  field_ipdc_title_custom: true
+  field_ipdc_title_options: true
+  field_ipdc_type: true
+  field_ipdc_type_custom: true
+  field_ipdc_type_options: true
+  field_ipdc_webid: true
+  field_ipdc_what: true
+  field_ipdc_what_custom: true
+  field_ipdc_what_options: true
+  field_ipdc_when: true
+  field_ipdc_when_custom: true
+  field_ipdc_when_options: true
+  field_keywords: true
+  field_section: true
+  field_system_note: true
+  field_tags: true
+  field_timestamp: true
+  field_weight: true
+  links: true

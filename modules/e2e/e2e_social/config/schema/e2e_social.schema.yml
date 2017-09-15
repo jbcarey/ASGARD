@@ -1,0 +1,25 @@
+e2e_social.settings:
+    type: config_object
+    label: 'Social Media Button Settings'
+    mapping:
+        e2e_social:
+            type: mapping
+            mapping:
+                facebook:
+                    type: boolean
+                    label: 'Facebook'
+                twitter:
+                    type: boolean
+                    label: 'Twitter'
+                linkedin:
+                    type: boolean
+                    label: 'Linkedin'
+                googleplus:
+                    type: boolean
+                    label: 'Google+'
+                instagram:
+                    type: boolean
+                    label: 'Instagram'
+                pinterest:
+                    type: boolean
+                    label: 'Pinterest'

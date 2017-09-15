@@ -1,0 +1,87 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.entity.body
+    - field.field.node.entity.field_association_type
+    - field.field.node.entity.field_banner
+    - field.field.node.entity.field_block_tags
+    - field.field.node.entity.field_bundles
+    - field.field.node.entity.field_email
+    - field.field.node.entity.field_enterprise_type
+    - field.field.node.entity.field_entity_type
+    - field.field.node.entity.field_fax
+    - field.field.node.entity.field_hours_paragraph
+    - field.field.node.entity.field_hoursdays_reference
+    - field.field.node.entity.field_image
+    - field.field.node.entity.field_images
+    - field.field.node.entity.field_keywords
+    - field.field.node.entity.field_location_reference
+    - field.field.node.entity.field_person_reference
+    - field.field.node.entity.field_phone
+    - field.field.node.entity.field_section
+    - field.field.node.entity.field_service_type
+    - field.field.node.entity.field_system_note
+    - field.field.node.entity.field_tags
+    - field.field.node.entity.field_website
+    - field.field.node.entity.field_weight
+    - image.style.medium
+    - node.type.entity
+  module:
+    - entity_reference_revisions
+    - image
+    - text
+    - user
+id: node.entity.teaser
+targetEntityType: node
+bundle: entity
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_hours_paragraph:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_image:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_association_type: true
+  field_banner: true
+  field_block_tags: true
+  field_bundles: true
+  field_email: true
+  field_enterprise_type: true
+  field_entity_type: true
+  field_fax: true
+  field_hoursdays_reference: true
+  field_images: true
+  field_keywords: true
+  field_location_reference: true
+  field_person_reference: true
+  field_phone: true
+  field_section: true
+  field_service_type: true
+  field_system_note: true
+  field_tags: true
+  field_website: true
+  field_weight: true
+  links: true

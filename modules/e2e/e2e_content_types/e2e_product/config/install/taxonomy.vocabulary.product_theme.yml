@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Product theme'
+vid: product_theme
+description: ''
+hierarchy: 0
+weight: 0

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slide_navigation
+    - paragraphs.paragraphs_type.slideshow
+id: paragraph.slideshow.field_slide_navigation
+field_name: field_slide_navigation
+entity_type: paragraph
+bundle: slideshow
+label: 'Show navigation'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

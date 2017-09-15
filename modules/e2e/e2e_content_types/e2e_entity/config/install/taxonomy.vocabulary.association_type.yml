@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Association type'
+vid: association_type
+description: 'Association type for content type entity'
+hierarchy: 0
+weight: 0

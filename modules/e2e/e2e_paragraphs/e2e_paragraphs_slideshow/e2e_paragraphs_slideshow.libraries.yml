@@ -1,0 +1,16 @@
+swiper:
+  version: 3.4.2
+  css:
+      theme:
+        css/swiper.css: {}
+  js:
+    js/swiper.jquery.js: {}
+  dependencies:
+    - core/jquery
+slideshow:
+  version: 1.x
+  js:
+    js/e2e_slideshow.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

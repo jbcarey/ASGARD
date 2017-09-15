@@ -1,0 +1,53 @@
+<?php
+
+use Drupal\Core\Database\Query\AlterableInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\e2e_paragraphs_overview\Includes\OverviewParagraph;
+
+/*
+ * Implements hook_theme()
+ */
+function e2e_paragraphs_overview_theme(){
+  return array(
+    'paragraph_overview' => array(
+      'variables' => array('overview' => NULL, 'filters' => NULL,),
+      'template' => 'paragraph_overview',
+    ),
+  );
+}
+
+/*
+ * Implements hook_entity_view()
+ */
+function e2e_paragraphs_overview_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode){
+  
+  if($entity->getEntityTypeId() == 'paragraph' && $entity->bundle() == 'overview'){
+    
+    $paragraph = new OverviewParagraph($entity);
+    
+    $build['field_content_type'] = [
+      '#overview' => $paragraph->getMarkup(),
+      '#filters' => $paragraph->getFilters(),
+      '#theme' => 'paragraph_overview'
+    ];
+    
+    if(!$paragraph->isCached())
+      $build['#cache'] = array('max-age' => 0);
+    
+    
+  }
+}
+
+/* 
+ * Implements hook_query_alter().
+ * Alter query on tag search_terms.
+ */
+function e2e_paragraphs_overview_query_overview_taxonomy_alter(AlterableInterface $query){
+    
+    $taxonomy = $query->getMetaData('taxonomy');
+    
+    $query->innerJoin('taxonomy_index', 't', 'node_field_data.nid = t.nid');
+	$query->condition('t.tid', $taxonomy, 'IN');
+    
+}

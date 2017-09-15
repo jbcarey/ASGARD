@@ -1,0 +1,895 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.product.body
+    - field.field.node.product.field_banner
+    - field.field.node.product.field_block_tags
+    - field.field.node.product.field_bundles
+    - field.field.node.product.field_image
+    - field.field.node.product.field_images
+    - field.field.node.product.field_ipdc_amount
+    - field.field.node.product.field_ipdc_amount_custom
+    - field.field.node.product.field_ipdc_amount_options
+    - field.field.node.product.field_ipdc_bringwhat
+    - field.field.node.product.field_ipdc_bringwhat_custom
+    - field.field.node.product.field_ipdc_bringwhat_options
+    - field.field.node.product.field_ipdc_conditions
+    - field.field.node.product.field_ipdc_conditions_custom
+    - field.field.node.product.field_ipdc_conditions_options
+    - field.field.node.product.field_ipdc_exceptions
+    - field.field.node.product.field_ipdc_exceptions_custom
+    - field.field.node.product.field_ipdc_exceptions_options
+    - field.field.node.product.field_ipdc_keywords
+    - field.field.node.product.field_ipdc_keywords_custom
+    - field.field.node.product.field_ipdc_keywords_options
+    - field.field.node.product.field_ipdc_procedure
+    - field.field.node.product.field_ipdc_procedure_custom
+    - field.field.node.product.field_ipdc_procedure_options
+    - field.field.node.product.field_ipdc_reference
+    - field.field.node.product.field_ipdc_reference_custom
+    - field.field.node.product.field_ipdc_reference_options
+    - field.field.node.product.field_ipdc_rules
+    - field.field.node.product.field_ipdc_rules_custom
+    - field.field.node.product.field_ipdc_rules_options
+    - field.field.node.product.field_ipdc_scope
+    - field.field.node.product.field_ipdc_scope_custom
+    - field.field.node.product.field_ipdc_scope_options
+    - field.field.node.product.field_ipdc_target
+    - field.field.node.product.field_ipdc_target_custom
+    - field.field.node.product.field_ipdc_target_options
+    - field.field.node.product.field_ipdc_theme
+    - field.field.node.product.field_ipdc_theme_custom
+    - field.field.node.product.field_ipdc_theme_options
+    - field.field.node.product.field_ipdc_title
+    - field.field.node.product.field_ipdc_title_custom
+    - field.field.node.product.field_ipdc_title_options
+    - field.field.node.product.field_ipdc_type
+    - field.field.node.product.field_ipdc_type_custom
+    - field.field.node.product.field_ipdc_type_options
+    - field.field.node.product.field_ipdc_webid
+    - field.field.node.product.field_ipdc_what
+    - field.field.node.product.field_ipdc_what_custom
+    - field.field.node.product.field_ipdc_what_options
+    - field.field.node.product.field_ipdc_when
+    - field.field.node.product.field_ipdc_when_custom
+    - field.field.node.product.field_ipdc_when_options
+    - field.field.node.product.field_keywords
+    - field.field.node.product.field_section
+    - field.field.node.product.field_system_note
+    - field.field.node.product.field_tags
+    - field.field.node.product.field_timestamp
+    - field.field.node.product.field_weight
+    - image.style.thumbnail
+    - node.type.product
+  module:
+    - datetime_range
+    - field_group
+    - image
+    - imce
+    - paragraphs
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_tab:
+      children:
+        - group_system
+        - group_summary
+        - group_customer
+        - group_ipdc_product
+        - group_images
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      format_settings:
+        label: Tabs
+        direction: horizontal
+        id: ''
+        classes: ipdc-tabs
+      label: Tabs
+    group_system:
+      children:
+        - field_section
+        - field_system_note
+        - field_keywords
+        - field_tags
+        - field_block_tags
+        - field_weight
+        - field_ipdc_webid
+        - field_timestamp
+      parent_name: group_tab
+      weight: 18
+      format_type: tab
+      format_settings:
+        label: System
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ipdc-tab
+      label: System
+    group_summary:
+      children:
+        - field_image
+        - body
+      parent_name: group_tab
+      weight: 19
+      format_type: tab
+      format_settings:
+        label: Summary
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ipdc-tab
+      label: Summary
+    group_customer:
+      children:
+        - field_bundles
+      parent_name: group_tab
+      weight: 20
+      format_type: tab
+      format_settings:
+        label: Content
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ipdc-tab
+      label: Content
+    group_images:
+      children:
+        - field_images
+        - field_banner
+      parent_name: group_tab
+      weight: 22
+      format_type: tab
+      format_settings:
+        label: Images
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ipdc-tab
+      label: Images
+    group_ipdc_product:
+      children:
+        - group_title
+        - group_what
+        - group_when
+        - group_conditions
+        - group_procedure
+        - group_what_to_bring_over
+        - group_amount
+        - group_exceptions
+        - group_regulations
+        - group_type
+        - group_target
+        - group_geographical_scope
+        - group_theme
+        - group_keywords
+        - group_references
+      parent_name: group_tab
+      weight: 21
+      format_type: tab
+      format_settings:
+        label: 'IPDC Product'
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ipdc-group
+      label: 'IPDC Product'
+    group_what_to_bring_over:
+      children:
+        - field_ipdc_bringwhat
+        - field_ipdc_bringwhat_custom
+        - field_ipdc_bringwhat_options
+      parent_name: group_ipdc_product
+      weight: 25
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'What to bring over'
+    group_what:
+      children:
+        - field_ipdc_what
+        - field_ipdc_what_custom
+        - field_ipdc_what_options
+      parent_name: group_ipdc_product
+      weight: 21
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: What
+    group_when:
+      children:
+        - field_ipdc_when
+        - field_ipdc_when_custom
+        - field_ipdc_when_options
+      parent_name: group_ipdc_product
+      weight: 22
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: When
+    group_title:
+      children:
+        - field_ipdc_title
+        - field_ipdc_title_custom
+        - field_ipdc_title_options
+      parent_name: group_ipdc_product
+      weight: 20
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Title
+    group_conditions:
+      children:
+        - field_ipdc_conditions
+        - field_ipdc_conditions_custom
+        - field_ipdc_conditions_options
+      parent_name: group_ipdc_product
+      weight: 23
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Conditions
+    group_exceptions:
+      children:
+        - field_ipdc_exceptions
+        - field_ipdc_exceptions_custom
+        - field_ipdc_exceptions_options
+      parent_name: group_ipdc_product
+      weight: 27
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Exceptions
+    group_regulations:
+      children:
+        - field_ipdc_rules
+        - field_ipdc_rules_custom
+        - field_ipdc_rules_options
+      parent_name: group_ipdc_product
+      weight: 28
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Regulations
+    group_procedure:
+      children:
+        - field_ipdc_procedure
+        - field_ipdc_procedure_custom
+        - field_ipdc_procedure_options
+      parent_name: group_ipdc_product
+      weight: 24
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Procedure
+    group_amount:
+      children:
+        - field_ipdc_amount
+        - field_ipdc_amount_custom
+        - field_ipdc_amount_options
+      parent_name: group_ipdc_product
+      weight: 26
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Amount
+    group_geographical_scope:
+      children:
+        - field_ipdc_scope
+        - field_ipdc_scope_custom
+        - field_ipdc_scope_options
+      parent_name: group_ipdc_product
+      weight: 31
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Geographical scope'
+    group_target:
+      children:
+        - field_ipdc_target
+        - field_ipdc_target_custom
+        - field_ipdc_target_options
+      parent_name: group_ipdc_product
+      weight: 30
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Target group'
+    group_type:
+      children:
+        - field_ipdc_type
+        - field_ipdc_type_custom
+        - field_ipdc_type_options
+      parent_name: group_ipdc_product
+      weight: 29
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Type
+    group_theme:
+      children:
+        - field_ipdc_theme
+        - field_ipdc_theme_custom
+        - field_ipdc_theme_options
+      parent_name: group_ipdc_product
+      weight: 32
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Theme
+    group_keywords:
+      children:
+        - field_ipdc_keywords
+        - field_ipdc_keywords_custom
+        - field_ipdc_keywords_options
+      parent_name: group_ipdc_product
+      weight: 33
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Keywords
+    group_references:
+      children:
+        - field_ipdc_reference
+        - field_ipdc_reference_custom
+        - field_ipdc_reference_options
+      parent_name: group_ipdc_product
+      weight: 34
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: References
+id: node.product.default
+targetEntityType: node
+bundle: product
+mode: default
+content:
+  body:
+    weight: 9
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_banner:
+    weight: 12
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+    region: content
+  field_block_tags:
+    weight: 30
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_bundles:
+    weight: 10
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_image:
+    weight: 8
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+    region: content
+  field_images:
+    weight: 11
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+    region: content
+  field_ipdc_amount:
+    type: text_textarea
+    weight: 27
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_ipdc_amount_custom:
+    type: text_textarea
+    weight: 28
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_ipdc_amount_options:
+    type: options_buttons
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_ipdc_bringwhat:
+    type: text_textarea
+    weight: 32
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_ipdc_bringwhat_custom:
+    type: text_textarea
+    weight: 33
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_ipdc_bringwhat_options:
+    type: options_buttons
+    weight: 34
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_ipdc_conditions:
+    type: text_textarea
+    weight: 23
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_ipdc_conditions_custom:
+    type: text_textarea
+    weight: 24
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_ipdc_conditions_options:
+    type: options_buttons
+    weight: 25
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_ipdc_exceptions:
+    type: text_textarea
+    weight: 32
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_ipdc_exceptions_custom:
+    type: text_textarea
+    weight: 33
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_ipdc_exceptions_options:
+    type: options_buttons
+    weight: 34
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_ipdc_keywords:
+    type: entity_reference_autocomplete
+    weight: 34
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ipdc_keywords_custom:
+    type: entity_reference_autocomplete
+    weight: 35
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ipdc_keywords_options:
+    type: options_buttons
+    weight: 36
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ipdc_procedure:
+    type: text_textarea
+    weight: 25
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_ipdc_procedure_custom:
+    type: text_textarea
+    weight: 26
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_ipdc_procedure_options:
+    type: options_buttons
+    weight: 27
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ipdc_reference:
+    weight: 35
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_ipdc_reference_custom:
+    weight: 36
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_ipdc_reference_options:
+    weight: 37
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_ipdc_rules:
+    type: text_textarea
+    weight: 33
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_ipdc_rules_custom:
+    type: text_textarea
+    weight: 34
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_ipdc_rules_options:
+    type: options_buttons
+    weight: 35
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ipdc_scope:
+    type: entity_reference_autocomplete
+    weight: 36
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ipdc_scope_custom:
+    type: entity_reference_autocomplete
+    weight: 37
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ipdc_scope_options:
+    type: options_buttons
+    weight: 38
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ipdc_target:
+    type: entity_reference_autocomplete
+    weight: 33
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ipdc_target_custom:
+    type: entity_reference_autocomplete
+    weight: 34
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ipdc_target_options:
+    type: options_buttons
+    weight: 35
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ipdc_theme:
+    type: entity_reference_autocomplete
+    weight: 33
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ipdc_theme_custom:
+    type: entity_reference_autocomplete
+    weight: 34
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ipdc_theme_options:
+    type: options_buttons
+    weight: 35
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ipdc_title:
+    type: string_textfield
+    weight: 21
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ipdc_title_custom:
+    type: string_textfield
+    weight: 22
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ipdc_title_options:
+    type: options_buttons
+    weight: 23
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ipdc_type:
+    type: entity_reference_autocomplete
+    weight: 30
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ipdc_type_custom:
+    type: entity_reference_autocomplete
+    weight: 31
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ipdc_type_options:
+    type: options_buttons
+    weight: 32
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ipdc_webid:
+    weight: 32
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ipdc_what:
+    type: text_textarea_with_summary
+    weight: 22
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_ipdc_what_custom:
+    type: text_textarea_with_summary
+    weight: 23
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_ipdc_what_options:
+    type: options_buttons
+    weight: 24
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ipdc_when:
+    type: daterange_default
+    weight: 23
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ipdc_when_custom:
+    type: daterange_default
+    weight: 24
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ipdc_when_options:
+    type: options_buttons
+    weight: 25
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_keywords:
+    weight: 28
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_section:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_system_note:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_tags:
+    weight: 29
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_timestamp:
+    weight: 33
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_weight:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  path:
+    type: path
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    third_party_settings: {  }
+    region: content
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

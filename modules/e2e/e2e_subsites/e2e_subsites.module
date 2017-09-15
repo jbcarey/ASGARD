@@ -1,0 +1,28 @@
+<?php
+
+use Drupal\e2e_subsites\Includes\SubsiteHelper;
+
+function e2e_subsites_pathauto_pattern_alter(&$pattern, array $context){
+  
+  
+  if (isset($context['data']['node']) && empty($context['data']['node']->menu_link->getValue())) {
+    
+    $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $node = $context['data']['node'];
+        
+    if(!empty($node->field_section)){
+        
+      $section = $node->field_section->target_id;
+
+      $nodetypePaths = SubsiteHelper::getNodeTypePaths($section);
+      
+      if (isset($nodetypePaths[$section][$langcode][$node->getType()])){
+        $patternpath = trim($nodetypePaths[$section][$langcode][$node->getType()] . '/[node:title]');
+        $pattern->setPattern($patternpath);
+      }
+    }
+  }
+}
+
+
+
