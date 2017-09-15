@@ -1,3 +1,7 @@
+
+'use-strict';
+//npm install gulp gulp-util gulp-tap gulp-plumber gulp-svgmin gulp-svgstore gulp-image-resize-ar
+
 /**
  * Gulp Packages
  */

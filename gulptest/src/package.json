@@ -1,0 +1,35 @@
+{
+  "name": "gulptest",
+  "version": "1.0.0",
+  "description": "none",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "default"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbcarey/asgard.git"
+  },
+  "keywords": [
+    "testing"
+  ],
+  "author": "jbcarey",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/jbcarey/asgard/issues"
+  },
+  "homepage": "https://github.com/jbcarey/asgard#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "jshint": "^2.9.5"
+  },
+  "dependencies": {
+    "del": "^3.0.0",
+    "event-stream": "^3.3.4",
+    "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "lazypipe": "^1.0.1",
+    "stream": "0.0.2"
+  }
+}
