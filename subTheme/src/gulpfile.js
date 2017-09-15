@@ -40,6 +40,8 @@ var svgmin = require('gulp-svgmin');
 var svgstore = require('gulp-svgstore');
 var imageResize = require('gulp-image-resize-ar');
 
+
+
 // favicon
 var realFavicon = require('gulp-real-favicon');
 
@@ -84,9 +86,6 @@ var paths = {
 };
 
 
-
-
-
 /**
  * Gulp Taks
  */
@@ -114,7 +113,7 @@ gulp.task('build:scripts', function() {
 			if ( file.isDirectory() ) {
 				var name = file.relative + '.js';
 				return gulp.src(file.path + '/*.js')
-					//.pipe(concat(name))
+					.pipe(concat(name))
 					.pipe(jsTasks());
 			}
 		}))
@@ -170,6 +169,7 @@ gulp.task('build:svgs', function () {
         .pipe(svgmin())
         .pipe(gulp.dest(paths.svgs.output));
 });
+
 
 // Copy image files into output folder
 gulp.task('build:images', ['build:thumbs'], function() {
@@ -227,6 +227,12 @@ gulp.task('build:fonts', function () {
 gulp.task('build:favicon', function() {
     var faviconSettings = require('./favicon/config.json');
     realFavicon.generateFavicon(faviconSettings);
+    gulp.start('copy:favicon');
+});
+
+gulp.task('copy:favicon', function() {
+    gulp.src('../favicon/favicon.ico')
+    .pipe(gulp.dest('../'));
 });
 
 // Lint scripts
@@ -304,8 +310,8 @@ gulp.task('watch', [
 ]);
 
 // Spin up livereload server and listen for file changes 
-gulp.task('watch-less', function () {
+gulp.task('watch:less', function () {
     "use strict";
     gulp.watch('./less/**/*.less', ['build:styles']);
-    gutil.log('Less Compiled!');
+    
 });

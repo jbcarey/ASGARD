@@ -1,15 +1,13 @@
 
 // main-menu
 #main-menu {
-
   a {
     padding: 0 1.5em;
     line-height: 3em;
     font-weight: 600;
     text-decoration: none;
-    font-family: "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-family:@myriad;
     color: @maincolor;
-
     
     &:hover,
     &:focus,
@@ -22,6 +20,7 @@
   
   & > a {
     display: none;
+    color: teal;
   }
 
   @media @bp-medium {
@@ -36,7 +35,10 @@
     }
   }
 
-  @media @bp-small {
+  @media @bp-max-small {
+    
+    & > a.menutoggle { display: block;}
+
     & > a {
       display: inline-block;
       border-color: lighten(@bgc-dark,10);
@@ -45,4 +47,13 @@
     }
   }
 
+}
+
+
+// ADD to basetheme
+
+.table-menu { 
+  & > ul.menu   { display: table; width: 100%;
+    & > li  { display: table-cell; }
+  }
 }

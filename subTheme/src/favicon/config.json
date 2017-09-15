@@ -1,6 +1,6 @@
 {
     "masterPicture": "./favicon/favicon.png",
-    "dest": "dist/favicon",
+    "dest": "../favicon",
     "iconsPath": "favicon",
     "design": {
 	    "ios": {

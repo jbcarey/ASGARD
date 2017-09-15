@@ -1,10 +1,7 @@
 subTheme:
   version: 1.x
   js:
-    js/smooth-scroll.min.js: {}
-    js/lazyload.min.js: {}
-    js/swiper.min.js: {}
-    js/gallery.min.js: {}
+    js/plugins.min.js: {}
     js/template.js: {}
   css:
     theme:
@@ -15,11 +12,6 @@ subTheme:
     - core/drupal
     - core/jquery
     - core/jquery-once
-    
-gallery:
-  version: VERSION
-  js:
-    js/gallery.min.js: {}
     
     
 

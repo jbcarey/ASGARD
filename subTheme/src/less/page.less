@@ -1,40 +1,109 @@
-.logo {
-  text-align: center;
-  display: block;
-  width: em(170);
-  height: em(185);
-   margin: 0;
-  position: static;
-  line-height: em(170);
-  text-decoration: none;
-  transition: transform 0.2s ease-in-out;
-
-  & > span {
-    display: none;
-    font-size: 2em;
-    font-weight: 300;
-  }
-
-  &:hover {
-    transform: scale(1.02);
-  }
-  
-  footer & {
-    width: em(130);
-    height: auto;
-  }
+// COMMENT GENERATOR http://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=entercomments
+@import "navigation";
+#menubar {
+    bottom: em(40);
 }
 
 
-@import "navigation";  
+/* 
+██╗  ██╗███████╗ █████╗ ██████╗ ███████╗██████╗ 
+██║  ██║██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗
+███████║█████╗  ███████║██║  ██║█████╗  ██████╔╝
+██╔══██║██╔══╝  ██╔══██║██║  ██║██╔══╝  ██╔══██╗
+██║  ██║███████╗██║  ██║██████╔╝███████╗██║  ██║
+╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝
+*/
+
+.logo {
+    text-align: center;
+    display: block;
+    width: em(170);
+    height: em(185);
+    margin: 0;
+    position: static;
+    line-height: em(170);
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+    &>span {
+        display: none;
+        font-size: 2em;
+        font-weight: 300;
+    }
+    &:hover {
+        transform: scale(1.02);
+    }
+    footer & {
+        width: em(130);
+        height: auto;
+    }
+}
+
+.social-links {
+    margin-right: em(20);
+    li {
+        margin-left: em(8);
+    }
+    a {
+        img {
+            vertical-align: middle;
+        }
+    }
+}
+
+.topmenu {
+    &.br-bottom-main {
+        border-bottom-color: @maincolor-darker;
+    }
+    ul.menu li {
+        position: relative;
+        &:after {
+            content: '';
+            width: 1px;
+            height: 21px;
+            display: inline-block;
+            background-color: #95cbdb;
+            position: absolute;
+            top: 50%;
+            margin-top: -10.5px;
+            right: 0;
+        }
+        &:last-child {
+            &:after {
+                display: none;
+            }
+        }
+        a {
+            color: white;
+            font-size: 14px;
+            font-family: @myriad;
+            line-height: em(37);
+        }
+    }
+}
+
+#search {
+    form {
+        line-height: 3em;
+        width: 100%;
+          input {
+            width: 100%;
+        }
+    }
+}
 
 
-#menubar { bottom: em(40); }
+/*
+███████╗ ██████╗  ██████╗ ████████╗███████╗██████╗ 
+██╔════╝██╔═══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔══██╗
+█████╗  ██║   ██║██║   ██║   ██║   █████╗  ██████╔╝
+██╔══╝  ██║   ██║██║   ██║   ██║   ██╔══╝  ██╔══██╗
+██║     ╚██████╔╝╚██████╔╝   ██║   ███████╗██║  ██║
+╚═╝      ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝
+*/
 
-
-// FOOTER
-footer { border: 0;
-  .wrapper {
-    padding:@pd-large 0;
-  }
+footer {
+    border: 0;
+    .wrapper {
+        padding: @pd-large 0;
+    }
 }

@@ -8,25 +8,38 @@
     <div class="pane grid3"> <a class="logo" href="{{ front_page }}"> <img src="{{ logopath }}" alt="{{ site_name }}" /> <span>{{ site_name }}</span> </a> </div>
     <div class="pane grid9" >
      
-      <div class="grid">
-      <div class="pane grid2 ta-right">social-btns</div>
-      <div class="pane grid10 ta-right" style="max-width: 570px;">{# {{ page.secondary_menu }} #} TOPMENU</div>
+      <div class="grid ta-right">
+      <div class="pane grid5 ta-right">
+        <ul class="inline-menu social-links">
+          <li><a href="https://www.facebook.com/Maarkedal/" target="_blank"><img src="{{ theme_path }}/img/facebook.png" alt=""></a></li>
+          <li><a href="https://twitter.com/gemMaarkedal" target="_blank"><img src="{{ theme_path }}/img/twitter.png" alt=""></a></li>
+          <li><a href="https://www.instagram.com/maarkedalmoetjebeleven/" target="_blank"><img src="{{ theme_path }}/img/instagram.png" alt=""></a></li>
+      </div>
+      <div class="table-menu topmenu pane grid7 ta-center bgc-main br-reset br-bottom-medium br-bottom-main"> {{ page.secondary_menu }} </div>
       </div>
       
-       <div id="menubar" class="absolute bottom">
+      <div class="grid">      
+      <div id="menubar" class="pane grid5">
           {{ page.primary_menu }}  
-        </div>  
-      
+      </div> 
+      <div class="pane grid7  bgc-main"> {{ page.search }}</div> 
+      </div>
 
-     
 
     </div>
   </div>
+
+
   <div class="banner bgc-grey">
     <div class="wrapper"> {{ page.header.banner }}</div>
   </div>
+
+
 </header>
 <div class="info wrapper"> {{ page.help }} </div>
+
+
+
 <main id="main">
   <div class="wrapper"> {{ page.breadcrumb }}
     

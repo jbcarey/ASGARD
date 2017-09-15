@@ -11,6 +11,7 @@ function subTheme_preprocess_html(&$variables) {
   $svg = file_get_contents(__DIR__ . '/svg/svg.svg');
   $variables['svg_sprite'] = $svg;
 
+
   /*$path = \Drupal::service('path.current')->getPath();
   $alias = \Drupal::service('path.alias_manager')->getAliasByPath($path);
   $alias_array = explode('/',$alias);
@@ -25,11 +26,14 @@ function subTheme_preprocess_page(&$variables) {
   
   
   $site_config = \Drupal::config('system.site');
+  $variables['theme_path'] = '/' . drupal_get_path('theme','subTheme');  
+  
+
   $variables['site_name'] = $site_config->get('name');
   $variables['site_slogan'] = $site_config->get('slogan');
 
   // logo needs to be placed within specified folder
-  $variables['logopath'] = '/' . drupal_get_path('theme','subTheme') . '/logo.svg';
+  $variables['logopath'] = $variables['theme_path'] . '/logo.svg';
   
   
   
@@ -221,17 +225,16 @@ function _subTheme_user_login_form_submit($form, FormStateInterface $form_state)
  */
 function subTheme_preprocess_block(&$variables) {
   
+  $variables['attributes']['class'][] = isset($variables['attributes']['class']) ? json_encode($variables['attributes']['class']) : 'blox';  
   
   if($variables['attributes']['id'] == 'block-mailchimpinschrijfformulierinschrijvennieuwsbrief') {
     $variables['attributes']['class'][] = 'add-teaserclass';
   }
   
-
-  if ($variables['attributes']['id'] == 'block-search-block') {
-  
-    $variables['content']['trefwoord']['#title_display'] = 'hidden';
-    $variables['content']['trefwoord']['#attributes']['placeholder'] = t('Search');
-
+  if ($variables['attributes']['id'] == 'block-subtheme-search') {
+    $variables['attributes']['class'][] = 'hide-block-title';
+    $variables['content']['keys']['#title_display'] = 'hidden';
+    $variables['content']['keys']['#attributes']['placeholder'] = t('What can we help you with?');
     unset($variables['content']['blogs']);
   }
   
@@ -244,4 +247,11 @@ function subTheme_preprocess_block(&$variables) {
 }
 
 
+function subTheme_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  $elements = &$variables['elements'];
 
+  if($elements['#id'] == 'subTheme_search') {
+    $suggestions[] = 'block__search_block';
+  }
+
+}

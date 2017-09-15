@@ -2,7 +2,7 @@ name: subTheme
 type: theme
 base theme: baseTheme
 description: a subtemplate based on baseTheme
-version: 0.7
+version: 0.8
 core: 8.x
 
 libraries:

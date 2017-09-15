@@ -54,13 +54,6 @@ sup {
   vertical-align: baseline
 }
 
-[type=checkbox],
-[type=radio],
-legend {
-  box-sizing: border-box;
-  padding: 0
-}
-
 body,
 html {
   min-height: 100%
@@ -112,14 +105,7 @@ textarea {
   overflow: auto
 }
 
-#main-menu a,
-.button,
-.text-link,
-a.pane,
-ul.menu a {
-  text-decoration: none
-}
-
+#search .icon,
 .dropdown-menu>a>*,
 body>header>.banner {
   pointer-events: none
@@ -166,6 +152,16 @@ abbr[title] {
   border-bottom: 0;
   text-decoration: underline;
   text-decoration: underline dotted
+}
+
+#logo,
+#main-menu a,
+.button,
+.icon+a,
+.text-link,
+a.pane,
+ul.menu a {
+  text-decoration: none
 }
 
 b,
@@ -251,9 +247,16 @@ button:-moz-focusring {
 }
 
 legend {
+  box-sizing: border-box;
   color: inherit;
   display: table;
   white-space: normal
+}
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0
 }
 
 [type=number]::-webkit-inner-spin-button,
@@ -477,14 +480,6 @@ hr {
   margin: 1em auto
 }
 
-.input,
-.pane,
-.visually-hidden,
-.wrapper,
-table {
-  box-sizing: border-box
-}
-
 ol,
 ul {
   padding-left: 1em
@@ -623,6 +618,7 @@ label {
   background-color: #fff;
   border: 1px solid #c4c4c4;
   border-radius: .25em;
+  box-sizing: border-box;
   color: #4d4d4d;
   display: block;
   font-size: 1em;
@@ -782,6 +778,7 @@ th {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+  box-sizing: border-box;
   min-width: 20em;
   width: 100%
 }
@@ -845,12 +842,14 @@ ul.tabs>li+li {
 }
 
 .pane {
+  box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
   width: 100%
 }
 
 .wrapper {
+  box-sizing: border-box;
   margin: 0 auto;
   max-width: 71.111em;
   min-width: 0 20em;
@@ -859,11 +858,19 @@ ul.tabs>li+li {
 }
 
 .visually-hidden {
+  box-sizing: border-box;
   opacity: 0;
   padding: 0;
   position: absolute;
   visibility: hidden;
   z-index: -1
+}
+
+#header,
+#menu-bar,
+#search,
+body>header {
+  position: relative
 }
 
 .icon,
@@ -892,6 +899,7 @@ ul.tabs>li+li {
   font-size: 1.333em
 }
 
+#logo span,
 .huge {
   font-size: 2em
 }
@@ -1051,11 +1059,6 @@ ul.tabs>li+li {
   z-index: 999999
 }
 
-#menu-bar,
-body>header {
-  position: relative
-}
-
 #menu-bar {
   -webkit-backface-visibility: hidden;
   border-bottom: 1px solid #111;
@@ -1151,6 +1154,11 @@ body>header>.wrapper {
   width: 1em
 }
 
+#logo,
+#logo span {
+  display: inline-block
+}
+
 #social-links .icon:hover {
   fill: #0074d9
 }
@@ -1159,10 +1167,124 @@ body>main {
   margin-top: 1.667em
 }
 
+#header {
+  padding: 2em 0
+}
+
+#header .pane {
+  vertical-align: middle
+}
+
+#footer .footer-content {
+  border-top: 1px solid #ddd;
+  padding: 1.667em 0
+}
+
+#scroll-to-top {
+  display: block;
+  margin-left: auto;
+  width: 4em
+}
+
+#scroll-to-top .icon {
+  height: 2em;
+  width: 2em
+}
+
+#logo {
+  color: #0074d9;
+  transition: opacity .2s ease-in-out
+}
+
+#logo span {
+  font-weight: 300;
+  line-height: 2
+}
+
+#logo span+span {
+  border-left: 1px solid #0074d9;
+  font-weight: 500;
+  margin-left: .4em;
+  padding-left: .4em;
+  transition: line-height .3s ease-in-out
+}
+
+#logo:hover {
+  opacity: .8
+}
+
+#logo:hover span+span {
+  line-height: 1.2
+}
+
 @media only screen and (max-width:16.667em) {
+  #logo {
+    font-size: .68em;
+    padding-top: 2.4em
+  }
+
   body:before {
     content: 'mini'
   }
+}
+
+#search .form-item {
+  min-height: 0
+}
+
+#search input {
+  margin: 0
+}
+
+#search form {
+  margin: 0 0 0 auto;
+  width: 11.111em
+}
+
+#search input[type=text] {
+  padding-right: 2.2em
+}
+
+#search input[type=submit] {
+  bottom: 0;
+  box-sizing: border-box;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  text-indent: 100%;
+  top: 0;
+  width: 2.2em
+}
+
+#search .icon {
+  fill: #0074d9;
+  height: 100%;
+  opacity: .7;
+  padding: 0 .5em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity .2s ease-in-out;
+  width: 1.2em
+}
+
+#search>div:hover .icon {
+  opacity: 1
+}
+
+.icon {
+  fill: #666;
+  height: 1.2em;
+  width: 1.2em
+}
+
+.icon-field .icon {
+  margin: -.2em .6em 0 0
+}
+
+.icon+a {
+  color: #333
 }
 
 @media only screen and (max-width:33.333em) {
@@ -1213,6 +1335,16 @@ body>main {
 }
 
 @media only screen and (max-width:50em) {
+  #logo {
+    padding-top: 3.5em
+  }
+
+  #search {
+    position: absolute;
+    right: 1.333em;
+    top: 0
+  }
+
   body:before {
     content: 'small'
   }
@@ -1379,7 +1511,7 @@ body>main {
   }
 
   .grid5 {
-    width: 41.66
+    width: 41.66%
   }
 
   .grid6 {

@@ -26,9 +26,9 @@
  */
 #}
 
-<div class="search-block{% if 'contextual-region' in attributes.class %} contextual-region{% endif %}">
+<div id="search" class="search-block{% if 'contextual-region' in attributes.class %} contextual-region{% endif %}">
   {{ title_prefix }}
-  {% if label %}
+  {% if not label %}
     <h2{{ title_attributes }}>{{ label }}</h2>
   {% endif %}
   {{ title_suffix }}
