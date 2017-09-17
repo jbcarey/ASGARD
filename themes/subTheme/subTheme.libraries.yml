@@ -5,9 +5,9 @@ subTheme:
     js/template.js: {}
   css:
     theme:
+      fonts/fonts.css: {} 
       css/template.css: {}
       css/custom.css: {}
-      fonts/fonts.css: {}
   dependencies:
     - core/drupal
     - core/jquery
