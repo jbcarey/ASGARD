@@ -7,6 +7,7 @@
  step 02 copy folder node_modules_fix/gulptap
  step 03 npm install jshint
  step 04 npm install imagemagick (BROKEN)
+ step 05 npm install --save bluebird (needed for images)
  */
 
 // General
@@ -44,7 +45,8 @@ var googleWebFonts = require('gulp-google-webfonts');
 // Images
 var svgmin = require('gulp-svgmin');
 var svgstore = require('gulp-svgstore');
-var imageResize = require('gulp-image-resize-ar');
+//var imageResize = require('gulp-image-resize-ar');
+var jimp = require("gulp-jimp-resize");
 
 // favicon
 var realFavicon = require('gulp-real-favicon');
@@ -179,30 +181,16 @@ gulp.task('build:svgs', function () {
 });
 
 // Copy image files into output folder
-gulp.task('build:images', ['build:thumbs'], function() {
-    return gulp.src(paths.images.input)
-        .pipe(plumber())
-        .pipe(imageResize({ 
-          width : 1200,
-          height : 600,
-          crop : true,
-          upscale : false
-        }))
-        .pipe(gulp.dest(paths.images.output));
-});
-
-
-// Copy image thumbnail files into output folder
-gulp.task('build:thumbs', function() {
-    return gulp.src(paths.images.thumbs.input)
-        .pipe(plumber())
-        .pipe(imageResize({ 
-          width : 180,
-          height : 180,
-          crop : true,
-          upscale : false
-        }))
-        .pipe(gulp.dest(paths.images.thumbs.output));
+gulp.task('build:images', function() {
+    return gulp.src('./img/**/*.{png,jpg,bmp}')
+    .pipe(jimp({
+        sizes: [
+            {"suffix": "lr", "width": 1020},
+            {"suffix": "md", "width": 830},
+            {"suffix": "sm", "width": 480}
+        ]
+    }))
+    .pipe(gulp.dest('./resized/'));
 });
 
 
@@ -281,7 +269,7 @@ gulp.task('default', [
     'build:plugins',
     'build:scripts',
     'build:styles',
-    //'build:images',
+    'build:images',
     'build:html',
     'build:svgs',
     'build:fonts',
